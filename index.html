@@ -214,8 +214,8 @@ a:hover .arr, button:hover .arr { transform: translate(3px, -3px); }
 .contact h2 { font-size: clamp(40px, 5vw, 76px); letter-spacing: -0.045em; padding: 72px 24px 12px; }
 .contact > p { padding: 0 24px 32px; max-width: 32em; font-size: var(--step-lead); line-height: 1.35; }
 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 24px; }
-.cell { min-height: 96px; border-radius: var(--r); background: var(--accent-2); color: #fff; display: grid; place-items: center; font-size: 22px; font-weight: 500; text-decoration: none; border: 0; cursor: pointer; transition: background .2s, color .2s, transform .15s var(--ease); }
-.cell.num { font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -0.02em; cursor: text; user-select: all; }
+.cell { min-height: 96px; border-radius: var(--r); background: var(--accent-2); color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 22px; font-weight: 500; text-decoration: none; border: 0; cursor: pointer; transition: background .2s, color .2s, transform .15s var(--ease); }
+.cell.num { font-size: clamp(18px, 1.6vw, 26px); letter-spacing: -0.01em; cursor: text; user-select: all; overflow-wrap: anywhere; text-align: center; padding: 0 12px; }
 button.cell:hover, a.cell:hover { background: var(--paper); color: var(--ink); }
 .cell:active { transform: scale(.98); }
 .cell.call { background: var(--paper); color: var(--ink); white-space: nowrap; }
@@ -317,7 +317,7 @@ footer.board .t a { color: inherit; }
     <a class="t pic p1 shutter" href="cloudline/" aria-label="打開雲線山居民宿網站"><img src="work/11-cloudline.jpg" alt="雲線山居民宿網站首頁，雲海照片上是大字店名與快速查空房列" width="960" height="600" fetchpriority="high"><span class="cap">最新作品：雲線山居民宿網站 ↗</span></a>
     <a class="t pic p2" href="https://hsiehcaleb00114-wq.github.io/restaurant-demos/sites/06-sanlan-cafe/" target="_blank" rel="noopener" aria-label="打開山嵐咖啡輕食網站"><img src="work/06-sanlan-cafe.jpg" alt="山嵐咖啡輕食網站首頁" width="960" height="600"><span class="cap">山嵐咖啡輕食 ↗</span></a>
     <div class="t dark s1"><p class="say">我幫民宿、餐廳和小店做官網、線上訂房和 App，從設計到上線一個人完成。</p><p class="small dim">11 個網站、4 個 App（3 個已上架），每一個都能點開操作。</p></div>
-    <a class="t blue s2" href="#contact"><p class="say">第一次聊不收費，告訴我你想做什麼。</p><p class="small">電話 0958-332-286 <span class="arr">↗</span></p></a>
+    <a class="t blue s2" href="#contact"><p class="say">第一次聊不收費，告訴我你想做什麼。</p><p class="small">minhanstudio369@gmail.com <span class="arr">↗</span></p></a>
   </section>
 
   <section class="board" id="case" aria-labelledby="case-h">
@@ -386,7 +386,7 @@ footer.board .t a { color: inherit; }
   <section class="board about-sec" id="about" aria-labelledby="about-h">
     <div class="sec-title"><h2 id="about-h" class="rv">關於</h2></div>
     <p class="about-lead rv" style="--d:1">我是旻翰，住在南投。「點子成形」的意思是：你帶著想法來，我把它做成能點、能用的東西。設計、寫程式、上線都是我一個人，你從頭到尾只要跟同一個人講。</p>
-    <div class="t pic about-pic rv"><img src="cloudline/img/hero.jpg" alt="南投山區清晨的雲海" width="2000" height="1466" loading="lazy"><p class="note">南投的店家我可以當面聊；其他縣市用電話、LINE 和視訊，一樣做得完。</p></div>
+    <div class="t pic about-pic rv"><img src="cloudline/img/hero.jpg" alt="南投山區清晨的雲海" width="2000" height="1466" loading="lazy"><p class="note">南投的店家我可以當面聊；其他縣市用 Email 和視訊，一樣做得完。</p></div>
     <div class="about-side">
       <div class="t blue about-map rv" style="--d:1" role="img" aria-label="台灣地圖，標出南投">
         <svg viewBox="0 0 230 400" aria-hidden="true"><path id="tw" fill="rgb(255 255 255 / .22)"/><circle id="nt" r="7" fill="#fff"/><text id="ntl" font-size="15" fill="#fff" font-weight="600">南投</text></svg>
@@ -403,11 +403,11 @@ footer.board .t a { color: inherit; }
   <section class="contact" id="contact" aria-labelledby="contact-h">
     <div class="strip" id="strip" aria-hidden="true"></div>
     <h2 id="contact-h">有想做的東西？</h2>
-    <p>打電話或傳訊息告訴我想做什麼、大概什麼時候要，我會盡快回覆。</p>
+    <p>寫信告訴我想做什麼、大概什麼時候要，我會盡快回覆。</p>
     <div class="cells">
-      <span class="cell num" id="v-phone">0958-332-286</span>
-      <button type="button" class="cell" id="copyBtn">複製號碼</button>
-      <a class="cell call" href="tel:+886958332286">直接打電話 <span class="arr">↗</span></a>
+      <span class="cell num" id="v-mail">minhanstudio369@gmail.com</span>
+      <button type="button" class="cell" id="copyBtn">複製 Email</button>
+      <a class="cell call" href="mailto:minhanstudio369@gmail.com">直接寫信 <span class="arr">↗</span></a>
     </div>
     <p class="fine">旻翰・點子成形工作室</p>
   </section>
@@ -499,10 +499,10 @@ footer.board .t a { color: inherit; }
   /* copy phone */
   var cb = document.getElementById('copyBtn');
   cb.addEventListener('click', function () {
-    var v = document.getElementById('v-phone');
+    var v = document.getElementById('v-mail');
     var done = function (ok) {
       if (!ok) { var r = document.createRange(); r.selectNodeContents(v); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-      cb.textContent = ok ? '已複製' : '已選取，按複製'; setTimeout(function () { cb.textContent = '複製號碼'; }, 1600);
+      cb.textContent = ok ? '已複製' : '已選取，按複製'; setTimeout(function () { cb.textContent = '複製 Email'; }, 1600);
     };
     try { navigator.clipboard.writeText(v.textContent.trim()).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
   });
