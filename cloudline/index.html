@@ -1,0 +1,1813 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>雲線山居</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="清境海拔 1,850 公尺的五間房民宿：房型、早餐與晚餐、設施、住宿須知、環境照片、線上訂房與民宿主人管理後台。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Direction: "The place carries it". Idea: the cloud line. The guesthouse sits at 1,850 m, above the morning cloud sea. */
+:root {
+  --bg: #eeecea; --surface: #e4e1dd; --field: #cdc3b6; --ink: #333231; --muted: #625e5a; --line: #d3cec7;
+  --accent: #56664e; --accent-ink: #f7f6f4; --on-photo: #f5f3ef; --on-sky: #27313a; --scrim: rgb(18 20 20 / 0.5);
+  --good: #3f6b3a; --good-bg: #dde5d6; --warn: #8a5a12; --warn-bg: #efe2c9; --bad: #9b3f32; --bad-bg: #f0d9d3;
+  --font: "Work Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2.25rem, 1.4rem + 3.2vw, 4.25rem);
+  --step-display: clamp(120px, 13vw, 200px);
+  --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --margin: max(16px, 5vw);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1b; --surface: #272724; --field: #3b3732; --ink: #ebe8e3; --muted: #aaa49c; --line: #3a3835;
+    --accent: #93a687; --accent-ink: #151613;
+    --good: #9ccb91; --good-bg: #26331f; --warn: #e2b468; --warn-bg: #3a2e18; --bad: #eb9a8b; --bad-bg: #3d2420;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1b; --surface: #272724; --field: #3b3732; --ink: #ebe8e3; --muted: #aaa49c; --line: #3a3835;
+  --accent: #93a687; --accent-ink: #151613;
+  --good: #9ccb91; --good-bg: #26331f; --warn: #e2b468; --warn-bg: #3a2e18; --bad: #eb9a8b; --bad-bg: #3d2420;
+  color-scheme: dark;
+}
+html, body { overflow-x: clip; }
+html { scroll-padding-top: 72px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: var(--step-body); line-height: 1.6; font-synthesis: none; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--field); color: var(--ink); }
+h1, h2, h3, h4 { font-weight: 300; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.num { font-variant-numeric: tabular-nums; }
+.view[hidden] { display: none !important; }
+.ic { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); background: var(--accent); color: var(--accent-ink); border: 0; font-size: var(--step-body); font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer; position: relative; overflow: hidden; transition: transform .15s var(--ease-out), filter .15s var(--ease-out); }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn.sm { min-height: 40px; padding: 0 18px; font-size: 15px; }
+.btn.line { background: transparent; color: inherit; box-shadow: inset 0 0 0 1px currentColor; }
+.btn .rip { position: absolute; border-radius: 50%; background: currentColor; opacity: .25; transform: scale(0); animation: rip .6s var(--ease-out) forwards; pointer-events: none; }
+@keyframes rip { to { transform: scale(4); opacity: 0; } }
+.link { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; cursor: pointer; white-space: nowrap; }
+.link:hover { text-decoration-thickness: 2px; }
+.arr { display: inline-block; transition: transform .3s var(--ease-out); }
+a:hover .arr, button:hover .arr { transform: translateX(5px); }
+
+/* ---------- site header ---------- */
+.sh { position: fixed; top: 0; left: 0; right: 0; z-index: 40; height: 68px; display: flex; align-items: center; gap: 28px; padding: 0 max(var(--margin), env(safe-area-inset-right, 0px)) 0 max(var(--margin), env(safe-area-inset-left, 0px)); color: var(--on-sky); transition: background .35s, color .35s, box-shadow .35s, transform .45s var(--ease-out); }
+.sh.solid { background: var(--bg); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+.sh.hide { transform: translateY(-100%); }
+.sh[hidden] { display: none; }
+.sh .wm { font-size: 22px; font-weight: 400; text-decoration: none; white-space: nowrap; margin-right: auto; letter-spacing: -0.01em; }
+.sn { display: flex; gap: 22px; font-size: 15px; }
+.sn a { text-decoration: none; position: relative; padding: 6px 0; white-space: nowrap; }
+.sn a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease-out); }
+.sn a:hover::after, .sn a[aria-current="true"]::after { transform: scaleX(1); }
+.burger { display: none; width: 44px; height: 44px; border: 0; background: none; position: relative; cursor: pointer; margin-right: -10px; }
+.burger i { position: absolute; left: 11px; width: 22px; height: 1.5px; background: currentColor; transition: transform .35s var(--ease-out), opacity .2s; }
+.burger i:nth-child(1) { top: 16px; } .burger i:nth-child(2) { top: 22px; } .burger i:nth-child(3) { top: 28px; }
+.burger[aria-expanded="true"] i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] i:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.mnav { position: fixed; inset: 0; z-index: 39; background: var(--bg); padding: 92px 24px 32px; display: grid; align-content: start; gap: 2px; transform: translateY(-100%); visibility: hidden; transition: transform .5s var(--ease-out), visibility 0s .5s; overflow-y: auto; }
+.mnav.open { transform: none; visibility: visible; transition: transform .5s var(--ease-out); }
+.mnav a { font-size: 28px; font-weight: 300; text-decoration: none; padding: 6px 0; opacity: 0; transform: translateY(14px); transition: opacity .4s, transform .5s var(--ease-out); }
+.mnav.open a { opacity: 1; transform: none; transition-delay: calc(var(--i) * 45ms + 140ms); }
+.mnav .btn { margin-top: 20px; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; height: 100svh; min-height: 640px; overflow: hidden; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; animation: drift 24s var(--ease-out) both; }
+@keyframes drift { from { transform: scale(1.08); } to { transform: scale(1); } }
+.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, var(--scrim) 0%, transparent 40%), linear-gradient(to right, rgb(18 20 20 / .35) 0%, transparent 55%); }
+.hero h1 { position: absolute; inset: 0; margin: 0; z-index: 2; }
+.hero .l1, .hero .l2 { position: absolute; display: block; font-size: var(--step-display); line-height: .85; font-weight: 300; letter-spacing: -0.035em; overflow: hidden; padding-bottom: .06em; }
+.hero .l1 { top: 104px; left: max(32px, env(safe-area-inset-left, 0px)); color: var(--on-sky); }
+.hero .l2 { right: max(32px, env(safe-area-inset-right, 0px)); bottom: 24px; color: var(--on-photo); }
+.mask { display: inline-block; animation: rise 1s var(--ease-out) both; }
+.l2 .mask { animation-delay: .12s; }
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+.hero-mid { position: absolute; z-index: 3; left: 32vw; right: 32px; top: 40%; display: grid; gap: var(--space-lg); justify-items: start; color: var(--on-photo); animation: fadeup .8s .5s var(--ease-out) both; }
+.hero-mid p { font-size: 19px; max-width: 25em; line-height: 1.55; }
+.hero-mid .acts { display: flex; gap: 12px; flex-wrap: wrap; }
+@keyframes fadeup { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.qs { position: relative; z-index: 5; margin: -150px 0 0 max(var(--margin), env(safe-area-inset-left, 0px)); width: min(780px, 58vw); background: var(--bg); padding: 20px; display: grid; grid-template-columns: 1.2fr 1.2fr .8fr .8fr auto; gap: 12px; align-items: end; animation: fadeup .8s .75s var(--ease-out) both; }
+.qs label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.qs input, .qs select { min-height: 46px; border: 1px solid var(--line); background: var(--bg); padding: 0 10px; font-size: 16px; color: var(--ink); border-radius: 0; min-width: 0; }
+.qs .err { grid-column: 1 / -1; color: var(--bad); font-size: 14px; }
+.qs .err:empty { display: none; }
+
+/* ---------- sections ---------- */
+.sec { padding-block: var(--space-4xl); }
+.grid12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; padding-left: max(var(--margin), env(safe-area-inset-left, 0px)); padding-right: max(var(--margin), env(safe-area-inset-right, 0px)); }
+.pad { padding-left: max(var(--margin), env(safe-area-inset-left, 0px)); padding-right: max(var(--margin), env(safe-area-inset-right, 0px)); }
+.h2 { font-size: var(--step-head); line-height: 1.08; }
+.lead { font-size: clamp(19px, 1.5vw, 22px); line-height: 1.6; max-width: 32em; }
+.cap { font-size: var(--step-small); color: var(--muted); line-height: 1.5; }
+.ph { overflow: hidden; position: relative; }
+.ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease-out); }
+.ph:hover img { transform: scale(1.035); }
+.par img { transform: translateY(var(--py, 0)) scale(1.12); transition: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .rv { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--ease-out), transform .9s var(--ease-out); transition-delay: calc(var(--d, 0) * 90ms); }
+  .rv.in { opacity: 1; transform: none; }
+  .wipe { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s var(--ease-out); }
+  .wipe.in { clip-path: inset(0 0 0 0); }
+}
+
+/* glance */
+.glance { align-items: start; }
+.glance .gp { grid-column: 1 / 7; position: relative; }
+.glance .gp .ph { aspect-ratio: 4 / 5; }
+.glance .gp .inset { position: absolute; right: -48px; bottom: -48px; width: 44%; aspect-ratio: 1; border: 10px solid var(--bg); z-index: 2; }
+.glance .gt { grid-column: 8 / 13; display: grid; gap: var(--space-xl); align-content: start; padding-top: var(--space-lg); }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; margin: 0; }
+.stats dd { margin: 0; font-size: clamp(38px, 3.6vw, 56px); font-weight: 300; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stats dd small { font-size: 18px; margin-left: 4px; letter-spacing: 0; }
+.stats dt { color: var(--muted); font-size: 15px; margin-top: 8px; order: 2; }
+.stats div { display: flex; flex-direction: column; }
+.hl { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 17px; }
+.hl li { display: flex; gap: 12px; align-items: flex-start; }
+.hl .ic { margin-top: 2px; color: var(--accent); }
+
+/* rooms */
+.rooms-head { grid-column: 1 / 13; display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.rooms-head p { max-width: 26em; }
+.rwrap { grid-column: 1 / 13; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 40px; margin-top: var(--space-2xl); align-items: start; }
+.rtabs { display: grid; gap: 4px; position: sticky; top: 96px; }
+.rtab { text-align: left; border: 0; border-left: 2px solid var(--line); background: none; padding: 14px 16px; cursor: pointer; display: grid; gap: 2px; transition: background .25s, border-color .25s, padding .3s var(--ease-out); }
+.rtab b { font-weight: 400; font-size: 19px; }
+.rtab span { font-size: 14px; color: var(--muted); }
+.rtab:hover { background: var(--surface); }
+.rtab[aria-selected="true"] { border-color: var(--accent); background: var(--surface); padding-left: 22px; }
+.rpanel { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.rpanel.swap > * { animation: swapin .6s var(--ease-out) both; }
+.rpanel.swap > *:nth-child(2) { animation-delay: .08s; }
+@keyframes swapin { from { opacity: 0; transform: translateX(28px); } }
+.rinfo { display: grid; gap: var(--space-lg); }
+.rinfo h3 { font-size: clamp(30px, 2.6vw, 42px); line-height: 1.1; }
+.rinfo .desc { font-size: 17px; }
+.spec { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 20px; margin: 0; font-size: 16px; }
+.spec dt { color: var(--muted); }
+.spec dd { margin: 0; }
+.amen { display: flex; flex-wrap: wrap; gap: 8px; }
+.amen span { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); padding: 5px 12px 5px 8px; font-size: 14px; }
+.amen .ic { width: 18px; height: 18px; color: var(--accent); }
+.rates { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 4px 28px; font-size: 15px; color: var(--muted); }
+.rates b { display: block; color: var(--ink); font-size: 22px; font-weight: 400; }
+.racts { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+/* carousel */
+.car { position: relative; background: var(--surface); }
+.car .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; }
+.car .track::-webkit-scrollbar { display: none; }
+.car .slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; cursor: zoom-in; border: 0; padding: 0; background: none; }
+.car .slide img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.cb { position: absolute; top: 50%; width: 46px; height: 46px; margin-top: -23px; border: 0; background: var(--bg); color: var(--ink); cursor: pointer; font-size: 20px; opacity: .92; transition: transform .2s var(--ease-out), opacity .2s; }
+.cb:hover { transform: scale(1.08); opacity: 1; }
+.cb.p { left: 14px; } .cb.n { right: 14px; }
+.dots { position: absolute; left: 0; right: 0; bottom: 14px; display: flex; justify-content: center; gap: 6px; }
+.dots button { width: 8px; height: 8px; border-radius: 4px; border: 0; padding: 0; background: rgb(255 255 255 / .6); cursor: pointer; transition: width .35s var(--ease-out), background .35s; }
+.dots button[aria-current="true"] { width: 26px; background: #fff; }
+.car .count { position: absolute; top: 14px; right: 14px; background: rgb(18 20 20 / .55); color: #fff; font-size: 13px; padding: 2px 10px; }
+
+/* dining */
+.dining { background: var(--surface); }
+.dining .h2 { grid-column: 1 / 13; }
+.dining .intro { grid-column: 1 / 7; margin-top: var(--space-lg); }
+.meal { grid-column: 1 / 13; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; margin-top: var(--space-3xl); align-items: center; }
+.meal .mos { grid-column: 1 / 8; display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 7 / 5; }
+.meal .mos .ph:first-child { grid-row: 1 / 3; }
+.meal .mt { grid-column: 9 / 13; display: grid; gap: var(--space-md); }
+.meal.rev .mos { grid-column: 6 / 13; grid-row: 1; grid-template-columns: 1fr 1.4fr; grid-template-rows: 1fr; aspect-ratio: 7 / 4; }
+.meal.rev .mos .ph:first-child { grid-row: auto; }
+.meal.rev .mt { grid-column: 1 / 5; grid-row: 1; }
+.meal h3 { font-size: clamp(28px, 2.4vw, 38px); }
+.meal .spec { font-size: 16px; }
+
+/* facilities */
+.fpics { grid-column: 1 / 13; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; margin-top: var(--space-2xl); }
+.fpics figure { margin: 0; }
+.fpics .ph { aspect-ratio: 4 / 5; }
+.fpics figure:first-child .ph { aspect-ratio: auto; height: 100%; max-height: 560px; }
+.fpics figure:first-child { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+.fpics figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
+.popular { grid-column: 1 / 13; display: flex; flex-wrap: wrap; gap: 14px 32px; margin-top: var(--space-2xl); padding: 22px 28px; background: var(--surface); font-size: 17px; }
+.popular span { display: inline-flex; align-items: center; gap: 10px; }
+.popular .ic { color: var(--accent); }
+.fcols { grid-column: 1 / 13; columns: 3 260px; column-gap: 48px; margin-top: var(--space-xl); }
+.fg { break-inside: avoid; margin: 0 0 32px; }
+.fg h3 { font-size: 18px; font-weight: 500; letter-spacing: 0; display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+.fg ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 16px; }
+.fg li { display: flex; gap: 10px; align-items: baseline; }
+.fg li::before { content: ""; width: 10px; height: 5px; border-left: 1.6px solid var(--accent); border-bottom: 1.6px solid var(--accent); transform: rotate(-45deg) translateY(-3px); flex: none; }
+
+/* rules */
+.rules { background: var(--surface); }
+.rules .h2 { grid-column: 1 / 7; }
+.rules .side-note { grid-column: 8 / 13; align-self: end; }
+.rtable { grid-column: 1 / 13; margin-top: var(--space-2xl); display: grid; gap: 4px; }
+.rrow { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px; padding: 22px 32px; background: var(--bg); transition: transform .3s var(--ease-out); }
+.rrow:hover { transform: translateX(4px); }
+.rrow h3 { font-size: 17px; font-weight: 500; letter-spacing: 0; display: flex; gap: 14px; align-items: center; }
+.rrow .v { font-size: 16px; white-space: pre-line; max-width: 46em; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badges span { border: 1px solid var(--line); background: var(--surface); padding: 4px 12px; font-size: 14px; font-weight: 500; }
+.policy { width: 100%; max-width: 420px; border-collapse: collapse; font-size: 15px; margin-top: 10px; }
+.policy td { padding: 5px 0; }
+.policy td:last-child { text-align: right; }
+.rrow details summary { cursor: pointer; text-decoration: underline; text-underline-offset: .2em; margin-top: 8px; display: inline-block; }
+
+/* area */
+.area-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.area-head .h2 { max-width: 12em; }
+.area-head .nb { display: none; gap: 8px; }
+.area-head .nb button { width: 48px; height: 48px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 20px; transition: background .2s; }
+.area-head .nb button:hover { background: var(--surface); }
+.spots { scroll-padding-inline: max(var(--margin), env(safe-area-inset-left, 0px)); display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: var(--space-xl); padding-bottom: 4px; cursor: grab; scroll-behavior: smooth; }
+.spots::-webkit-scrollbar { display: none; }
+.spots.drag { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
+.spot { flex: 0 0 min(400px, 78vw); scroll-snap-align: start; user-select: none; }
+.spot .ph { aspect-ratio: 4 / 5; }
+.spot img { pointer-events: none; }
+.spot h3 { font-size: 22px; margin-top: 14px; }
+.spot p { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.spot .km { color: var(--ink); font-weight: 500; }
+@media (min-width: 901px) {
+  .spots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: visible; cursor: auto; }
+  .spot { user-select: auto; }
+}
+@media (max-width: 900px) { .area-head .nb { display: flex; } }
+
+/* news */
+.news .h2 { grid-column: 1 / 7; }
+.news .more { grid-column: 9 / 13; align-self: end; justify-self: end; }
+.nwrap { grid-column: 1 / 13; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; margin-top: var(--space-2xl); align-items: start; }
+.nfeat { border: 0; padding: 0; background: none; text-align: left; cursor: pointer; display: grid; gap: 14px; }
+.nfeat .ph { aspect-ratio: 16 / 10; }
+.nfeat h3 { font-size: clamp(24px, 2vw, 32px); line-height: 1.25; }
+.nfeat p { color: var(--muted); font-size: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.nmeta { display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--muted); }
+.tag { display: inline-block; font-size: 13px; padding: 1px 10px; background: var(--field); color: var(--ink); font-weight: 500; white-space: nowrap; }
+.tag.t-優惠 { background: var(--accent); color: var(--accent-ink); }
+.tag.t-活動 { background: var(--warn-bg); color: var(--warn); }
+.nlist { display: grid; gap: 6px; }
+.nitem { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; padding: 18px 20px; border: 0; background: var(--surface); text-align: left; cursor: pointer; width: 100%; transition: background .25s; }
+.nitem:hover { background: var(--field); }
+.nitem b { font-weight: 400; font-size: 19px; grid-column: 1; }
+.nitem .arr { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: 20px; }
+.nitem:hover b { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+.nempty { color: var(--muted); }
+
+/* visit + map */
+.visit .h2 { grid-column: 1 / 13; }
+.map { grid-column: 1 / 9; margin-top: var(--space-2xl); background: var(--field); position: relative; }
+.map svg { width: 100%; height: auto; display: block; }
+.map .route { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.6s var(--ease-out) .2s; }
+.map.in .route { stroke-dashoffset: 0; }
+.map .pulse { transform-origin: 548px 206px; animation: pulse 2.2s ease-out infinite; }
+@keyframes pulse { from { transform: scale(.6); opacity: .7; } to { transform: scale(2.6); opacity: 0; } }
+.map .mcap { position: absolute; left: 16px; bottom: 12px; font-size: 13px; color: var(--muted); }
+.vcard { grid-column: 9 / 13; margin-top: var(--space-2xl); display: grid; gap: var(--space-lg); align-content: start; }
+.vcard .addr { font-size: 20px; line-height: 1.5; }
+.vcard .rows { display: grid; gap: 8px; font-size: 16px; }
+.vcard .rows div { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 8px; }
+.vcard .rows span:first-child { color: var(--muted); }
+.ways { grid-column: 1 / 13; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: var(--space-2xl); }
+.ways h3 { font-size: 20px; display: flex; gap: 10px; align-items: center; margin-bottom: 8px; font-weight: 400; }
+.ways p { font-size: 16px; }
+.slot { background: var(--field); padding: 0 6px; color: var(--ink); }
+
+/* faq */
+.faq { background: var(--surface); }
+.faq .h2 { grid-column: 1 / 6; font-size: clamp(32px, 3vw, 48px); }
+.faq .qs2 { grid-column: 7 / 13; }
+.qa summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--space-md); font-size: 19px; padding-block: 14px; align-items: center; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa { background: var(--bg); padding: 0 20px; }
+.qa + .qa { margin-top: 6px; }
+.qa[open] .a > div { animation: fadeup .45s var(--ease-out); }
+.qa p { font-size: 17px; padding-bottom: 16px; max-width: 34em; }
+.chev { width: 12px; height: 12px; position: relative; display: inline-block; flex: none; transition: transform .3s var(--ease-out); }
+.chev::before, .chev::after { content: ""; position: absolute; top: 5px; width: 8px; height: 2px; background: currentColor; }
+.chev::before { left: 0; transform: rotate(45deg); }
+.chev::after { left: 5px; transform: rotate(-45deg); }
+details[open] > summary .chev { transform: rotate(180deg); }
+
+/* footer */
+.foot { background: var(--field); padding-block: var(--space-3xl) var(--space-2xl); }
+.post { grid-column: 2 / 12; background: var(--bg); position: relative; padding: 72px 56px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); -webkit-mask: radial-gradient(circle 24px at 50% 0, transparent 96%, #000 100%) 0 0 / 100px 100% repeat-x; mask: radial-gradient(circle 24px at 50% 0, transparent 96%, #000 100%) 0 0 / 100px 100% repeat-x; }
+.post h2 { font-size: 32px; }
+.post .msg { display: grid; gap: var(--space-md); align-content: start; }
+.post .msg p { max-width: 24em; font-size: 16px; }
+.post .addr { display: grid; gap: 12px; align-content: start; font-size: 18px; padding-top: 110px; position: relative; }
+.post .addr a { text-decoration: none; }
+.post .addr a:hover { text-decoration: underline; }
+.post .stamp { position: absolute; top: 0; right: 0; width: 88px; padding: 6px; background: var(--surface); transform: rotate(4deg); transition: transform .4s var(--ease-out); }
+.post .stamp:hover { transform: rotate(-2deg) scale(1.05); }
+.post .stamp img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.post .imprint { grid-column: 1 / 3; text-align: center; font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 64ch; justify-self: center; }
+.post .imprint summary { cursor: pointer; display: inline; text-decoration: underline; text-underline-offset: .2em; }
+.post .imprint details p { margin-top: 8px; font-size: 15px; line-height: 1.6; text-align: left; color: var(--ink); }
+.post .imprint a { color: inherit; }
+
+.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; background: var(--bg); box-shadow: 0 -1px 0 var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); align-items: center; justify-content: space-between; gap: 12px; transform: translateY(110%); transition: transform .4s var(--ease-out); }
+.mbar.show { transform: none; }
+.mbar span { font-size: 15px; }
+.mbar b { font-weight: 500; }
+
+/* ---------- gallery page ---------- */
+.gal { padding: 120px max(var(--margin), env(safe-area-inset-right, 0px)) var(--space-3xl) max(var(--margin), env(safe-area-inset-left, 0px)); }
+.gal h1 { font-size: var(--step-head); line-height: 1.05; }
+.gal .lead { margin-top: 12px; }
+.gchips { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--space-xl) 0 var(--space-lg); }
+.gchip { min-height: 42px; padding: 0 18px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 15px; white-space: nowrap; transition: background .25s, color .25s; }
+.gchip:hover { background: var(--surface); }
+.gchip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.gchip small { margin-left: 6px; opacity: .7; }
+.masonry { columns: 3 300px; column-gap: 16px; }
+.gitem { break-inside: avoid; margin: 0 0 16px; display: block; width: 100%; border: 0; padding: 0; background: none; cursor: zoom-in; text-align: left; }
+.gitem .ph img { height: auto; }
+.gitem span { display: block; font-size: 14px; color: var(--muted); margin-top: 6px; }
+.gitem.pop { animation: gpop .55s var(--ease-out) both; animation-delay: calc(var(--i) * 35ms); }
+@keyframes gpop { from { opacity: 0; transform: translateY(18px) scale(.97); } }
+
+.lb { position: fixed; inset: 0; z-index: 70; background: rgb(12 12 12 / .94); color: #f2f0ec; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s .3s; touch-action: pan-y; }
+.lb.open { opacity: 1; visibility: visible; transition: opacity .3s; }
+.lb .top { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 14px; }
+.lb .top button { width: 44px; height: 44px; border: 0; background: none; color: inherit; font-size: 28px; cursor: pointer; }
+.lb .stage { display: grid; place-items: center; padding: 0 72px; min-height: 0; }
+.lb img { max-width: 100%; max-height: 100%; object-fit: contain; animation: lbin .45s var(--ease-out); }
+@keyframes lbin { from { opacity: 0; transform: scale(.94); } }
+.lb .cap2 { text-align: center; padding: 14px 16px 22px; font-size: 15px; }
+.lb .lp, .lb .ln { position: absolute; top: 50%; width: 52px; height: 52px; margin-top: -26px; border: 0; background: rgb(255 255 255 / .1); color: #fff; font-size: 24px; cursor: pointer; transition: background .2s; }
+.lb .lp:hover, .lb .ln:hover { background: rgb(255 255 255 / .22); }
+.lb .lp { left: 12px; } .lb .ln { right: 12px; }
+
+/* dialog (news + admin forms) */
+dialog.dlg { border: 0; padding: 0; width: min(680px, calc(100vw - 24px)); max-height: calc(100svh - 32px); background: var(--bg); color: var(--ink); box-shadow: 0 30px 80px rgb(0 0 0 / .3); overflow: auto; }
+dialog.dlg[open] { animation: pop .4s var(--ease-out); }
+dialog.dlg::backdrop { background: rgb(10 10 10 / .5); }
+@keyframes pop { from { opacity: 0; transform: translateY(24px) scale(.98); } }
+.dh { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 20px 0; }
+.dh h2 { font-size: 22px; font-weight: 400; letter-spacing: -0.01em; }
+.dh .x { width: 40px; height: 40px; border: 0; background: none; font-size: 26px; cursor: pointer; color: var(--muted); }
+.db { padding: 16px 20px; display: grid; gap: 14px; }
+.df { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 20px 20px; position: sticky; bottom: 0; background: var(--bg); }
+.nread .ph { aspect-ratio: 16 / 9; }
+.nread .body { font-size: 17px; white-space: pre-line; }
+
+/* ---------- booking ---------- */
+.book { padding: 112px max(var(--margin), env(safe-area-inset-right, 0px)) var(--space-3xl) max(var(--margin), env(safe-area-inset-left, 0px)); }
+.book h1 { font-size: var(--step-head); line-height: 1.05; }
+.steps { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: var(--space-lg) 0 var(--space-2xl); padding: 0; list-style: none; font-size: 16px; color: var(--muted); }
+.steps li[aria-current="step"] { color: var(--ink); font-weight: 500; }
+.steps li.done { color: var(--ink); }
+.bk-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: start; }
+.bk-grid > aside { position: sticky; top: 88px; }
+.panel { background: var(--surface); padding: var(--space-lg); }
+.cal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); gap: var(--space-md); }
+.cal-head .sel { font-size: var(--step-lead); font-weight: 300; }
+.navb { width: 40px; height: 40px; border: 0; background: var(--bg); cursor: pointer; font-size: 18px; }
+.navb:disabled { opacity: .4; cursor: not-allowed; }
+.months { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+.month h3 { font-size: 18px; font-weight: 500; letter-spacing: 0; margin-bottom: var(--space-sm); }
+.dow, .days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; }
+.dow { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.day { border: 0; background: none; cursor: pointer; padding: 6px 0 5px; display: grid; gap: 1px; justify-items: center; min-height: 52px; font-size: 16px; transition: background .15s; }
+.day small { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.day.hol small { color: var(--warn); }
+.day:hover:not(:disabled) { background: var(--bg); }
+.day:disabled { color: var(--muted); opacity: .45; cursor: not-allowed; }
+.day.full { text-decoration: line-through; }
+.day.in-range { background: var(--field); }
+.day.edge { background: var(--accent); color: var(--accent-ink); }
+.day.edge small { color: var(--accent-ink); }
+.guests { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: var(--space-lg); }
+.guests .g { display: grid; gap: 6px; font-size: 15px; }
+.guests .g small { color: var(--muted); font-size: 13px; }
+.stepper { display: inline-flex; align-items: center; background: var(--bg); justify-self: start; }
+.stepper button { width: 40px; height: 40px; border: 0; background: none; cursor: pointer; font-size: 18px; }
+.stepper button:disabled { opacity: .35; cursor: not-allowed; }
+.stepper output { min-width: 2.2em; text-align: center; }
+.stay h3 { font-size: 18px; font-weight: 500; letter-spacing: 0; margin-bottom: var(--space-sm); }
+.stay ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 15px; }
+.stay li { display: grid; grid-template-columns: 6.2em minmax(0, 1fr); gap: var(--space-sm); }
+.stay li b { font-weight: 500; }
+.stay .empty { color: var(--muted); font-size: 16px; }
+.moon { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; background: var(--ink); }
+.roomlist { margin-top: var(--space-2xl); display: grid; gap: var(--space-sm); }
+.roomlist h2 { font-size: clamp(26px, 2.4vw, 36px); margin-bottom: var(--space-sm); }
+.ropt { display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; gap: var(--space-md); align-items: center; padding: 12px; background: var(--surface); border: 2px solid transparent; transition: border-color .2s, transform .2s var(--ease-out); }
+.ropt img { width: 132px; aspect-ratio: 4 / 3; object-fit: cover; }
+.ropt.on { border-color: var(--accent); }
+.ropt.off { opacity: .55; }
+.ropt .t { font-size: var(--step-lead); font-weight: 300; }
+.ropt .d { font-size: 15px; color: var(--muted); }
+.ropt .r { text-align: right; display: grid; gap: 6px; justify-items: end; padding-right: 8px; }
+.ropt .r b { font-size: 20px; font-weight: 500; }
+.ghost { min-height: 40px; padding: 0 var(--space-md); background: var(--bg); border: 0; cursor: pointer; font-size: 15px; white-space: nowrap; }
+.ghost:hover { background: var(--field); }
+.ropt.on .ghost { background: var(--accent); color: var(--accent-ink); }
+.form { display: grid; gap: var(--space-lg); max-width: 640px; }
+.f { display: grid; gap: 6px; }
+.f label, .f legend { font-size: 15px; font-weight: 500; }
+.f input, .f select, .f textarea { min-height: 48px; padding: 10px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 0; font-size: 16px; }
+.f textarea { min-height: 96px; resize: vertical; }
+.f .err { color: var(--bad); font-size: 14px; min-height: 1lh; }
+.f [aria-invalid="true"] { border-color: var(--bad); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+fieldset { border: 0; padding: 0; margin: 0; }
+.opts { display: grid; gap: var(--space-sm); }
+.opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--space-md); align-items: center; padding: 14px var(--space-md); background: var(--surface); cursor: pointer; border: 2px solid transparent; transition: border-color .2s; }
+.opt:has(input:checked) { border-color: var(--accent); }
+.opt input { width: 20px; height: 20px; accent-color: var(--accent); }
+.opt small { display: block; color: var(--muted); font-size: 14px; }
+.sum { display: grid; gap: 10px; font-size: 16px; }
+.sum img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.sum .row { display: flex; justify-content: space-between; gap: var(--space-md); }
+.sum .row span:first-child { color: var(--muted); }
+.sum .tot { font-size: 22px; padding-top: 10px; border-top: 1px solid var(--line); }
+.sum .tot span:first-child { color: var(--ink); }
+.navrow { display: flex; gap: var(--space-lg); align-items: center; margin-top: var(--space-xl); flex-wrap: wrap; }
+.done-box { max-width: 640px; display: grid; gap: var(--space-lg); }
+.done-box .big { font-size: var(--step-lead); font-weight: 300; }
+.hint { font-size: 14px; color: var(--muted); }
+.rsum { display: grid; gap: 10px; font-size: 15px; margin: 0; }
+.rsum div { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 12px; }
+.rsum dt { font-weight: 500; }
+.rsum dd { margin: 0; white-space: pre-line; }
+.check { width: 64px; height: 64px; }
+.check circle { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .7s var(--ease-out) forwards; }
+.check path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .5s .5s var(--ease-out) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* ---------- ADMIN ---------- */
+.app { display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 100svh; font-size: 14px; line-height: 1.5; }
+.side { background: var(--surface); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; position: sticky; top: 0; height: 100svh; overflow-y: auto; }
+.side .mark { display: flex; gap: 10px; align-items: center; padding: 4px 10px 20px; }
+.side .mark svg { width: 28px; height: 28px; flex: none; }
+.side .mark b { display: block; font-weight: 500; font-size: 15px; }
+.side .mark span { color: var(--muted); font-size: 13px; }
+.side .grp { font-size: 12px; color: var(--muted); padding: 14px 10px 4px; }
+.side button { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 34px; padding: 0 10px; border: 0; background: none; text-align: left; font-size: 14px; cursor: pointer; border-radius: 6px; white-space: nowrap; }
+.side button:hover { background: var(--bg); }
+.side button[aria-current="page"] { background: var(--bg); font-weight: 500; }
+.side .count { font-size: 12px; color: var(--warn); font-variant-numeric: tabular-nums; }
+.side .grow { flex: 1; min-height: 16px; }
+.side a, .side .reset { font-size: 13px; color: var(--muted); padding: 6px 10px; }
+.main { padding: 28px 32px 64px; min-width: 0; }
+.main h1 { font-size: 26px; font-weight: 400; letter-spacing: -0.01em; }
+.main .sub { color: var(--muted); margin-top: 2px; }
+.main > * { animation: fadeup .35s var(--ease-out) both; }
+.tophead { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.tophead .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.box { background: var(--surface); padding: 16px; min-width: 0; }
+.box h2 { font-size: 15px; font-weight: 500; letter-spacing: 0; margin-bottom: 12px; display: flex; justify-content: space-between; gap: 8px; }
+.box h2 span { color: var(--muted); font-weight: 400; }
+.item { display: grid; gap: 2px; padding: 10px 0; }
+.item + .item { border-top: 1px solid var(--line); }
+.item .top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.item .top b { font-weight: 500; font-size: 15px; }
+.item .m { color: var(--muted); }
+.acts { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+.sbtn { min-height: 32px; padding: 0 12px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 13px; border-radius: 6px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; transition: background .15s, transform .12s; }
+.sbtn:hover { background: var(--field); }
+.sbtn:active { transform: scale(.97); }
+.sbtn.pri { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.sbtn.pri:hover { filter: brightness(1.08); }
+.sbtn.dan { color: var(--bad); }
+.sbtn.dan.solid { background: var(--bad); color: #fff; border-color: var(--bad); }
+.sbtn:disabled { opacity: .55; cursor: not-allowed; }
+.pill { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; white-space: nowrap; font-weight: 500; }
+.p-pending { background: var(--warn-bg); color: var(--warn); }
+.p-paid { background: var(--good-bg); color: var(--good); }
+.p-stay { background: var(--accent); color: var(--accent-ink); }
+.p-done, .p-draft { background: var(--bg); color: var(--muted); }
+.p-cancel { background: var(--bad-bg); color: var(--bad); }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
+.kpi { background: var(--surface); padding: 14px 16px; }
+.kpi span { color: var(--muted); font-size: 13px; }
+.kpi b { display: block; font-size: 24px; font-weight: 400; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.kpi small { color: var(--muted); font-size: 12px; }
+.chart { margin-top: 16px; }
+.chart svg { width: 100%; height: 180px; display: block; }
+.chart rect { transform-origin: bottom; transform-box: fill-box; animation: grow .7s var(--ease-out) both; animation-delay: calc(var(--i) * 18ms); }
+@keyframes grow { from { transform: scaleY(0); } }
+.empty-s { color: var(--muted); padding: 10px 0; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.chip { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: 13px; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.search { min-height: 32px; padding: 0 10px; border: 1px solid var(--line); background: var(--bg); border-radius: 6px; font-size: 14px; margin-left: auto; width: 220px; max-width: 100%; }
+.tscroll { overflow-x: auto; background: var(--surface); }
+table.t { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 760px; }
+table.t th { text-align: left; font-weight: 500; color: var(--muted); padding: 10px 12px; white-space: nowrap; font-size: 13px; }
+table.t td { padding: 10px 12px; border-top: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; vertical-align: middle; }
+table.t tbody tr[data-row] { cursor: pointer; }
+table.t tbody tr:hover td { background: var(--bg); }
+table.t .r { text-align: right; }
+table.t td.wrap { white-space: normal; min-width: 220px; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+.detail dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0 0 12px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; }
+.msgbox { background: var(--bg); padding: 10px 12px; font-size: 13px; white-space: pre-wrap; margin-top: 10px; }
+.occ { overflow-x: auto; background: var(--surface); }
+.occ table { border-collapse: separate; border-spacing: 2px; font-size: 12.5px; min-width: 900px; width: 100%; }
+.occ th { font-weight: 500; color: var(--muted); padding: 6px 4px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.occ th.we { color: var(--ink); }
+.occ th.rn { text-align: left; color: var(--ink); padding-right: 12px; }
+.occ td { height: 40px; padding: 0; }
+.occ td button { width: 100%; height: 100%; border: 0; cursor: pointer; font-size: 12px; background: var(--bg); color: var(--muted); border-radius: 4px; }
+.occ td button:hover { outline: 2px solid var(--accent); }
+.occ td.bk button { background: var(--accent); color: var(--accent-ink); }
+.occ td.bk.pend button { background: var(--warn-bg); color: var(--warn); }
+.occ td.blk button { background: var(--field); color: var(--ink); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 13px; margin-top: 10px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.rates-t input { width: 96px; min-height: 34px; padding: 0 8px; border: 1px solid var(--line); background: var(--bg); text-align: right; font-variant-numeric: tabular-nums; border-radius: 6px; }
+.hols { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.hols span { display: inline-flex; align-items: center; gap: 6px; background: var(--bg); padding: 4px 6px 4px 10px; border-radius: 6px; font-variant-numeric: tabular-nums; }
+.hols button { border: 0; background: none; cursor: pointer; width: 24px; height: 24px; color: var(--muted); }
+.addhol { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.addhol input { min-height: 32px; border: 1px solid var(--line); background: var(--bg); padding: 0 8px; border-radius: 6px; }
+.rcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.rcard { background: var(--surface); display: grid; grid-template-rows: auto 1fr; min-width: 0; transition: transform .25s var(--ease-out), box-shadow .25s; }
+.rcard:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(0 0 0 / .08); }
+.rcard img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.rcard.offline img { filter: grayscale(1); opacity: .6; }
+.rcard .b { padding: 12px 14px 14px; display: grid; gap: 4px; align-content: start; }
+.rcard .b .top { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.rcard .b b { font-size: 16px; font-weight: 500; }
+.rcard .m { color: var(--muted); }
+.thumb { width: 64px; height: 44px; object-fit: cover; display: block; }
+.gadm { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.gcard { background: var(--surface); display: grid; gap: 8px; padding-bottom: 10px; }
+.gcard img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gcard .in { display: grid; gap: 6px; padding: 0 10px; }
+.gcard select, .gcard input { min-height: 30px; border: 1px solid var(--line); background: var(--bg); border-radius: 6px; padding: 0 8px; font-size: 13px; width: 100%; }
+.gcard .acts { padding: 0 10px; margin: 0; }
+.rulel { background: var(--surface); }
+.rulel .rr { display: grid; grid-template-columns: 28px 180px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 16px; }
+.rulel .rr + .rr { border-top: 1px solid var(--line); }
+.rulel .rr .v { white-space: pre-line; color: var(--muted); }
+.af { display: grid; gap: 4px; }
+.af > span { font-size: 13px; font-weight: 500; }
+.af input:not([type=checkbox]):not([type=radio]), .af select, .af textarea { min-height: 38px; padding: 6px 10px; border: 1px solid var(--line); background: var(--bg); border-radius: 6px; font-size: 15px; width: 100%; box-sizing: border-box; }
+.af textarea { min-height: 110px; resize: vertical; }
+.af .err { color: var(--bad); font-size: 13px; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.ck { display: flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; }
+.ck input { width: 18px; height: 18px; accent-color: var(--accent); }
+.ferr { color: var(--bad); background: var(--bad-bg); padding: 8px 12px; font-size: 14px; border-radius: 6px; }
+.ferr:empty { display: none; }
+.pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; max-height: 240px; overflow: auto; padding: 2px; }
+.pick label { position: relative; cursor: pointer; display: block; }
+.pick img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity .2s; }
+.pick input { position: absolute; top: 5px; left: 5px; width: 18px; height: 18px; margin: 0; accent-color: var(--accent); z-index: 1; }
+.pick input:checked + img { outline: 3px solid var(--accent); outline-offset: -3px; }
+.pick .none { display: grid; place-items: center; aspect-ratio: 1; background: var(--surface); color: var(--muted); font-size: 12px; }
+.upl { position: relative; overflow: hidden; }
+.upl input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.toast { position: fixed; right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 6px; font-size: 14px; z-index: 80; box-shadow: 0 6px 24px rgb(0 0 0 / .18); animation: fadeup .3s var(--ease-out); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1180px) {
+  .sn { display: none; }
+  .burger { display: block; }
+}
+@media (max-width: 900px) {
+  html { scroll-padding-top: 60px; }
+  .sh { height: 60px; gap: 12px; }
+  .hero { min-height: 560px; height: 88svh; }
+  .hero .l1, .hero .l2 { font-size: 21vw; }
+  .hero .l1 { top: 84px; left: 16px; }
+  .hero .l2 { right: 16px; bottom: 20px; }
+  .hero-mid { left: 16px; right: 16px; top: auto; bottom: 30%; }
+  .hero-mid p { font-size: 18px; }
+  .qs { margin: 0; width: auto; grid-template-columns: 1fr 1fr; box-shadow: none; background: var(--surface); padding: 20px 16px 24px; animation: none; }
+  .qs .btn { grid-column: 1 / -1; }
+  .sec { padding-block: var(--space-3xl); }
+  .grid12 { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 12px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .pad { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .glance .gp { grid-column: 1 / 7; margin-right: 24px; }
+  .glance .gp .inset { right: -24px; bottom: -32px; width: 46%; border-width: 6px; }
+  .glance .gt { grid-column: 1 / 7; padding-top: var(--space-3xl); }
+  .rooms-head, .rwrap { grid-column: 1 / 7; }
+  .rooms-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .rwrap { grid-template-columns: 1fr; gap: 20px; margin-top: var(--space-xl); }
+  .rtabs { position: static; display: flex; overflow-x: auto; scrollbar-width: none; gap: 0; margin: 0 -20px; padding: 0 20px; }
+  .rtabs::-webkit-scrollbar { display: none; }
+  .rtab { border-left: 0; border-bottom: 2px solid var(--line); flex: none; padding: 10px 14px; }
+  .rtab[aria-selected="true"] { padding-left: 14px; }
+  .rtab b { font-size: 16px; }
+  .rpanel { grid-template-columns: 1fr; gap: 24px; }
+  .rates { gap: 4px 18px; }
+  .rates b { font-size: 19px; }
+  .dining .h2, .dining .intro { grid-column: 1 / 7; }
+  .meal, .meal.rev { grid-column: 1 / 7; grid-template-columns: 1fr; margin-top: var(--space-2xl); row-gap: 24px; }
+  .meal .mos, .meal.rev .mos { grid-column: 1; grid-row: 1; aspect-ratio: 4 / 3; }
+  .meal .mt, .meal.rev .mt { grid-column: 1; grid-row: 2; }
+  .fpics { grid-column: 1 / 7; grid-template-columns: 1fr 1fr; }
+  .fpics figure:first-child { grid-column: 1 / 3; }
+  .fpics figure:first-child .ph { aspect-ratio: 4 / 3; height: auto; }
+  .popular, .fcols { grid-column: 1 / 7; }
+  .rules .h2, .rules .side-note { grid-column: 1 / 7; }
+  .rules .side-note { margin-top: 16px; }
+  .rtable { grid-column: 1 / 7; gap: 0; background: var(--bg); padding: 6px 18px; }
+  .rrow { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; background: none; }
+  .rrow:hover { transform: none; }
+  .spots { scroll-padding-inline: 20px; }
+  .news .h2, .news .more { grid-column: 1 / 7; justify-self: start; }
+  .news .more { margin-top: 12px; }
+  .nwrap { grid-column: 1 / 7; grid-template-columns: 1fr; gap: 24px; margin-top: var(--space-xl); }
+  .visit .h2 { grid-column: 1 / 7; }
+  .map { grid-column: 1 / 7; margin: var(--space-xl) -20px 0; }
+  .vcard { grid-column: 1 / 7; margin-top: var(--space-xl); }
+  .ways { grid-column: 1 / 7; grid-template-columns: 1fr; gap: 24px; }
+  .faq .h2, .faq .qs2 { grid-column: 1 / 7; }
+  .faq .qs2 { margin-top: var(--space-lg); }
+  .post { grid-column: 1 / 7; grid-template-columns: 1fr; padding: 64px 24px 24px; gap: var(--space-xl); }
+  .post .addr { padding-top: 0; font-size: 17px; }
+  .post .stamp { position: absolute; top: -40px; width: 64px; }
+  .post .msg { padding-right: 76px; }
+  .post .imprint { grid-column: 1; }
+  .foot { padding-bottom: 96px; }
+  .mbar { display: flex; }
+  .gal { padding-top: 96px; }
+  .lb .stage { padding: 0 8px; }
+  .lb .lp, .lb .ln { top: auto; bottom: 64px; }
+  .book { padding-top: 88px; }
+  .bk-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .bk-grid > aside { position: static; }
+  .months { grid-template-columns: 1fr; }
+  .months .month + .month { display: none; }
+  .two { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 1fr; }
+  .side { position: static; height: auto; flex-direction: row; flex-wrap: wrap; padding: 12px; gap: 4px; }
+  .side .mark { width: 100%; padding-bottom: 8px; }
+  .side .grp { display: none; }
+  .side button { width: auto; }
+  .side .grow { display: none; }
+  .main { padding: 20px 16px 48px; }
+  .cols, .kpis { grid-template-columns: 1fr 1fr; }
+  .cols > .box:first-child { grid-column: 1 / 3; }
+  .split { grid-template-columns: 1fr; }
+  .search { margin-left: 0; width: 100%; }
+  .rulel .rr { grid-template-columns: 24px minmax(0, 1fr); }
+  .rulel .rr .v, .rulel .rr .acts { grid-column: 2; }
+}
+@media (max-width: 560px) {
+  .guests { grid-template-columns: 1fr 1fr; }
+  .cols, .kpis { grid-template-columns: 1fr; }
+  .cols > .box:first-child { grid-column: auto; }
+  .ropt { grid-template-columns: 96px minmax(0, 1fr); }
+  .ropt img { width: 96px; }
+  .ropt .r { grid-column: 1 / 3; justify-items: start; text-align: left; grid-auto-flow: column; align-items: center; justify-content: space-between; padding: 0; }
+  .g2, .g3 { grid-template-columns: 1fr 1fr; }
+  .stats dd { font-size: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .map .route { stroke-dashoffset: 0; }
+}
+</style>
+
+<!-- ================= SHARED HEADER ================= -->
+<header class="sh" id="sh">
+  <a class="wm" href="#top">雲線山居</a>
+  <nav class="sn" aria-label="主選單">
+    <a href="#about">關於民宿</a><a href="#rooms">房型</a><a href="#dining">餐食</a><a href="#facilities">設施</a><a href="#rules">住宿須知</a><a href="#gallery">環境照片</a><a href="#news">最新消息</a><a href="#visit">交通地圖</a>
+  </nav>
+  <a class="btn sm" href="#book">線上訂房</a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="開啟選單"><i></i><i></i><i></i></button>
+</header>
+<nav class="mnav" id="mnav" aria-label="手機選單">
+  <a href="#about" style="--i:0">關於民宿</a><a href="#rooms" style="--i:1">房型</a><a href="#dining" style="--i:2">餐食</a><a href="#facilities" style="--i:3">設施</a><a href="#rules" style="--i:4">住宿須知</a><a href="#gallery" style="--i:5">環境照片</a><a href="#news" style="--i:6">最新消息</a><a href="#visit" style="--i:7">交通地圖</a>
+  <a class="btn" href="#book" style="--i:8">線上訂房</a>
+</nav>
+
+<!-- ================= SITE ================= -->
+<div class="view" id="v-site">
+  <section class="hero" id="top" aria-label="雲線山居">
+    <img src="img/hero.jpg" width="1800" height="1319" alt="清晨的雲海填滿山谷，遠處是層疊的中央山脈稜線" fetchpriority="high">
+    <h1><span class="l1"><span class="mask">雲線</span></span><span class="l2"><span class="mask">山居</span></span></h1>
+    <div class="hero-mid">
+      <p>清境，海拔 1,850 公尺的五間房民宿。房價含早餐，晴朗的早晨，雲海就在窗外。</p>
+      <div class="acts"><a class="btn" href="#book">查空房與訂房</a><a class="btn line" href="#rooms">看房型</a></div>
+    </div>
+  </section>
+  <form class="qs" id="qs" novalidate aria-label="快速查空房">
+    <label>入住日期<input type="date" id="qsIn" required></label>
+    <label>退房日期<input type="date" id="qsOut" required></label>
+    <label>大人<select id="qsA"></select></label>
+    <label>兒童（2–11 歲）<select id="qsK"></select></label>
+    <button class="btn" type="submit">查空房</button>
+    <p class="err" id="qsErr" role="alert"></p>
+  </form>
+
+  <section class="sec glance grid12" id="about" aria-labelledby="about-h">
+    <div class="gp">
+      <div class="ph par wipe" data-par="0.06"><img src="img/exterior.jpg" width="1600" height="1067" alt="山坡上的石砌民宿，背後是層疊的山" loading="lazy"></div>
+      <div class="ph inset rv" style="--d:3"><img src="img/corridor.jpg" width="1400" height="933" alt="二樓木頭走廊與房門" loading="lazy"></div>
+    </div>
+    <div class="gt">
+      <h2 class="h2 rv" id="about-h">清境山上，五間房的民宿</h2>
+      <p class="lead rv" style="--d:1">雲線山居在台14甲線旁，清境農場遊客中心再往上 2 公里。一棟三層的石牆木屋，一樓是餐廳和有壁爐的交誼廳，二、三樓是五間客房，每一間都有獨立衛浴和暖氣。</p>
+      <dl class="stats rv" style="--d:2">
+        <div><dd><span data-count="5">5</span><small>間</small></dd><dt>客房，最多住 18 人</dt></div>
+        <div><dd><span data-count="1850">1,850</span><small>公尺</small></dd><dt>海拔，夏天夜裡也要蓋被</dt></div>
+        <div><dd><span data-count="6">6</span><small>位</small></dd><dt>免費停車位，不用預約</dt></div>
+        <div><dd class="num" id="tmrSun">06:20</dd><dt>明天清境的日出時間</dt></div>
+      </dl>
+      <ul class="hl rv" style="--d:3">
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>房價含早餐，08:00 到 09:30，可以改外帶</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-6-3-6-6 0-4 4-6 4-10 3 2 4 4 4 6 1-1 1.5-2 1.5-3 2 2 2.5 4 2.5 7 0 3-2 6-6 6z"/></svg>冬天交誼廳生壁爐，晚餐可預約火鍋</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="9" r="2"/><path d="M4 20v-5a4 4 0 0 1 8 0v5M13 20v-4a3 3 0 0 1 6 0v4"/></svg>歡迎帶小孩，有家庭房和嬰兒床</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 11h14M8 21v-3M16 21v-3"/></svg>沒開車也能來，可加購埔里轉運站接送</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec grid12" id="rooms" aria-labelledby="rooms-h" style="padding-top:0">
+    <div class="rooms-head">
+      <h2 class="h2 rv" id="rooms-h">五間房，每一間都朝著山</h2>
+      <p class="rv" style="--d:1">每間都有獨立衛浴、暖氣、電熱毯和免費 Wi-Fi。點房名切換，照片可以左右滑。</p>
+    </div>
+    <div class="rwrap">
+      <div class="rtabs" role="tablist" aria-label="房型" id="rtabs"></div>
+      <div class="rpanel" id="rpanel" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <section class="sec dining grid12" id="dining" aria-labelledby="dining-h">
+    <h2 class="h2 rv" id="dining-h">早餐在雲上吃</h2>
+    <p class="lead intro rv" style="--d:1">早餐由民宿主人每天早上現做，台式和中式輪著換。晚上山上餐廳不多，前一天說一聲，我們幫你準備火鍋。</p>
+    <div class="meal">
+      <div class="mos">
+        <div class="ph rv"><img src="img/bf1.jpg" width="1400" height="2100" alt="起霧的早晨，戶外桌上的湯麵與飲料" loading="lazy"></div>
+        <div class="ph rv" style="--d:1"><img src="img/bf2.jpg" width="1400" height="1050" alt="托盤上的白飯、湯與配菜" loading="lazy"></div>
+        <div class="ph rv" style="--d:2"><img src="img/bf3.jpg" width="1400" height="933" alt="剛蒸好的包子與紅豆湯" loading="lazy"></div>
+      </div>
+      <div class="mt rv" style="--d:1">
+        <h3>早餐，含在房價裡</h3>
+        <p>白粥配小菜、包子饅頭配熱豆漿、湯麵，三種每天輪替。素食、不吃蛋、過敏都可以在訂房時寫在備註。</p>
+        <dl class="spec">
+          <dt>時間</dt><dd>08:00–09:30</dd>
+          <dt>地點</dt><dd>一樓餐廳，窗邊可以看山</dd>
+          <dt>早起外帶</dt><dd>要去看日出的話，前一晚告訴我們，06:00 前放在交誼廳</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="meal rev">
+      <div class="mos">
+        <div class="ph rv"><img src="img/hp1.jpg" width="1400" height="2100" alt="冒著熱氣的火鍋與新鮮蔬菜" loading="lazy"></div>
+        <div class="ph rv" style="--d:1"><img src="img/hp2.jpg" width="1400" height="2105" alt="一桌火鍋與小菜" loading="lazy"></div>
+      </div>
+      <div class="mt rv">
+        <h3>火鍋晚餐，前一天預約</h3>
+        <p>用山上的高麗菜、香菇和在地豬肉煮的鍋，一人一鍋，湯底有昆布和麻油雞兩種。</p>
+        <dl class="spec num">
+          <dt>時間</dt><dd>18:00–19:30</dd>
+          <dt>價格</dt><dd>大人 NT$480，兒童 NT$250</dd>
+          <dt>預約</dt><dd>入住前一天 18:00 前，LINE 或電話</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec grid12" id="facilities" aria-labelledby="fac-h">
+    <h2 class="h2 rv" id="fac-h" style="grid-column:1/13">設施與服務</h2>
+    <div class="fpics">
+      <figure class="rv"><div class="ph"><img src="img/lounge1.jpg" width="1400" height="2489" alt="一樓交誼廳，木頭桌椅與懸吊式壁爐" loading="lazy"></div><figcaption>一樓交誼廳，24 小時開放，有熱水、茶包和桌遊</figcaption></figure>
+      <figure class="rv" style="--d:1"><div class="ph"><img src="img/fire.jpg" width="1400" height="2490" alt="壁爐前的毛毯和抱枕" loading="lazy"></div><figcaption>十一月到三月，傍晚會生火</figcaption></figure>
+      <figure class="rv" style="--d:2"><div class="ph"><img src="img/bath1.jpg" width="1400" height="2097" alt="石牆與木作的浴室" loading="lazy"></div><figcaption>每間房都有獨立衛浴，熱水 24 小時</figcaption></figure>
+    </div>
+    <div class="popular rv" id="popular"></div>
+    <div class="fcols" id="fcols"></div>
+  </section>
+
+  <section class="sec rules grid12" id="rules" aria-labelledby="rules-h">
+    <h2 class="h2 rv" id="rules-h">住宿須知</h2>
+    <p class="side-note rv" style="--d:1">訂房前請先看過，入住、退房時間和取消規定，訂房最後一步付款前會再列出一次。</p>
+    <div class="rtable rv" id="rtable"></div>
+  </section>
+
+  <section class="sec" id="area" aria-labelledby="area-h">
+    <div class="pad area-head">
+      <h2 class="h2 rv" id="area-h">附近可以去的地方</h2>
+      <div class="nb"><button type="button" id="spPrev" aria-label="上一個">‹</button><button type="button" id="spNext" aria-label="下一個">›</button></div>
+    </div>
+    <div class="spots pad" id="spots">
+      <article class="spot"><div class="ph"><img src="img/sheep.jpg" width="1000" height="664" alt="霧中的青草坡上，綿羊低頭吃草" loading="lazy"></div><h3>清境農場青青草原</h3><p><span class="km">開車 10 分鐘</span>，平日早上八點前去最安靜</p></article>
+      <article class="spot"><div class="ph"><img src="img/tea.jpg" width="1200" height="900" alt="雲嶺之丘的山坡與遠方雲層" loading="lazy"></div><h3>雲嶺之丘</h3><p><span class="km">開車 15 分鐘</span>，傍晚看雲海的好位置</p></article>
+      <article class="spot"><div class="ph"><img src="img/dusk.jpg" width="1600" height="1067" alt="黃昏時分的合歡山草坡" loading="lazy"></div><h3>合歡山武嶺</h3><p><span class="km">開車 40 分鐘</span>，台灣公路最高點 3,275 公尺</p></article>
+      <article class="spot"><div class="ph"><img src="img/stars.jpg" width="1024" height="683" alt="山峰上方的銀河" loading="lazy"></div><h3>合歡山暗空公園</h3><p><span class="km">開車 40 分鐘</span>，無月的晴夜看得到銀河</p></article>
+      <article class="spot"><div class="ph"><img src="img/cuesta.jpg" width="1600" height="1200" alt="合歡山的青綠草坡與公路" loading="lazy"></div><h3>合歡山東峰步道</h3><p><span class="km">開車 45 分鐘</span>，來回約 2 小時，冬天注意結冰</p></article>
+    </div>
+  </section>
+
+  <section class="sec grid12 news" id="news" aria-labelledby="news-h" style="padding-top:0">
+    <h2 class="h2 rv" id="news-h">最新消息</h2>
+    <div class="nwrap" id="nwrap"></div>
+  </section>
+
+  <section class="sec visit grid12" id="visit" aria-labelledby="visit-h" style="padding-top:0">
+    <h2 class="h2" id="visit-h">怎麼上山</h2>
+    <div class="map" id="map" data-in>
+      <svg viewBox="0 0 800 500" role="img" aria-label="路線示意圖：從埔里沿台14線到霧社，轉台14甲線上山到清境，民宿在清境農場遊客中心往上 2 公里，再往上是合歡山武嶺">
+        <path d="M0 500 L0 330 L120 270 L210 300 L330 200 L420 230 L520 120 L640 150 L730 40 L800 20 L800 500 Z" fill="var(--surface)" opacity=".55"/>
+        <path d="M0 500 L0 410 L160 360 L260 390 L380 300 L470 330 L600 230 L700 250 L800 170 L800 500 Z" fill="var(--bg)" opacity=".45"/>
+        <path d="M40 452 C140 432 200 402 258 362 S330 318 352 300 C402 282 424 252 470 238 S528 216 548 206 C612 166 648 126 696 94 S748 62 770 48" fill="none" stroke="var(--bg)" stroke-width="9" stroke-linecap="round"/>
+        <path class="route" pathLength="1" d="M40 452 C140 432 200 402 258 362 S330 318 352 300 C402 282 424 252 470 238 S528 216 548 206" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M470 238 L430 282" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+        <circle cx="40" cy="452" r="7" fill="var(--ink)"/><text x="56" y="474" font-size="17" fill="var(--ink)">埔里</text>
+        <circle cx="352" cy="300" r="6" fill="var(--ink)"/><text x="288" y="336" font-size="16" fill="var(--ink)">霧社</text>
+        <circle cx="470" cy="238" r="6" fill="var(--ink)"/><text x="360" y="232" font-size="15" fill="var(--ink)">清境農場遊客中心</text>
+        <circle cx="430" cy="282" r="5" fill="var(--ink)"/><text x="350" y="304" font-size="15" fill="var(--ink)">青青草原</text>
+        <circle class="pulse" cx="548" cy="206" r="10" fill="var(--accent)"/>
+        <circle cx="548" cy="206" r="10" fill="var(--accent)" stroke="var(--bg)" stroke-width="3"/>
+        <text x="566" y="214" font-size="20" fill="var(--ink)" font-weight="500">雲線山居</text>
+        <circle cx="770" cy="48" r="6" fill="var(--ink)"/><text x="640" y="40" font-size="16" fill="var(--ink)">合歡山武嶺</text>
+        <text x="150" y="420" font-size="13" fill="var(--muted)">台14線</text>
+        <text x="590" y="140" font-size="13" fill="var(--muted)">台14甲線</text>
+        <g transform="translate(740 440)" fill="var(--ink)"><path d="M0 -22 L7 0 L0 -5 L-7 0 Z"/><text x="-5" y="18" font-size="14">N</text></g>
+      </svg>
+      <span class="mcap">路線示意，距離與位置以實際導航為準</span>
+    </div>
+    <div class="vcard">
+      <p class="addr">南投縣仁愛鄉仁和路 <span class="slot">門牌</span><br>台14甲線，清境農場遊客中心往上 2 公里</p>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%B8%85%E5%A2%83%E8%BE%B2%E5%A0%B4%E9%81%8A%E5%AE%A2%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">用 Google 地圖導航 <span class="arr">→</span></a>
+      <div class="rows num">
+        <div><span>入住</span><span>15:00–21:00</span></div>
+        <div><span>退房</span><span>11:00 前</span></div>
+        <div><span>電話</span><span>049-280 <span class="slot">號碼</span>（08:00–22:00）</span></div>
+        <div><span>LINE</span><span>@cloudline</span></div>
+      </div>
+    </div>
+    <div class="ways">
+      <div><h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-5h10l2 5v5M5 16h14M5 16v2M19 16v2M7.5 13h.01M16.5 13h.01"/></svg>開車</h3><p>國道 6 號到埔里交流道，接台14線往霧社，再轉台14甲線上山。埔里到民宿約 50 分鐘，霧社之後彎道多，請慢慢開。</p></div>
+      <div><h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 11h14M8 21v-3M16 21v-3M8.5 14.5h.01M15.5 14.5h.01"/></svg>客運</h3><p>高鐵台中站或台中市區搭客運到埔里轉運站，再轉往清境方向的客運，在清境農場站下車，打電話給我們，開車下去接你。</p></div>
+      <div><h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg>民宿接送</h3><p>訂房時加購埔里轉運站接送，單程 NT$1,200，一台車最多 6 人，車程約 50 分鐘。</p></div>
+    </div>
+  </section>
+
+  <section class="sec faq" id="faq" aria-labelledby="faq-h">
+    <div class="grid12">
+      <h2 class="h2" id="faq-h">出發前常被問到的事</h2>
+      <div class="qs2">
+        <details class="qa"><summary>冬天會下雪嗎？要準備什麼？<i class="chev" aria-hidden="true"></i></summary><div class="a"><div><p>清境本身很少積雪，但寒流時合歡山會下雪，公路總局會實施交通管制，上山需備妥雪鏈。房間都有暖氣與電熱毯，帶件厚外套就好。</p></div></div></details>
+        <details class="qa"><summary>颱風天不能上山怎麼辦？<i class="chev" aria-hidden="true"></i></summary><div class="a"><div><p>入住當天若南投縣政府宣布停止上班，或台14甲線封閉，可以全額退款，或保留訂金延期入住。</p></div></div></details>
+        <details class="qa"><summary>小孩怎麼算人數？<i class="chev" aria-hidden="true"></i></summary><div class="a"><div><p>2 歲以下嬰兒不佔床、不算人數，可以免費借嬰兒床；2 到 11 歲兒童算入房間人數，早餐免費。需要加床的話，朝東雙人房和合歡四人房可以加一床。</p></div></div></details>
+        <details class="qa"><summary>山上收訊好嗎？可以工作嗎？<i class="chev" aria-hidden="true"></i></summary><div class="a"><div><p>全館有光纖 Wi-Fi，視訊會議沒問題。四大電信在民宿都收得到訊號，往合歡山方向部分路段會沒有訊號。</p></div></div></details>
+        <details class="qa"><summary>幾點以後就不能入住？<i class="chev" aria-hidden="true"></i></summary><div class="a"><div><p>櫃台到 21:00，晚到請先打電話，我們把房卡放在門口的信箱，並傳 LINE 告訴你密碼。</p></div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="grid12">
+      <div class="post">
+        <div class="msg">
+          <h2>山上見</h2>
+          <p>上山的路有點彎，記得慢慢開。到了打給我們，熱茶會先泡好。</p>
+          <p>雲線山居　民宿主人 敬上</p>
+        </div>
+        <div class="addr">
+          <div class="stamp"><img src="img/stars.jpg" width="1024" height="683" alt="" loading="lazy"></div>
+          <a href="#book">線上訂房</a>
+          <a href="#gallery">環境照片</a>
+          <a href="#rules">住宿須知</a>
+          <span>南投縣民宿登記 第 <span class="slot">登記證號</span> 號</span>
+          <a href="#admin">民宿管理後台</a>
+        </div>
+        <div class="imprint"><p>雲線山居為網站設計作品，民宿名稱、房型、價格、消息與訂單皆為範例，無法實際訂房。</p><details><summary>照片來源與授權</summary><p>清境與合歡山風景：<a href="https://commons.wikimedia.org/w/index.php?curid=15641147">“Sea of clouds, Taiwan”</a> Bernard Gagnon，<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=87897461">“Dusk sky over Hehuanshan cuesta”</a> Quintin Lin，<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=1697383">“Hehuanshan”</a> Francisco Carin 范凱令，<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=131958224">“View from the Qingjing Farm”</a> uphey，<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=97845874">“Sheep at Qingjing Farm”</a> lwtt93，<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>；<a href="https://www.flickr.com/photos/51449066@N06/14046174932">“合歡山銀河”</a> JerryLai0208，<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=124290874">“雲嶺之丘 Yunling Hill”</a> Ping an Chang，<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=10398167">“Hehuanshan Cuesta”</a> Chewy3326，<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。<br>房間、餐點與公共空間為示意照片，來自 Pexels，依 <a href="https://www.pexels.com/license/">Pexels 授權</a>使用：<a href="https://www.pexels.com/photo/scenic-mountain-lodge-with-stunning-view-29000349/">Quang Nguyen Vinh</a>、<a href="https://www.pexels.com/photo/brown-wooden-railings-near-brown-wooden-door-13872620/">Matheus Bertelli</a>、<a href="https://www.pexels.com/photo/serene-hotel-room-with-mountain-view-30835932/">zeng jinwen</a>、<a href="https://www.pexels.com/photo/a-room-with-view-of-mountains-2346091/">Tobi</a>、<a href="https://www.pexels.com/photo/beds-in-a-hotel-room-20666872/">Trần Chính</a>、<a href="https://www.pexels.com/photo/hotel-bedroom-interior-design-19045885/">Luca Luperto</a>、<a href="https://www.pexels.com/photo/a-double-bed-under-a-roof-window-16116303/">Anna Androshuk</a>、<a href="https://www.pexels.com/photo/a-cup-on-a-balcony-terrace-and-the-landscape-of-foggy-mountains-and-conifer-forest-13904939/">FEY</a>、<a href="https://www.pexels.com/photo/bedroom-in-cottage-with-windows-overlooking-mountains-19737829/">Jonathan Borba</a>、<a href="https://www.pexels.com/photo/cup-of-coffee-on-a-patio-18545158/">Christina Petsos</a>、<a href="https://www.pexels.com/photo/cozy-a-frame-cabin-bedroom-with-wooden-interior-34944270/">John Moshi</a>、<a href="https://www.pexels.com/photo/three-beds-in-apartment-11062799/">30Nudos Adicora</a>、<a href="https://www.pexels.com/photo/toilet-bowl-in-rustic-design-bathroom-16436964/">Luis Zambrano</a>、<a href="https://www.pexels.com/photo/a-rustic-comfort-room-3620234/">Engin Akyurt</a>、<a href="https://www.pexels.com/photo/cozy-modern-lounge-with-fireplace-and-wooden-decor-34995013/">Ummu</a>、<a href="https://www.pexels.com/photo/cozy-rustic-living-room-with-fireplace-29887410/">Alexander Mass</a>、<a href="https://www.pexels.com/photo/cozy-fireplace-setting-with-blankets-and-pillows-34503419/">Дмитрий Терза</a>、<a href="https://www.pexels.com/photo/food-and-drinks-standing-on-a-table-outside-on-a-foggy-day-20811949/">Pew Nguyen</a>、<a href="https://www.pexels.com/photo/top-view-photo-of-meal-4110430/">Syed Muhammad Afifi</a>、<a href="https://www.pexels.com/photo/chinese-steamed-buns-1103910/">Cats Coming</a>、<a href="https://www.pexels.com/photo/delicious-asian-breakfast-featuring-rice-and-eggs-36461948/">Bimbim Sindu</a>、<a href="https://www.pexels.com/photo/delicious-hot-pot-with-fresh-ingredients-29479438/">Lily Lili</a>、<a href="https://www.pexels.com/photo/abundance-of-food-on-table-16569160/">Rob Ruiz</a>。</p></details></div>
+      </div>
+    </div>
+  </footer>
+  <div class="mbar" id="mbar"><span>每晚 <b class="num" id="mbarP">NT$3,200</b> 起，含早餐</span><a class="btn sm" href="#book">查空房</a></div>
+</div>
+
+<!-- ================= GALLERY ================= -->
+<div class="view" id="v-gal" hidden>
+  <main class="gal">
+    <h1>環境照片</h1>
+    <p class="lead">外觀、客房、餐廳和交誼廳，以及開車一小時內的山。點照片可以放大，左右切換。</p>
+    <div class="gchips" id="gchips" role="group" aria-label="照片分類"></div>
+    <div class="masonry" id="masonry"></div>
+  </main>
+</div>
+
+<!-- ================= BOOKING ================= -->
+<div class="view" id="v-book" hidden>
+  <main class="book">
+    <h1 id="bk-title">查空房與訂房</h1>
+    <ol class="steps" id="steps"></ol>
+    <div id="bk-body"></div>
+  </main>
+</div>
+
+<!-- ================= ADMIN ================= -->
+<div class="view" id="v-admin" hidden>
+  <div class="app">
+    <aside class="side" aria-label="後台選單">
+      <div class="mark">
+        <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="6" fill="var(--accent)"/><path d="M4 19 L10 12 L14 16 L18 10 L24 19 Z" fill="var(--accent-ink)"/><rect x="4" y="20.5" width="20" height="2" fill="var(--accent-ink)"/></svg>
+        <div><b>雲線山居</b><span>民宿主人後台</span></div>
+      </div>
+      <p class="grp">營運</p>
+      <button data-tab="today">今天</button>
+      <button data-tab="orders">訂單 <span class="count" id="cntPending"></span></button>
+      <button data-tab="occ">房況</button>
+      <p class="grp">網站內容</p>
+      <button data-tab="rooms">房型管理</button>
+      <button data-tab="rates">房價與連假</button>
+      <button data-tab="news">最新消息</button>
+      <button data-tab="gal">環境照片</button>
+      <button data-tab="rules">住宿須知</button>
+      <div class="grow"></div>
+      <a href="#top">回到官網</a>
+      <button class="reset" data-reset>還原初始資料</button>
+    </aside>
+    <main class="main" id="adminMain"></main>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="照片檢視">
+  <div class="top"><span id="lbN" class="num"></span><button type="button" id="lbX" aria-label="關閉">×</button></div>
+  <div class="stage" id="lbStage"></div>
+  <p class="cap2" id="lbCap"></p>
+  <button type="button" class="lp" id="lbP" aria-label="上一張">‹</button><button type="button" class="ln" id="lbNx" aria-label="下一張">›</button>
+</div>
+<dialog class="dlg" id="dlg"></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+'use strict';
+try { document.documentElement.lang = 'zh-Hant-TW'; } catch (e) {}
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- dates ---------- */
+const pad = n => String(n).padStart(2, '0');
+const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const add = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+const diff = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+const TODAY = iso(new Date());
+const WD = ['日', '一', '二', '三', '四', '五', '六'];
+const md = s => { const d = parse(s); return (d.getMonth() + 1) + '/' + d.getDate(); };
+const mdw = s => { const d = parse(s); return (d.getMonth() + 1) + '/' + d.getDate() + '（' + WD[d.getDay()] + '）'; };
+const ymd = s => { const d = parse(s); return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()); };
+const money = n => 'NT$' + Number(n || 0).toLocaleString('en-US');
+
+/* ---------- sky ---------- */
+const LAT = 24.05, LON = 121.16;
+function sunrise(s) {
+  const d = parse(s), start = new Date(d.getFullYear(), 0, 0);
+  const N = Math.floor((d - start) / 864e5), g = 2 * Math.PI / 365 * (N - 1);
+  const eq = 229.18 * (0.000075 + 0.001868 * Math.cos(g) - 0.032077 * Math.sin(g) - 0.014615 * Math.cos(2 * g) - 0.040849 * Math.sin(2 * g));
+  const dec = 0.006918 - 0.399912 * Math.cos(g) + 0.070257 * Math.sin(g) - 0.006758 * Math.cos(2 * g) + 0.000907 * Math.sin(2 * g) - 0.002697 * Math.cos(3 * g) + 0.00148 * Math.sin(3 * g);
+  const r = Math.PI / 180, lat = LAT * r;
+  const ha = Math.acos(Math.cos(90.833 * r) / (Math.cos(lat) * Math.cos(dec)) - Math.tan(lat) * Math.tan(dec)) / r;
+  const min = Math.round(720 - 4 * (LON + ha) - eq + 480);
+  return pad(Math.floor(min / 60)) + ':' + pad(min % 60);
+}
+function moonLit(s) {
+  const d = parse(s); d.setHours(22);
+  const P = 29.530588853, ref = Date.UTC(2000, 0, 6, 18, 14);
+  const ph = (((d.getTime() - ref) / 864e5) % P + P) % P / P;
+  return Math.round((1 - Math.cos(2 * Math.PI * ph)) / 2 * 100);
+}
+
+/* ---------- icons ---------- */
+const ICON = {
+  in: ['入住', '<path d="M10 4h8v16h-8M3 12h11M11 9l3 3-3 3"/>'],
+  out: ['退房', '<path d="M14 4H6v16h8M10 12h11M18 9l3 3-3 3"/>'],
+  info: ['說明', '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>'],
+  kids: ['孩童', '<circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="9" r="2"/><path d="M4 20v-5a4 4 0 0 1 8 0v5M13 20v-4a3 3 0 0 1 6 0v4"/>'],
+  age: ['年齡', '<circle cx="12" cy="5" r="2.5"/><path d="M8 21v-7l-1-4h10l-1 4v7M12 14v7"/>'],
+  pet: ['寵物', '<circle cx="6.5" cy="10" r="1.8"/><circle cx="17.5" cy="10" r="1.8"/><circle cx="10" cy="5.5" r="1.8"/><circle cx="14" cy="5.5" r="1.8"/><path d="M8 17.5c0-3 2-5.5 4-5.5s4 2.5 4 5.5c0 2-2 2.2-4 1.8-2 .4-4 .2-4-1.8z"/>'],
+  card: ['付款', '<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18M7 15h4"/>'],
+  smoke: ['吸菸', '<path d="M3 14h12v3H3zM18 14v3M21 14v3M4 4l16 16"/>'],
+  party: ['派對', '<path d="M4 20l5-14 9 9zM14 4l1 2M20 6l-2 1M20 11l-2-.5"/>'],
+  moon: ['安靜', '<path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"/>'],
+  car: ['停車', '<path d="M5 16V11l2-5h10l2 5v5M5 16h14M5 16v2M19 16v2M7.5 13h.01M16.5 13h.01"/>'],
+  clock: ['時間', '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'],
+  wifi: ['網路', '<path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"/>'],
+  bed: ['床', '<path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5M6.5 11.5h.01"/>'],
+  bath: ['衛浴', '<path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/>'],
+  fire: ['壁爐', '<path d="M12 21c-4 0-6-3-6-6 0-4 4-6 4-10 3 2 4 4 4 6 1-1 1.5-2 1.5-3 2 2 2.5 4 2.5 7 0 3-2 6-6 6z"/>'],
+  cup: ['餐飲', '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>'],
+  mtn: ['景觀', '<path d="M2 19l7-11 4 6 3-4 6 9z"/>'],
+  heat: ['暖氣', '<path d="M5 20V8M10 20V8M15 20V8M20 20V8M3 20h18M3 8h18"/>'],
+  key: ['服務', '<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>'],
+  lang: ['語言', '<path d="M4 5h16v11H9l-5 4z"/>'],
+  bus: ['交通', '<rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 11h14M8 21v-3M16 21v-3"/>'],
+  shield: ['安全', '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>']
+};
+const ic = k => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${(ICON[k] || ICON.info)[1]}</svg>`;
+
+/* ---------- photo library ---------- */
+const DIMS = {"hero":[1800,1319],"dusk":[1600,1067],"ridge":[1600,931],"stars":[1024,683],"sheep":[1000,664],"farm":[1200,800],"tea":[1200,900],"cuesta":[1600,1200],"exterior":[1600,1067],"corridor":[1400,933],"east1":[1400,1050],"east2":[1400,933],"twin1":[1400,933],"twin2":[1400,933],"star1":[1400,1867],"star2":[1400,2095],"hehuan1":[1400,933],"hehuan2":[1400,2100],"loft1":[1400,933],"loft2":[1400,933],"bath1":[1400,2097],"bath2":[1400,934],"lounge1":[1400,2489],"lounge2":[1400,2100],"fire":[1400,2490],"bf1":[1400,2100],"bf2":[1400,1050],"bf3":[1400,933],"bf4":[1400,2100],"hp1":[1400,2100],"hp2":[1400,2105]};
+const PH = {
+  exterior: ['山坡上的石砌民宿外觀，背後是層疊的山', '外觀'], corridor: ['二樓木頭走廊與房門', '外觀'],
+  east1: ['朝東雙人房，大窗外是山谷裡的霧', '客房'], east2: ['傍晚從房間窗戶看出去的山', '客房'],
+  twin1: ['山霧雙床房，兩張單人床與樹林窗景', '客房'], twin2: ['木牆客房與床上的毛巾', '客房'],
+  star1: ['斜屋頂天窗下的雙人床', '客房'], star2: ['露台上的一杯熱茶，前方是霧中的森林', '客房'],
+  hehuan1: ['三角屋頂臥室，大片窗戶朝山', '客房'], hehuan2: ['木欄杆上的咖啡杯，遠方是山', '客房'],
+  loft1: ['木造閣樓臥室', '客房'], loft2: ['閣樓的上下鋪與雙人床', '客房'],
+  bath1: ['石牆與木作的浴室', '衛浴'], bath2: ['木頭牆面的浴室與洗手台', '衛浴'],
+  lounge1: ['一樓交誼廳的木桌與懸吊式壁爐', '公共空間'], lounge2: ['交誼廳角落的燒柴暖爐', '公共空間'], fire: ['壁爐前的毛毯和抱枕', '公共空間'],
+  bf1: ['起霧的早晨，戶外桌上的湯麵早餐', '餐食'], bf2: ['托盤上的白飯、湯與配菜', '餐食'], bf3: ['剛蒸好的包子與紅豆湯', '餐食'], bf4: ['四盤家常早餐，有飯、蛋和青菜', '餐食'],
+  hp1: ['冒著熱氣的火鍋與新鮮蔬菜', '餐食'], hp2: ['一桌火鍋與小菜', '餐食'],
+  hero: ['清晨的雲海填滿山谷', '周邊'], sheep: ['霧中的青草坡上，綿羊低頭吃草', '周邊'], farm: ['清境農場的草原與遠方山谷', '周邊'], tea: ['雲嶺之丘的山坡與遠方雲層', '周邊'],
+  dusk: ['黃昏時分的合歡山草坡', '周邊'], ridge: ['雲帶橫越合歡山群峰的稜線', '周邊'], stars: ['合歡山上方的銀河', '周邊'], cuesta: ['合歡山的青綠草坡與公路', '周邊']
+};
+const CATS = ['外觀', '客房', '衛浴', '餐食', '公共空間', '周邊'];
+let S;
+const src = ref => !ref ? '' : ref.indexOf('up:') === 0 ? (S.uploads[ref.slice(3)] || '') : 'img/' + ref + '.jpg';
+const altOf = ref => PH[ref] ? PH[ref][0] : '';
+function img(ref, alt, cls, eager) {
+  const d = DIMS[ref];
+  return `<img src="${src(ref)}"${d ? ` width="${d[0]}" height="${d[1]}"` : ''} alt="${esc(alt != null ? alt : altOf(ref))}"${cls ? ` class="${cls}"` : ''}${eager ? '' : ' loading="lazy"'} decoding="async">`;
+}
+
+/* ---------- seed data ---------- */
+const ROOMS = [
+  { id: 'east', name: '朝東雙人房', size: 6, beds: '雙人床一張', max: 2, view: '正東窗，日出與雲海', desc: '窗戶正對東邊山谷，天氣好的早上，太陽會從雲海後面升起。床靠窗擺，躺著就看得到外面。', extraBed: true, wk: 3600, we: 4800, hol: 5400, photos: ['east1', 'east2', 'bath1'], on: true },
+  { id: 'twin', name: '山霧雙床房', size: 5, beds: '單人床兩張', max: 2, view: '南向窗，對著杉木林', desc: '兩張單人床，適合朋友或家人同行。窗外是一片杉木林，午後起霧的時候特別安靜。', extraBed: false, wk: 3200, we: 4200, hol: 4800, photos: ['twin1', 'twin2', 'bath2'], on: true },
+  { id: 'star', name: '星空天窗房', size: 7, beds: '雙人床一張', max: 2, view: '斜屋頂天窗，附小露台', desc: '在頂樓，床的正上方開了一扇天窗。無月的晴夜關燈躺著就看得到星星；早上可以端著熱茶到露台看霧。', extraBed: false, wk: 4600, we: 6000, hol: 6800, photos: ['star1', 'star2', 'bath1'], on: true },
+  { id: 'hehuan', name: '合歡四人房', size: 9, beds: '雙人床兩張', max: 4, view: '大片窗戶，朝合歡山', desc: '整面窗戶朝合歡山方向，兩張雙人床，四個人住也寬敞。窗邊有兩張椅子和小桌。', extraBed: true, wk: 5200, we: 6800, hol: 7600, photos: ['hehuan1', 'hehuan2', 'bath2'], on: true },
+  { id: 'loft', name: '閣樓家庭房', size: 12, beds: '雙人床兩張、上下鋪一組', max: 6, view: '挑高閣樓，東向與北向雙面窗', desc: '挑高木造閣樓，大人睡雙人床，小孩睡上下鋪。空間最大，帶小孩的家庭最常訂這間。', extraBed: false, wk: 6400, we: 8200, hol: 9200, photos: ['loft1', 'loft2', 'bath1'], on: true }
+];
+const AMEN = [['bath', '獨立衛浴'], ['heat', '暖氣'], ['bed', '電熱毯'], ['wifi', '免費 Wi-Fi'], ['cup', '熱水壺與茶包'], ['mtn', '山景']];
+const HOLIDAYS0 = ['2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01', '2027-01-02', '2027-02-05', '2027-02-06', '2027-02-07', '2027-02-08', '2027-02-09'];
+const PAY = { card: '信用卡', atm: 'ATM 轉帳', cvs: '超商代碼', cash: '現場付款' };
+const ST = { pending: '待付款', paid: '已付款', cancelled: '已取消' };
+const KEY = 'cloudline-v2';
+const RULES0 = [
+  { id: 'r1', icon: 'in', t: '入住時間', v: '15:00 至 21:00\n21:00 以後抵達請先來電，我們會把房卡放在門口信箱。' },
+  { id: 'r2', icon: 'out', t: '退房時間', v: '隔天 11:00 前，可免費寄放行李到 15:00。' },
+  { id: 'r3', icon: 'info', t: '取消與預付', v: '入住 14 天前取消全額退款，之後依天數比例退還。信用卡訂房付清全額；ATM 轉帳需先付 30% 訂金。', cancel: true },
+  { id: 'r4', icon: 'kids', t: '孩童與加床', v: '歡迎任何年齡的孩童入住。\n0–1 歲嬰兒不佔床、不算人數，可免費借嬰兒床（數量有限，請在備註寫上）。\n2–11 歲兒童算入房間人數，早餐免費。\n朝東雙人房、合歡四人房可加床一張，每晚 NT$800，含早餐。' },
+  { id: 'r5', icon: 'age', t: '年齡限制', v: '無年齡限制，未滿 18 歲需由成年人陪同入住。' },
+  { id: 'r6', icon: 'pet', t: '寵物', v: '不接待寵物，導盲犬除外。' },
+  { id: 'r7', icon: 'card', t: '接受的付款方式', v: 'VISA、Mastercard、JCB、ATM 轉帳、超商代碼、現金', badges: true },
+  { id: 'r8', icon: 'smoke', t: '吸菸', v: '全館禁菸，包含房間、露台與陽台。違者需支付清潔費 NT$3,000。' },
+  { id: 'r9', icon: 'party', t: '派對', v: '不可舉辦派對或聚會活動。' },
+  { id: 'r10', icon: 'moon', t: '安靜時段', v: '22:00 至隔天 08:00，請放低音量。' },
+  { id: 'r11', icon: 'car', t: '停車', v: '免費，民宿旁有 6 個停車位，不需預約。' }
+];
+const FAC = [
+  ['bath', '衛浴', ['獨立衛浴', '24 小時熱水', '吹風機', '毛巾與浴巾', '免費盥洗用品', '拖鞋']],
+  ['bed', '臥室', ['厚棉被與電熱毯', '暖氣', '衣架與掛衣區', '遮光窗簾']],
+  ['mtn', '景觀與戶外', ['山景', '雲海景（天氣好的早晨）', '露台（星空天窗房）', '小花園']],
+  ['fire', '公共空間', ['交誼廳與壁爐', '共用冰箱', '熱水與茶包', '書和桌遊']],
+  ['cup', '餐飲', ['早餐（含在房價）', '早起外帶早餐', '火鍋晚餐（需預約）']],
+  ['wifi', '網路', ['全館免費 Wi-Fi，光纖網路']],
+  ['car', '停車', ['免費私人停車場，6 個車位，不需預約']],
+  ['key', '服務', ['埔里轉運站接送（付費）', '行李寄放', '週六觀星時間（天氣好時）']],
+  ['shield', '安全', ['公共區域有監視器', '每層樓有滅火器', '房間有煙霧偵測器']],
+  ['lang', '使用的語言', ['中文', '台語', '英語', '日語（簡單會話）']]
+];
+const POPULAR = [['car', '免費停車'], ['kids', '家庭房'], ['wifi', '免費 Wi-Fi'], ['smoke', '全館禁菸'], ['cup', '含早餐'], ['heat', '房間有暖氣']];
+
+function seedBookings() {
+  const L = [
+    ['loft', -2, 2, '黃小姐', 2, 3, 'card', 'paid', '0928-***-114'],
+    ['east', -1, 2, '林小姐', 2, 0, 'card', 'paid', '0912-***-318'],
+    ['hehuan', 0, 2, '陳先生', 2, 2, 'atm', 'paid', '0933-***-562', '17:30 左右到'],
+    ['star', 0, 1, 'Yuki Sato', 2, 0, 'card', 'paid', '+81 90-****-2231', '想要隔天早上的外帶早餐'],
+    ['twin', 1, 2, '吳先生', 2, 0, 'atm', 'pending', '0955-***-870'],
+    ['east', 4, 2, '張小姐', 2, 0, 'card', 'paid', '0919-***-045'],
+    ['hehuan', 5, 2, 'Emily Chen', 2, 1, 'card', 'paid', '0987-***-662'],
+    ['loft', 5, 2, '許先生', 4, 2, 'atm', 'pending', '0921-***-337'],
+    ['star', 6, 1, '鄭小姐', 2, 0, 'cvs', 'paid', '0936-***-901'],
+    ['twin', 12, 3, 'Park Jiwoo', 2, 0, 'card', 'paid', '+82 10-****-7781'],
+    ['east', 18, 2, '謝先生', 2, 0, 'card', 'cancelled', '0910-***-229'],
+    ['loft', 20, 2, '劉小姐', 2, 2, 'card', 'paid', '0975-***-516'],
+    ['hehuan', 26, 1, '蔡先生', 4, 0, 'cvs', 'pending', '0958-***-404'],
+    ['twin', -6, 2, '周小姐', 2, 0, 'card', 'paid', '0920-***-617'],
+    ['star', -5, 2, '王先生', 2, 0, 'atm', 'paid', '0911-***-182'],
+    ['hehuan', -8, 1, '李小姐', 3, 0, 'card', 'paid', '0935-***-740'],
+    ['east', -4, 2, '楊先生', 2, 0, 'card', 'paid', '0953-***-093']
+  ];
+  let n = 101;
+  return L.map(([room, off, nights, name, adults, kids, pay, status, phone, note]) => {
+    const ci = add(TODAY, off), co = add(ci, nights);
+    return { id: 'CL' + ci.slice(2, 4) + ci.slice(5, 7) + (n++), room, ci, co, name, adults, kids, inf: 0, pay, status, phone, email: '', note: note || '', checkedIn: off < 0, amount: price(room, ci, co).total, created: add(ci, -20), due: pay === 'card' ? null : add(TODAY, status === 'pending' ? (off <= 1 ? 0 : 2) : 0) };
+  });
+}
+function seedNews() {
+  return [
+    { id: 'n1', date: add(TODAY, -4), tag: '公告', title: '十二月起夜裡變冷，房間都換上冬被', body: '清境十二月的夜間氣溫常在 5°C 上下，所有房間已換上厚棉被，並加放電熱毯。\n合歡山方向若遇寒流，公路總局可能實施交通管制，出發前可以先打電話問我們路況。', photo: 'fire', pub: true, pin: true },
+    { id: 'n2', date: add(TODAY, -11), tag: '優惠', title: '平日連住兩晚，第二晚 85 折', body: '週日到週四入住，同一間房連住兩晚，第二晚房價打 85 折。線上訂房時在備註寫「平日連住」，退房時折抵。\n連假與春節期間不適用。', photo: 'east1', pub: true, pin: false },
+    { id: 'n3', date: add(TODAY, -23), tag: '活動', title: '週六晚上的觀星時間', body: '每週六晚上 20:30，天氣晴朗時，民宿主人會在頂樓露台架好望遠鏡，帶大家認星座，約 40 分鐘，住客免費參加。\n陰天或下雨取消，當天傍晚會用 LINE 通知。', photo: 'stars', pub: true, pin: false },
+    { id: 'n4', date: add(TODAY, -37), tag: '公告', title: '火鍋晚餐開放預約', body: '山上晚上餐廳少，現在可以在入住前一天預約民宿的火鍋晚餐。\n18:00 至 19:30 在一樓餐廳，大人每位 NT$480，兒童 NT$250，素食可。', photo: 'hp1', pub: true, pin: false },
+    { id: 'n5', date: add(TODAY, -2), tag: '公告', title: '春節期間訂房開放（草稿）', body: '2027 年春節連假已開放訂房，連假房價依官網公告，訂房後 3 天內需付清全額。', photo: '', pub: false, pin: false }
+  ];
+}
+function seedGallery() {
+  const order = ['exterior', 'corridor', 'east1', 'twin1', 'star1', 'hehuan1', 'loft1', 'east2', 'twin2', 'star2', 'hehuan2', 'loft2', 'bath1', 'bath2', 'lounge1', 'lounge2', 'fire', 'bf1', 'bf2', 'bf3', 'bf4', 'hp1', 'hp2', 'hero', 'sheep', 'farm', 'tea', 'dusk', 'ridge', 'stars', 'cuesta'];
+  return order.map(r => ({ ref: r, cat: PH[r][1], cap: PH[r][0] }));
+}
+
+function load() {
+  try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.v === 2 && o.day === TODAY) { S = o; return; } } } catch (e) {}
+  reset();
+}
+function reset() {
+  S = { v: 2, day: TODAY, rooms: ROOMS.map(r => JSON.parse(JSON.stringify(r))), hol: HOLIDAYS0.slice(), bookings: [], blocks: {}, news: seedNews(), rules: RULES0.map(r => Object.assign({}, r)), gallery: seedGallery(), uploads: {} };
+  S.bookings = seedBookings();
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(S)); return true; }
+  catch (e) { toast('瀏覽器儲存空間不足，這次的變更只會保留到關閉頁面'); return false; }
+}
+const room = id => S.rooms.find(r => r.id === id) || { name: '（已刪除的房型）', wk: 0, we: 0, hol: 0, max: 0, photos: [] };
+const liveRooms = () => S.rooms.filter(r => r.on && !r.deleted);
+const roomsN = () => liveRooms().length || 1;
+
+function nightType(s) { if (S.hol.includes(s)) return 'hol'; const w = parse(s).getDay(); return (w === 5 || w === 6) ? 'we' : 'wk'; }
+const TYPE = { wk: '平日', we: '假日', hol: '連假' };
+function price(rid, ci, co) {
+  const r = room(rid), lines = []; let total = 0;
+  for (let d = ci; d < co; d = add(d, 1)) { const t = nightType(d); lines.push({ d, t, p: r[t] }); total += r[t]; }
+  return { lines, total };
+}
+function free(rid, ci, co, skipId) {
+  for (const b of S.bookings) { if (b.room !== rid || b.status === 'cancelled' || b.id === skipId) continue; if (b.ci < co && ci < b.co) return false; }
+  const bl = S.blocks[rid] || [];
+  for (let d = ci; d < co; d = add(d, 1)) if (bl.includes(d)) return false;
+  return true;
+}
+function status(b) {
+  if (b.status === 'cancelled') return ['cancel', '已取消'];
+  if (b.status === 'pending') return ['pending', '待付款'];
+  if (b.co <= TODAY) return ['done', '已退房'];
+  if (b.ci <= TODAY) return b.checkedIn ? ['stay', '入住中'] : ['paid', '已付款'];
+  return ['paid', '已付款'];
+}
+const ppl = o => `${o.adults} 位大人${o.kids ? `、${o.kids} 位兒童` : ''}${o.inf ? `、${o.inf} 位嬰兒` : ''}`;
+
+/* ---------- toast ---------- */
+function toast(m) { const t = $('#toast'); t.textContent = m; t.hidden = false; t.style.animation = 'none'; t.offsetHeight; t.style.animation = ''; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2800); }
+
+/* ---------- site: rooms ---------- */
+let RI = 0;
+function renderRooms() {
+  const rs = liveRooms();
+  if (RI >= rs.length) RI = 0;
+  $('#rtabs').innerHTML = rs.map((r, i) => `<button type="button" class="rtab" role="tab" aria-selected="${i === RI}" data-ri="${i}"><b>${esc(r.name)}</b><span class="num">${money(r.wk)} 起，最多 ${r.max} 位</span></button>`).join('');
+  $$('#rtabs .rtab').forEach(b => b.onclick = () => { RI = +b.dataset.ri; renderRooms(); swap(); b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: RM ? 'auto' : 'smooth' }); });
+  const r = rs[RI];
+  if (!r) { $('#rpanel').innerHTML = '<p class="nempty">房型整理中。</p>'; return; }
+  const photos = r.photos && r.photos.length ? r.photos : ['exterior'];
+  $('#rpanel').innerHTML = `${carousel(photos, r.name)}
+    <div class="rinfo">
+      <h3>${esc(r.name)}</h3>
+      <p class="desc">${esc(r.desc)}</p>
+      <dl class="spec num"><dt>大小</dt><dd>${r.size} 坪</dd><dt>床型</dt><dd>${esc(r.beds)}</dd><dt>人數</dt><dd>最多 ${r.max} 位${r.extraBed ? '，可加床一張' : ''}</dd><dt>窗景</dt><dd>${esc(r.view)}</dd></dl>
+      <div class="amen">${AMEN.map(([k, t]) => `<span>${ic(k)}${t}</span>`).join('')}</div>
+      <div class="rates num"><span>平日<b>${money(r.wk)}</b></span><span>週五、六<b>${money(r.we)}</b></span><span>連假<b>${money(r.hol)}</b></span></div>
+      <div class="racts"><a class="btn" href="#book" id="bookThis">訂這間房</a><button type="button" class="link" id="allPh">看這間的全部照片</button></div>
+    </div>`;
+  initCar($('#rpanel .car'));
+  $('#bookThis').onclick = () => { B.room = r.id; B.step = 0; };
+  $('#allPh').onclick = () => openLB(photos.map(p => ({ ref: p, cap: r.name + '，' + altOf(p) })), 0);
+  $$('#rpanel .slide').forEach((s, i) => s.onclick = () => openLB(photos.map(p => ({ ref: p, cap: r.name + '，' + altOf(p) })), i));
+}
+function swap() { const p = $('#rpanel'); p.classList.remove('swap'); p.offsetWidth; p.classList.add('swap'); }
+function carousel(photos, name) {
+  return `<div class="car"><div class="track">${photos.map((p, i) => `<button type="button" class="slide" aria-label="放大第 ${i + 1} 張照片">${img(p, name + '：' + altOf(p), '', i === 0)}</button>`).join('')}</div>
+    ${photos.length > 1 ? `<button type="button" class="cb p" aria-label="上一張">‹</button><button type="button" class="cb n" aria-label="下一張">›</button><div class="dots">${photos.map((p, i) => `<button type="button" aria-label="第 ${i + 1} 張" aria-current="${i === 0}"></button>`).join('')}</div><span class="count num">1 / ${photos.length}</span>` : ''}</div>`;
+}
+function initCar(c) {
+  if (!c) return;
+  const t = $('.track', c), dots = $$('.dots button', c), cnt = $('.count', c), n = dots.length;
+  if (!n) return;
+  const cur = () => Math.round(t.scrollLeft / t.clientWidth);
+  const goTo = i => t.scrollTo({ left: ((i + n) % n) * t.clientWidth, behavior: RM ? 'auto' : 'smooth' });
+  $('.cb.p', c).onclick = () => goTo(cur() - 1);
+  $('.cb.n', c).onclick = () => goTo(cur() + 1);
+  dots.forEach((d, i) => d.onclick = () => goTo(i));
+  t.addEventListener('scroll', () => { const i = cur(); dots.forEach((d, k) => d.setAttribute('aria-current', k === i)); cnt.textContent = (i + 1) + ' / ' + n; }, { passive: true });
+}
+
+/* ---------- site: facilities, rules, news ---------- */
+function renderFacilities() {
+  $('#popular').innerHTML = POPULAR.map(([k, t]) => `<span>${ic(k)}${t}</span>`).join('');
+  $('#fcols').innerHTML = FAC.map(([k, t, l]) => `<div class="fg rv"><h3>${t}</h3><ul>${l.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('');
+}
+const CANCEL = [['入住前 14 天以上', '退還 100%'], ['前 10–13 天', '退還 70%'], ['前 7–9 天', '退還 50%'], ['前 4–6 天', '退還 40%'], ['前 2–3 天', '退還 30%'], ['前 1 天', '退還 20%'], ['入住當天或未到', '不退款']];
+const cancelTable = () => `<table class="policy num"><tbody>${CANCEL.map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('')}</tbody></table>`;
+function ruleValue(r) {
+  if (r.badges) return `<div class="badges">${r.v.split(/[、,，]/).map(x => x.trim()).filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('')}</div>`;
+  return `<div class="v">${esc(r.v)}${r.cancel ? `<details><summary>看完整的退款比例</summary>${cancelTable()}<p class="hint" style="margin-top:6px">颱風或台14甲線封閉時，可全額退款或保留延期。</p></details>` : ''}</div>`;
+}
+function renderRules() { $('#rtable').innerHTML = S.rules.map(r => `<div class="rrow"><h3>${ic(r.icon)}${esc(r.t)}</h3>${ruleValue(r)}</div>`).join(''); }
+const pubNews = () => S.news.filter(n => n.pub).sort((a, b) => (b.pin - a.pin) || (a.date < b.date ? 1 : -1));
+function renderNews() {
+  const L = pubNews();
+  if (!L.length) { $('#nwrap').innerHTML = '<p class="nempty">目前沒有新消息。</p>'; return; }
+  const f = L[0], rest = L.slice(1, 6);
+  $('#nwrap').innerHTML = `<button type="button" class="nfeat rv" data-news="${f.id}">${f.photo ? `<div class="ph">${img(f.photo, '')}</div>` : ''}<span class="nmeta num"><span class="tag t-${esc(f.tag)}">${esc(f.tag)}</span>${ymd(f.date)}</span><h3>${esc(f.title)}</h3><p>${esc(f.body)}</p></button>
+    <div class="nlist rv" style="--d:1">${rest.map(n => `<button type="button" class="nitem" data-news="${n.id}"><span class="nmeta num"><span class="tag t-${esc(n.tag)}">${esc(n.tag)}</span>${ymd(n.date)}</span><b>${esc(n.title)}</b><span class="arr" aria-hidden="true">→</span></button>`).join('') || '<p class="nempty">沒有其他消息。</p>'}</div>`;
+  $$('#nwrap [data-news]').forEach(b => b.onclick = () => readNews(b.dataset.news));
+  observe($('#nwrap'));
+}
+function readNews(id) {
+  const n = S.news.find(x => x.id === id); if (!n) return;
+  const d = $('#dlg');
+  d.innerHTML = `<div class="nread"><div class="dh"><span class="nmeta num"><span class="tag t-${esc(n.tag)}">${esc(n.tag)}</span>${ymd(n.date)}</span><button type="button" class="x" data-close aria-label="關閉">×</button></div><div class="db">${n.photo ? `<div class="ph">${img(n.photo, '')}</div>` : ''}<h2 style="font-size:28px;line-height:1.25">${esc(n.title)}</h2><p class="body">${esc(n.body)}</p></div><div class="df"><a class="btn sm" href="#book" data-close>查空房與訂房</a></div></div>`;
+  openDlg();
+}
+function openDlg() { const d = $('#dlg'); $$('[data-close]', d).forEach(b => b.addEventListener('click', () => d.close())); if (!d.open) { try { d.showModal(); } catch (e) { d.setAttribute('open', ''); } } }
+$('#dlg').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+
+/* ---------- gallery ---------- */
+let GF = '全部';
+function renderGallery() {
+  const counts = {}; S.gallery.forEach(g => counts[g.cat] = (counts[g.cat] || 0) + 1);
+  $('#gchips').innerHTML = ['全部'].concat(CATS.filter(c => counts[c])).map(c => `<button type="button" class="gchip" aria-pressed="${c === GF}" data-cat="${c}">${c}<small class="num">${c === '全部' ? S.gallery.length : counts[c]}</small></button>`).join('');
+  $$('#gchips .gchip').forEach(b => b.onclick = () => { GF = b.dataset.cat; renderGallery(); });
+  const list = S.gallery.filter(g => GF === '全部' || g.cat === GF);
+  $('#masonry').innerHTML = list.map((g, i) => `<button type="button" class="gitem pop" style="--i:${Math.min(i, 14)}" data-gi="${i}"><div class="ph">${img(g.ref, g.cap)}</div><span>${esc(g.cap)}</span></button>`).join('');
+  $$('#masonry .gitem').forEach(b => b.onclick = () => openLB(list, +b.dataset.gi));
+}
+
+/* ---------- lightbox ---------- */
+const LB = { list: [], i: 0 };
+function openLB(list, i) { LB.list = list; LB.i = i; drawLB(); $('#lb').classList.add('open'); document.body.style.overflow = 'hidden'; $('#lbX').focus(); }
+function closeLB() { $('#lb').classList.remove('open'); document.body.style.overflow = ''; }
+function drawLB() { const g = LB.list[LB.i]; $('#lbStage').innerHTML = img(g.ref, g.cap, '', true); $('#lbCap').textContent = g.cap; $('#lbN').textContent = (LB.i + 1) + ' / ' + LB.list.length; }
+function stepLB(d) { LB.i = (LB.i + d + LB.list.length) % LB.list.length; drawLB(); }
+$('#lbX').onclick = closeLB; $('#lbP').onclick = () => stepLB(-1); $('#lbNx').onclick = () => stepLB(1);
+$('#lb').addEventListener('click', e => { if (e.target.id === 'lbStage') closeLB(); });
+document.addEventListener('keydown', e => { if (!$('#lb').classList.contains('open')) return; if (e.key === 'Escape') closeLB(); if (e.key === 'ArrowLeft') stepLB(-1); if (e.key === 'ArrowRight') stepLB(1); });
+(function () { let x0 = null; const el = $('#lb'); el.addEventListener('pointerdown', e => x0 = e.clientX); el.addEventListener('pointerup', e => { if (x0 != null && Math.abs(e.clientX - x0) > 50) stepLB(e.clientX < x0 ? 1 : -1); x0 = null; }); })();
+
+/* ---------- area drag carousel ---------- */
+(function () {
+  const sp = $('#spots'); let down = false, sx = 0, sl = 0, moved = false;
+  sp.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = sp.scrollLeft; sp.classList.add('drag'); });
+  window.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4) moved = true; sp.scrollLeft = sl - dx; });
+  window.addEventListener('pointerup', () => { if (!down) return; down = false; sp.classList.remove('drag'); });
+  const by = () => (sp.querySelector('.spot').offsetWidth + 20);
+  $('#spPrev').onclick = () => sp.scrollBy({ left: -by(), behavior: RM ? 'auto' : 'smooth' });
+  $('#spNext').onclick = () => sp.scrollBy({ left: by(), behavior: RM ? 'auto' : 'smooth' });
+})();
+
+/* ---------- quick search ---------- */
+(function () {
+  $('#qsA').innerHTML = [1, 2, 3, 4, 5, 6].map(n => `<option${n === 2 ? ' selected' : ''}>${n}</option>`).join('');
+  $('#qsK').innerHTML = [0, 1, 2, 3, 4].map(n => `<option>${n}</option>`).join('');
+  const i = $('#qsIn'), o = $('#qsOut');
+  i.min = TODAY; o.min = add(TODAY, 1);
+  i.onchange = () => { if (i.value) { o.min = add(i.value, 1); if (!o.value || o.value <= i.value) o.value = add(i.value, 1); } };
+  $('#qs').onsubmit = e => {
+    e.preventDefault();
+    const err = $('#qsErr');
+    if (!i.value || !o.value) { err.textContent = '請選入住和退房日期。'; (i.value ? o : i).focus(); return; }
+    if (i.value < TODAY) { err.textContent = '入住日期不能早於今天。'; i.focus(); return; }
+    if (o.value <= i.value) { err.textContent = '退房日期要在入住日期之後。'; o.focus(); return; }
+    if (diff(i.value, o.value) > 14) { err.textContent = '線上最多訂 14 晚，更長的住宿請來電。'; o.focus(); return; }
+    err.textContent = '';
+    Object.assign(B, { step: 0, ci: i.value, co: o.value, adults: +$('#qsA').value, kids: +$('#qsK').value, inf: 0, room: null, agree: false });
+    const a = parse(TODAY), b = parse(i.value); B.month = Math.min(4, (b.getFullYear() - a.getFullYear()) * 12 + b.getMonth() - a.getMonth());
+    autoRoom(); location.hash = 'book';
+  };
+})();
+
+/* ---------- booking ---------- */
+const B = { step: 0, ci: null, co: null, adults: 2, kids: 0, inf: 0, room: null, bed: false, pickup: false, g: { name: '', phone: '', email: '', eta: '15:00–17:00', note: '' }, pay: 'card', agree: false, month: 0, done: null };
+const STEPS = ['日期與房型', '旅客資料', '確認與付款', '完成'];
+const fits = r => B.adults + B.kids <= r.max;
+function minRoomPrice(d) { let m = Infinity; for (const r of liveRooms()) if (free(r.id, d, add(d, 1))) m = Math.min(m, r[nightType(d)]); return m; }
+function autoRoom() { if (B.ci && B.co) { const cur = B.room && liveRooms().find(r => r.id === B.room); if (!cur || !free(cur.id, B.ci, B.co) || !fits(cur)) { const f = liveRooms().find(r => free(r.id, B.ci, B.co) && fits(r)); B.room = f ? f.id : null; } } }
+function renderSteps() { $('#steps').innerHTML = STEPS.map((s, i) => `<li${i === B.step ? ' aria-current="step"' : ''}${i < B.step ? ' class="done"' : ''}>${s}</li>`).join('<li aria-hidden="true">›</li>'); }
+function monthGrid(y, m) {
+  const first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
+  let h = `<div class="month"><h3>${y} 年 ${m + 1} 月</h3><div class="dow">${WD.map(w => `<span>${w}</span>`).join('')}</div><div class="days">`;
+  for (let i = 0; i < first.getDay(); i++) h += '<span></span>';
+  for (let d = 1; d <= days; d++) {
+    const s = iso(new Date(y, m, d)), past = s < TODAY, mp = past ? Infinity : minRoomPrice(s), cls = ['day'];
+    if (nightType(s) === 'hol') cls.push('hol');
+    if (B.ci && s === B.ci || B.co && s === B.co) cls.push('edge'); else if (B.ci && B.co && s > B.ci && s < B.co) cls.push('in-range');
+    if (!past && mp === Infinity) cls.push('full');
+    const label = `${m + 1}月${d}日，${mp === Infinity ? (past ? '已過' : '客滿') : TYPE[nightType(s)] + '，最低 ' + mp + ' 元'}`;
+    h += `<button type="button" class="${cls.join(' ')}" data-d="${s}" ${past ? 'disabled' : ''} aria-label="${label}"><span>${d}</span><small>${past ? '' : mp === Infinity ? '客滿' : (mp / 1000).toFixed(1)}</small></button>`;
+  }
+  return h + '</div></div>';
+}
+const stepper = (id, label, sub, v, min, max) => `<div class="g"><span>${label}<br><small>${sub}</small></span><span class="stepper"><button type="button" data-st="${id}" data-dv="-1" aria-label="${label}減少一位" ${v <= min ? 'disabled' : ''}>−</button><output aria-live="polite">${v}</output><button type="button" data-st="${id}" data-dv="1" aria-label="${label}增加一位" ${v >= max ? 'disabled' : ''}>+</button></span></div>`;
+function bookBody() {
+  const el = $('#bk-body');
+  renderSteps();
+  if (B.step === 0) {
+    const t0 = parse(TODAY), base = new Date(t0.getFullYear(), t0.getMonth() + B.month, 1), nxt = new Date(base.getFullYear(), base.getMonth() + 1, 1);
+    const nights = B.ci && B.co ? diff(B.ci, B.co) : 0;
+    let stay = '<p class="empty">選好入住與退房日期後，這裡會列出每一晚的房價類型、月光亮度，和每天早上的日出時間。</p>';
+    if (nights) {
+      let items = '';
+      for (let d = B.ci; d < B.co; d = add(d, 1)) {
+        const lit = moonLit(d);
+        items += `<li><b>${mdw(d)}</b><span>晚上，${TYPE[nightType(d)]}房價，<span class="moon" style="box-shadow: inset ${Math.round((1 - lit / 100) * 12)}px 0 0 var(--surface), inset 0 0 0 1px var(--ink)"></span>月光 ${lit}%${lit < 25 ? '，適合看星星' : ''}</span></li>`;
+        items += `<li><b>${mdw(add(d, 1))}</b><span>早上，日出約 ${sunrise(add(d, 1))}${add(d, 1) === B.co ? '，當天退房' : ''}</span></li>`;
+      }
+      stay = `<ol class="num">${items}</ol>`;
+    }
+    let rooms = '';
+    if (nights) {
+      rooms = `<div class="roomlist"><h2>${md(B.ci)} 入住，${nights} 晚，${ppl(B)}</h2>` + liveRooms().map(r => {
+        const ok = free(r.id, B.ci, B.co), fit = fits(r), p = price(r.id, B.ci, B.co), on = B.room === r.id && ok && fit;
+        return `<div class="ropt ${on ? 'on' : ''} ${!ok || !fit ? 'off' : ''}">${img((r.photos || [])[0] || 'exterior', '')}<div><div class="t">${esc(r.name)}</div><div class="d">${r.size} 坪，${esc(r.beds)}，最多 ${r.max} 位</div></div>
+          <div class="r"><b class="num">${ok && fit ? money(p.total) : ''}</b>${ok && fit ? `<button type="button" class="ghost" data-pick="${r.id}" aria-pressed="${on}">${on ? '已選這間' : '選這間'}</button>` : `<span class="hint">${!ok ? '這幾天已訂滿' : `最多 ${r.max} 位`}</span>`}</div></div>`;
+      }).join('') + '</div>';
+    }
+    const sel = B.room && liveRooms().find(r => r.id === B.room);
+    const can = nights && sel && free(sel.id, B.ci, B.co) && fits(sel);
+    el.innerHTML = `<div class="bk-grid"><div>
+      <div class="panel"><div class="cal-head"><button type="button" class="navb" id="prevM" aria-label="上個月" ${B.month <= 0 ? 'disabled' : ''}>‹</button><span class="sel num">${B.ci ? mdw(B.ci) + ' → ' + (B.co ? mdw(B.co) : '選退房日') : '選入住日'}</span><button type="button" class="navb" id="nextM" aria-label="下個月" ${B.month >= 4 ? 'disabled' : ''}>›</button></div>
+      <div class="months">${monthGrid(base.getFullYear(), base.getMonth())}${monthGrid(nxt.getFullYear(), nxt.getMonth())}</div>
+      <p class="hint" style="margin-top:8px">日期下方是當晚最低房價（千元），棕色為連假</p>
+      <div class="guests">${stepper('adults', '大人', '12 歲以上', B.adults, 1, 6)}${stepper('kids', '兒童', '2–11 歲，算入人數', B.kids, 0, 4)}${stepper('inf', '嬰兒', '0–1 歲，不佔床', B.inf, 0, 2)}</div></div>
+      ${rooms}
+      <div class="navrow"><button type="button" class="btn" id="toStep1" ${can ? '' : 'disabled'}>下一步，填寫旅客資料</button>${!nights ? '<span class="hint">先選日期</span>' : !can ? '<span class="hint">選一間可入住的房型</span>' : ''}</div>
+    </div>
+    <aside class="panel stay" aria-live="polite"><h3>你在山上的那幾天</h3>${stay}</aside></div>`;
+    $$('.day:not(:disabled)', el).forEach(b => b.onclick = () => pickDay(b.dataset.d));
+    $('#prevM').onclick = () => { B.month--; bookBody(); };
+    $('#nextM').onclick = () => { B.month++; bookBody(); };
+    $$('[data-st]', el).forEach(b => b.onclick = () => { const k = b.dataset.st, lim = { adults: [1, 6], kids: [0, 4], inf: [0, 2] }[k]; B[k] = Math.max(lim[0], Math.min(lim[1], B[k] + +b.dataset.dv)); autoRoom(); bookBody(); });
+    $$('[data-pick]', el).forEach(b => b.onclick = () => { B.room = b.dataset.pick; bookBody(); });
+    $('#toStep1').onclick = () => go(1);
+  } else if (B.step === 1) {
+    const r = room(B.room), n = diff(B.ci, B.co);
+    el.innerHTML = `<div class="bk-grid"><form class="form" id="gForm" novalidate>
+      <div class="two"><div class="f"><label for="gName">姓名</label><input id="gName" autocomplete="name" value="${esc(B.g.name)}" aria-describedby="eName"><span class="err" id="eName"></span></div>
+      <div class="f"><label for="gPhone">手機號碼</label><input id="gPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912 345 678" value="${esc(B.g.phone)}" aria-describedby="ePhone"><span class="err" id="ePhone"></span></div></div>
+      <div class="f"><label for="gEmail">Email</label><input id="gEmail" type="email" autocomplete="email" placeholder="name@example.com" value="${esc(B.g.email)}" aria-describedby="eEmail"><span class="err" id="eEmail"></span></div>
+      <div class="f"><label for="gEta">預計抵達時間</label><select id="gEta">${['15:00–17:00', '17:00–19:00', '19:00–21:00', '21:00 以後（請先來電）'].map(o => `<option${o === B.g.eta ? ' selected' : ''}>${o}</option>`).join('')}</select></div>
+      <fieldset class="f"><legend>加購</legend><div class="opts">
+        ${r.extraBed ? `<label class="opt"><input type="checkbox" id="xBed" ${B.bed ? 'checked' : ''}><span>加床<small>每晚 NT$800，含備品與早餐</small></span><span class="num">${money(800 * n)}</span></label>` : ''}
+        <label class="opt"><input type="checkbox" id="xPick" ${B.pickup ? 'checked' : ''}><span>埔里轉運站接送<small>單程，車程約 50 分鐘</small></span><span class="num">NT$1,200</span></label>
+      </div></fieldset>
+      <div class="f"><label for="gNote">給民宿的話</label><textarea id="gNote" placeholder="例如：素食、慶生、需要嬰兒床">${esc(B.g.note)}</textarea></div>
+      <div class="navrow"><button class="btn" type="submit">下一步，確認與付款</button><button type="button" class="link" id="back0">回上一步</button></div>
+    </form>${summary()}</div>`;
+    const f = $('#gForm');
+    const sync = () => { B.g.name = f.gName.value.trim(); B.g.phone = f.gPhone.value.trim(); B.g.email = f.gEmail.value.trim(); B.g.eta = f.gEta.value; B.g.note = f.gNote.value; B.bed = !!(f.xBed && f.xBed.checked); B.pickup = f.xPick.checked; };
+    $$('input[type=checkbox]', f).forEach(c => c.onchange = () => { sync(); bookBody(); });
+    $('#back0').onclick = () => { sync(); go(0); };
+    f.onsubmit = e => {
+      e.preventDefault(); sync();
+      const errs = { Name: !B.g.name ? '請填寫姓名，入住時會核對。' : '', Phone: !/^(09\d{8}|\+\d[\d\s-]{7,})$/.test(B.g.phone.replace(/[\s-]/g, '')) ? '請填寫手機號碼，例如 0912345678。' : '', Email: !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(B.g.email) ? 'Email 格式不完整，訂房確認會寄到這裡。' : '' };
+      let first = null;
+      for (const k in errs) { const inp = f['g' + k]; inp.setAttribute('aria-invalid', errs[k] ? 'true' : 'false'); $('#e' + k).textContent = errs[k]; if (errs[k] && !first) first = inp; }
+      if (first) { first.focus(); return; }
+      go(2);
+    };
+  } else if (B.step === 2) {
+    const t = totals();
+    el.innerHTML = `<div class="bk-grid"><div class="form">
+      <fieldset class="f"><legend>付款方式</legend><div class="opts">
+        <label class="opt"><input type="radio" name="pay" value="card" ${B.pay === 'card' ? 'checked' : ''}><span>信用卡一次付清<small>付款完成即確認訂房</small></span><span class="num">${money(t.total)}</span></label>
+        <label class="opt"><input type="radio" name="pay" value="atm" ${B.pay === 'atm' ? 'checked' : ''}><span>ATM 轉帳，先付訂金 30%<small>3 天內完成轉帳，餘額入住時付清</small></span><span class="num">${money(t.deposit)}</span></label>
+        <label class="opt"><input type="radio" name="pay" value="cvs" ${B.pay === 'cvs' ? 'checked' : ''}><span>超商代碼繳費<small>2 天內到超商繳費，上限 NT$20,000</small></span><span class="num">${money(t.total)}</span></label>
+      </div></fieldset>
+      <div class="panel"><h3 style="font-size:18px;font-weight:500;letter-spacing:0;margin-bottom:12px">住宿須知</h3>
+        <dl class="rsum">${S.rules.filter(r => !r.cancel && !r.badges).map(r => `<div><dt>${esc(r.t)}</dt><dd>${esc(r.v)}</dd></div>`).join('')}</dl>
+        <h3 style="font-size:18px;font-weight:500;letter-spacing:0;margin:20px 0 4px">取消與退款</h3>${cancelTable()}
+        <p class="hint" style="margin-top:8px">入住當天若南投縣宣布停止上班，或台14甲線封閉，可全額退款或保留延期。</p></div>
+      <label class="opt" style="grid-template-columns:auto 1fr"><input type="checkbox" id="agree" ${B.agree ? 'checked' : ''}><span>我已閱讀住宿須知與取消退款規定</span></label>
+      <div class="navrow"><button class="btn" type="button" id="placeBtn" ${B.agree ? '' : 'disabled'}>建立訂單並付款 ${money(B.pay === 'atm' ? t.deposit : t.total)}</button><button type="button" class="link" id="back1">回上一步</button></div>
+      <p class="hint">付款頁面由綠界科技提供，本站不經手也不保存信用卡號。</p>
+    </div>${summary()}</div>`;
+    $$('input[name=pay]', el).forEach(i => i.onchange = () => { B.pay = i.value; bookBody(); });
+    $('#agree').onchange = e => { B.agree = e.target.checked; $('#placeBtn').disabled = !B.agree; };
+    $('#back1').onclick = () => go(1);
+    $('#placeBtn').onclick = place;
+  } else {
+    const b = B.done, hold = b.pay === 'card' ? '30 分鐘' : b.pay === 'atm' ? '3 天' : '2 天';
+    el.innerHTML = `<div class="bk-grid"><div class="done-box">
+      <svg class="check" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" pathLength="1" fill="none" stroke="var(--accent)" stroke-width="3"/><path d="M19 33 L28 42 L46 23" pathLength="1" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p class="big">訂單 <span class="num">${b.id}</span> 已建立，${esc(room(b.room).name)}為你保留 ${hold}。</p>
+      <p>${esc(b.name)}，你的入住日是 ${mdw(b.ci)}，${diff(b.ci, b.co)} 晚。付款完成後，訂房確認會寄到 ${esc(b.email)}，入住前一天我們會再傳一次交通資訊。</p>
+      <p>那天早上的日出大約在 ${sunrise(add(b.ci, 1))}。</p>
+      <div class="navrow"><a class="btn" href="#admin" id="seeAdmin">看民宿後台收到的這筆訂單</a><a class="link" href="#top">回首頁</a></div>
+    </div>${summary(b)}</div>`;
+    $('#seeAdmin').onclick = () => { A.tab = 'orders'; A.sel = b.id; A.filter = 'all'; };
+  }
+}
+function totals(b) {
+  const o = b || { room: B.room, ci: B.ci, co: B.co, bed: B.bed, pickup: B.pickup };
+  const p = price(o.room, o.ci, o.co), n = diff(o.ci, o.co);
+  const extras = (o.bed ? 800 * n : 0) + (o.pickup ? 1200 : 0), total = p.total + extras;
+  return { p, n, extras, total, deposit: Math.round(total * 0.3 / 10) * 10 };
+}
+function summary(b) {
+  const o = b || { room: B.room, ci: B.ci, co: B.co, bed: B.bed, pickup: B.pickup, adults: B.adults, kids: B.kids, inf: B.inf };
+  const t = totals(o), r = room(o.room), groups = {};
+  t.p.lines.forEach(l => { groups[l.t] = groups[l.t] || { n: 0, p: l.p }; groups[l.t].n++; });
+  return `<aside class="panel"><div class="sum num">
+    ${img((r.photos || [])[0] || 'exterior', '')}
+    <div style="font-size:var(--step-lead);font-weight:300">${esc(r.name)}</div>
+    <div class="row"><span>入住</span><span>${mdw(o.ci)} 15:00 後</span></div>
+    <div class="row"><span>退房</span><span>${mdw(o.co)} 11:00 前</span></div>
+    <div class="row"><span>人數</span><span>${ppl(o)}</span></div>
+    ${Object.keys(groups).map(k => `<div class="row"><span>${TYPE[k]} ${money(groups[k].p)} × ${groups[k].n} 晚</span><span>${money(groups[k].p * groups[k].n)}</span></div>`).join('')}
+    ${o.bed ? `<div class="row"><span>加床 × ${t.n} 晚</span><span>${money(800 * t.n)}</span></div>` : ''}
+    ${o.pickup ? `<div class="row"><span>埔里接送</span><span>NT$1,200</span></div>` : ''}
+    <div class="row tot"><span>總計</span><span>${money(t.total)}</span></div>
+    <div class="row"><span>含早餐與稅金</span><span></span></div>
+  </div></aside>`;
+}
+function pickDay(s) {
+  if (!B.ci || B.co || s <= B.ci) { B.ci = s; B.co = null; }
+  else if (diff(B.ci, s) > 14) { B.ci = s; B.co = null; }
+  else B.co = s;
+  autoRoom(); bookBody();
+}
+function go(n) { B.step = n; bookBody(); window.scrollTo(0, 0); }
+function newId(ci) { let n = 101 + S.bookings.length, id; do { id = 'CL' + ci.slice(2, 4) + ci.slice(5, 7) + n++; } while (S.bookings.some(b => b.id === id)); return id; }
+function place() {
+  const t = totals();
+  const b = { id: newId(B.ci), room: B.room, ci: B.ci, co: B.co, name: B.g.name, adults: B.adults, kids: B.kids, inf: B.inf, pay: B.pay, status: 'pending', phone: B.g.phone, email: B.g.email, note: [B.g.note, B.bed ? '加床' : '', B.pickup ? '需要埔里接送' : '', B.inf ? '需要嬰兒床' : '', '抵達 ' + B.g.eta].filter(Boolean).join('，'), amount: t.total, bed: B.bed, pickup: B.pickup, created: TODAY, due: B.pay === 'card' ? TODAY : add(TODAY, B.pay === 'atm' ? 3 : 2), fresh: true };
+  S.bookings.unshift(b); save(); B.done = b; go(3);
+}
+
+/* ---------- admin ---------- */
+const A = { tab: 'today', filter: 'all', q: '', sel: null, confirm: null };
+function reminder(b) { return `${b.name} 您好，這裡是雲線山居。您 ${mdw(b.ci)} 入住${room(b.room).name}的訂單 ${b.id} 尚未完成付款，房間保留到 ${md(b.due || TODAY)} 23:59，完成後我們會傳確認給您。有問題可以直接回覆這則訊息。`; }
+function copy(text, label) { try { navigator.clipboard.writeText(text).then(() => toast(label), () => toast('無法自動複製，請手動選取訊息文字')); } catch (e) { toast('無法自動複製，請手動選取訊息文字'); } }
+function adminRender() {
+  const pend = S.bookings.filter(b => b.status === 'pending').length;
+  $('#cntPending').textContent = pend || '';
+  $$('.side [data-tab]').forEach(b => b.setAttribute('aria-current', b.dataset.tab === A.tab ? 'page' : 'false'));
+  const V = { today: vToday, orders: vOrders, occ: vOcc, rooms: vRooms, rates: vRates, news: vNews, gal: vGal, rules: vRules };
+  $('#adminMain').innerHTML = V[A.tab]();
+}
+function itemHTML(b, acts) {
+  const [k, lab] = status(b);
+  return `<div class="item"><div class="top"><b>${esc(b.name)}</b><span class="pill p-${k}">${lab}</span></div><div class="m">${esc(room(b.room).name)}，${ppl(b)}，${diff(b.ci, b.co)} 晚</div>${b.note ? `<div class="m">${esc(b.note)}</div>` : ''}${acts ? `<div class="acts">${acts}</div>` : ''}</div>`;
+}
+function vToday() {
+  const live = S.bookings.filter(b => b.status !== 'cancelled');
+  const ins = live.filter(b => b.ci === TODAY), outs = live.filter(b => b.co === TODAY), pend = S.bookings.filter(b => b.status === 'pending');
+  const d = parse(TODAY), monthKey = TODAY.slice(0, 7), dim = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate(), N = roomsN();
+  let sold = 0, rev = 0;
+  live.forEach(b => { for (let x = b.ci; x < b.co; x = add(x, 1)) if (x.slice(0, 7) === monthKey) { sold++; if (b.status === 'paid') rev += room(b.room)[nightType(x)]; } });
+  const tonight = live.filter(b => b.ci <= TODAY && TODAY < b.co).length;
+  const W = 900, H = 170, bw = W / 30;
+  let bars = '';
+  for (let i = 0; i < 30; i++) { const x = add(TODAY, i), n = live.filter(b => b.ci <= x && x < b.co).length, h = Math.min(n, N) / N * (H - 30), we = nightType(x) !== 'wk'; bars += `<rect style="--i:${i}" x="${i * bw + 3}" y="${H - 20 - h}" width="${bw - 6}" height="${Math.max(h, 1)}" fill="${n ? 'var(--accent)' : 'var(--line)'}" opacity="${we ? 1 : .7}"><title>${md(x)} ${n} 間</title></rect>` + (i % 7 === 0 ? `<text x="${i * bw + 3}" y="${H - 4}" font-size="12" fill="var(--muted)">${md(x)}</text>` : ''); }
+  const grid = Array.from({ length: N + 1 }, (_, n) => `<line x1="0" x2="${W}" y1="${H - 20 - n / N * (H - 30)}" y2="${H - 20 - n / N * (H - 30)}" stroke="var(--line)" stroke-width="1"/>`).join('');
+  return `<div class="tophead"><div><h1>${d.getMonth() + 1} 月 ${d.getDate()} 日，星期${WD[d.getDay()]}</h1><p class="sub">今晚 ${tonight} 間有人住，${Math.max(0, N - tonight)} 間空著</p></div><div class="acts"><button class="sbtn pri" data-act="neworder">＋ 新增訂單</button></div></div>
+    <div class="kpis"><div class="kpi"><span>今晚入住率</span><b>${Math.round(tonight / N * 100)}%</b><small>${tonight} / ${N} 間</small></div><div class="kpi"><span>本月已售房晚</span><b>${sold}</b><small>共 ${dim * N} 房晚可賣</small></div><div class="kpi"><span>本月已收房費</span><b>${money(rev)}</b><small>只計已付款訂單</small></div><div class="kpi"><span>等待付款</span><b>${pend.length} 筆</b><small>${money(pend.reduce((a, b) => a + b.amount, 0))}</small></div></div>
+    <div class="cols">
+      <section class="box"><h2>今天入住 <span>${ins.length} 組</span></h2>${ins.length ? ins.map(b => itemHTML(b, b.checkedIn ? '' : `<button class="sbtn pri" data-act="checkin" data-id="${b.id}" ${b.status === 'pending' ? 'disabled' : ''}>辦理入住</button><button class="sbtn" data-act="open" data-id="${b.id}">訂單內容</button>`)).join('') : '<p class="empty-s">今天沒有新入住的客人。</p>'}</section>
+      <section class="box"><h2>今天退房 <span>${outs.length} 組</span></h2>${outs.length ? outs.map(b => itemHTML(b, `<button class="sbtn" data-act="open" data-id="${b.id}">訂單內容</button>`)).join('') : '<p class="empty-s">今天沒有人退房。</p>'}</section>
+      <section class="box"><h2>等待付款 <span>${pend.length} 筆</span></h2>${pend.length ? pend.map(b => `<div class="item"><div class="top"><b>${esc(b.name)}</b><span class="m num">${money(b.amount)}</span></div><div class="m">${PAY[b.pay]}，${b.due === TODAY ? '今天 23:59 到期' : md(b.due || TODAY) + ' 到期'}，${mdw(b.ci)} 入住</div><div class="acts"><button class="sbtn" data-act="remind" data-id="${b.id}">複製付款提醒</button><button class="sbtn" data-act="markpaid" data-id="${b.id}">已收到款項</button></div></div>`).join('') : '<p class="empty-s">所有訂單都已付款。</p>'}</section>
+    </div>
+    <section class="box chart"><h2>未來 30 天每晚訂出幾間 <span>深色為週五、六與連假</span></h2><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="未來 30 天每晚已訂房間數">${grid}${bars}</svg></section>`;
+}
+function vOrders() {
+  const F = { all: '全部', pending: '待付款', paid: '已付款', stay: '入住中', done: '已退房', cancel: '已取消' };
+  let list = S.bookings.slice().sort((a, b) => a.ci < b.ci ? -1 : 1);
+  if (A.filter !== 'all') list = list.filter(b => status(b)[0] === A.filter);
+  if (A.q) list = list.filter(b => (b.name + b.id + b.phone + room(b.room).name).toLowerCase().includes(A.q.toLowerCase()));
+  const sel = S.bookings.find(b => b.id === A.sel);
+  const rows = list.map(b => { const [k, lab] = status(b); return `<tr data-row="${b.id}" ${b.id === A.sel ? 'style="background:var(--bg)"' : ''}><td>${b.id}${b.fresh ? ' <span class="pill p-pending">新</span>' : ''}</td><td>${esc(b.name)}</td><td>${esc(room(b.room).name)}</td><td>${mdw(b.ci)} → ${md(b.co)}</td><td>${b.adults + b.kids}${b.kids ? `（童 ${b.kids}）` : ''}</td><td class="r">${money(b.amount)}</td><td>${PAY[b.pay]}</td><td><span class="pill p-${k}">${lab}</span></td></tr>`; }).join('');
+  let det = '<section class="box detail"><h2>訂單內容</h2><p class="empty-s">點選左邊任一筆訂單，看旅客資料與可以做的事。</p></section>';
+  if (sel) {
+    const [k, lab] = status(sel), daysTo = diff(TODAY, sel.ci);
+    const pct = daysTo >= 14 ? 100 : daysTo >= 10 ? 70 : daysTo >= 7 ? 50 : daysTo >= 4 ? 40 : daysTo >= 2 ? 30 : daysTo >= 1 ? 20 : 0;
+    det = `<section class="box detail"><h2>${sel.id} <span class="pill p-${k}">${lab}</span></h2>
+      <dl class="num"><dt>旅客</dt><dd>${esc(sel.name)}</dd><dt>電話</dt><dd>${esc(sel.phone)}</dd>${sel.email ? `<dt>Email</dt><dd>${esc(sel.email)}</dd>` : ''}<dt>房型</dt><dd>${esc(room(sel.room).name)}</dd><dt>日期</dt><dd>${mdw(sel.ci)} → ${mdw(sel.co)}</dd><dt>人數</dt><dd>${ppl(sel)}</dd><dt>金額</dt><dd>${money(sel.amount)}</dd><dt>付款</dt><dd>${PAY[sel.pay]}${sel.status === 'pending' && sel.due ? `，${md(sel.due)} 到期` : ''}</dd>${sel.note ? `<dt>備註</dt><dd style="white-space:normal">${esc(sel.note)}</dd>` : ''}</dl>
+      <div class="acts">
+        ${sel.status === 'pending' ? `<button class="sbtn pri" data-act="markpaid" data-id="${sel.id}">已收到款項</button><button class="sbtn" data-act="remind" data-id="${sel.id}">複製付款提醒</button>` : ''}
+        ${k === 'paid' && sel.ci <= TODAY ? `<button class="sbtn pri" data-act="checkin" data-id="${sel.id}">辦理入住</button>` : ''}
+        <button class="sbtn" data-act="editorder" data-id="${sel.id}">編輯</button>
+        ${sel.status !== 'cancelled' && k !== 'done' && k !== 'stay' ? `<button class="sbtn" data-act="askcancel" data-id="${sel.id}">取消訂單</button>` : ''}
+        <button class="sbtn dan" data-act="delorder" data-id="${sel.id}">刪除</button>
+      </div>
+      ${A.confirm === sel.id ? `<div class="msgbox">距離入住 ${daysTo} 天，依規定退還 ${pct}%${sel.status === 'pending' ? '（尚未付款，不需退款）' : `，共 ${money(Math.round(sel.amount * pct / 100))}`}。${sel.pay === 'card' ? '信用卡會自動退刷。' : 'ATM 與超商付款需要你另外匯款給旅客。'}<div class="acts"><button class="sbtn pri" data-act="cancel" data-id="${sel.id}">確定取消</button><button class="sbtn" data-act="nocancel">保留訂單</button></div></div>` : ''}
+    </section>`;
+  }
+  return `<div class="tophead"><div><h1>訂單</h1><p class="sub">${S.bookings.length} 筆，依入住日排序</p></div><div class="acts"><button class="sbtn pri" data-act="neworder">＋ 新增訂單</button></div></div>
+    <div class="toolbar">${Object.keys(F).map(k => `<button class="chip" data-filter="${k}" aria-pressed="${A.filter === k}">${F[k]}</button>`).join('')}<input class="search" id="q" type="search" placeholder="搜尋姓名、電話、訂單編號" aria-label="搜尋訂單" value="${esc(A.q)}"></div>
+    <div class="split"><div class="tscroll"><table class="t"><thead><tr><th>訂單編號</th><th>旅客</th><th>房型</th><th>日期</th><th>人數</th><th class="r">金額</th><th>付款方式</th><th>狀態</th></tr></thead><tbody>${rows || `<tr><td colspan="8" class="empty-s">沒有符合的訂單，換個篩選條件試試。</td></tr>`}</tbody></table></div>${det}</div>`;
+}
+function vOcc() {
+  const days = []; for (let i = 0; i < 21; i++) days.push(add(TODAY, i));
+  const head = `<tr><th class="rn">房間</th>${days.map(d => `<th class="${nightType(d) !== 'wk' ? 'we' : ''}">${md(d)}<br>${WD[parse(d).getDay()]}</th>`).join('')}</tr>`;
+  const body = liveRooms().map(r => `<tr><th class="rn">${esc(r.name)}</th>${days.map(d => {
+    const b = S.bookings.find(x => x.room === r.id && x.status !== 'cancelled' && x.ci <= d && d < x.co);
+    if (b) return `<td class="bk ${b.status === 'pending' ? 'pend' : ''}"><button title="${esc(b.name)} ${b.id}" data-open="${b.id}">${d === b.ci || d === days[0] ? esc(b.name.slice(0, 3)) : ''}</button></td>`;
+    const bl = (S.blocks[r.id] || []).includes(d);
+    return `<td class="${bl ? 'blk' : ''}"><button data-block="${r.id}|${d}" aria-label="${esc(r.name)} ${md(d)} ${bl ? '已關房，點一下開放' : '空房，點一下關房'}">${bl ? '關房' : ''}</button></td>`;
+  }).join('')}</tr>`).join('');
+  return `<div class="tophead"><div><h1>房況</h1><p class="sub">未來 21 晚。點空格關房（自用、整修），再點一次開放；點訂單看內容</p></div><div class="acts"><button class="sbtn pri" data-act="neworder">＋ 新增訂單</button></div></div>
+    <div class="occ"><table>${head}${body}</table></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>已付款</span><span><i style="background:var(--warn-bg)"></i>待付款</span><span><i style="background:var(--field)"></i>關房</span><span><i style="background:var(--bg);box-shadow:inset 0 0 0 1px var(--line)"></i>空房</span></div>`;
+}
+function vRooms() {
+  const rs = S.rooms.filter(r => !r.deleted);
+  return `<div class="tophead"><div><h1>房型管理</h1><p class="sub">${rs.length} 個房型，${liveRooms().length} 個上架中。改完官網和訂房頁會立刻更新</p></div><div class="acts"><button class="sbtn pri" data-act="newroom">＋ 新增房型</button></div></div>
+    <div class="rcards">${rs.map(r => `<article class="rcard ${r.on ? '' : 'offline'}">${img((r.photos || [])[0] || 'exterior', '')}<div class="b"><div class="top"><b>${esc(r.name)}</b><span class="pill ${r.on ? 'p-paid' : 'p-draft'}">${r.on ? '上架中' : '已下架'}</span></div>
+      <span class="m num">${r.size} 坪，${esc(r.beds)}，最多 ${r.max} 位</span><span class="num">平日 ${money(r.wk)}・假日 ${money(r.we)}・連假 ${money(r.hol)}</span><span class="m">${(r.photos || []).length} 張照片</span>
+      <div class="acts"><button class="sbtn" data-act="editroom" data-id="${r.id}">編輯</button><button class="sbtn" data-act="toggleroom" data-id="${r.id}">${r.on ? '下架' : '上架'}</button><button class="sbtn dan" data-act="delroom" data-id="${r.id}">刪除</button></div></div></article>`).join('')}</div>`;
+}
+function vRates() {
+  const rs = S.rooms.filter(r => !r.deleted);
+  return `<div class="tophead"><div><h1>房價與連假</h1><p class="sub">改完按儲存，官網與訂房頁的價格會立刻更新</p></div></div>
+    <div class="tscroll"><table class="t rates-t" style="min-width:560px"><thead><tr><th>房型</th><th class="r">平日（日到四）</th><th class="r">假日（五、六）</th><th class="r">連假</th></tr></thead><tbody>
+    ${rs.map(r => `<tr><td>${esc(r.name)}</td>${['wk', 'we', 'hol'].map(k => `<td class="r"><input type="number" min="0" step="100" inputmode="numeric" id="rate-${r.id}-${k}" value="${r[k]}" aria-label="${esc(r.name)}${TYPE[k]}房價"></td>`).join('')}</tr>`).join('')}
+    </tbody></table></div>
+    <div style="margin-top:12px;display:flex;gap:12px;align-items:center"><button class="sbtn pri" data-act="saverates">儲存房價</button></div>
+    <section class="box" style="margin-top:16px"><h2>連假日期 <span>這些晚上套用連假價</span></h2>
+      <div class="hols num">${S.hol.slice().sort().map(h => `<span>${mdw(h)}<button data-delhol="${h}" aria-label="移除 ${h}">×</button></span>`).join('') || '<span class="m">尚未設定</span>'}</div>
+      <div class="addhol"><input type="date" id="newHol" aria-label="新增連假日期"><button class="sbtn" data-act="addhol">加入</button><span class="m">依人事行政總處公布的行事曆設定</span></div>
+    </section>`;
+}
+function vNews() {
+  const L = S.news.slice().sort((a, b) => a.date < b.date ? 1 : -1);
+  return `<div class="tophead"><div><h1>最新消息</h1><p class="sub">${L.length} 則，${L.filter(n => n.pub).length} 則公開在官網</p></div><div class="acts"><button class="sbtn pri" data-act="newnews">＋ 新增消息</button></div></div>
+    <div class="tscroll"><table class="t"><thead><tr><th></th><th>日期</th><th>分類</th><th>標題</th><th>狀態</th><th></th></tr></thead><tbody>
+    ${L.map(n => `<tr><td>${n.photo ? img(n.photo, '', 'thumb') : '<span class="m">無照片</span>'}</td><td>${ymd(n.date)}</td><td><span class="tag t-${esc(n.tag)}">${esc(n.tag)}</span></td><td class="wrap">${n.pin ? '<span class="pill p-stay">置頂</span> ' : ''}${esc(n.title)}</td><td><span class="pill ${n.pub ? 'p-paid' : 'p-draft'}">${n.pub ? '已發布' : '草稿'}</span></td>
+      <td class="r"><div class="acts" style="margin:0;justify-content:flex-end"><button class="sbtn" data-act="editnews" data-id="${n.id}">編輯</button><button class="sbtn" data-act="pubnews" data-id="${n.id}">${n.pub ? '取消發布' : '發布'}</button><button class="sbtn dan" data-act="delnews" data-id="${n.id}">刪除</button></div></td></tr>`).join('') || '<tr><td colspan="6" class="empty-s">還沒有消息。</td></tr>'}
+    </tbody></table></div>`;
+}
+function vGal() {
+  return `<div class="tophead"><div><h1>環境照片</h1><p class="sub">${S.gallery.length} 張，顯示在官網的「環境照片」頁。可改分類、說明、順序</p></div><div class="acts"><label class="sbtn pri upl">＋ 上傳照片<input type="file" accept="image/*" multiple id="galUp" aria-label="上傳照片"></label></div></div>
+    <div class="gadm">${S.gallery.map((g, i) => `<div class="gcard">${img(g.ref, g.cap)}<div class="in"><select data-gcat="${i}" aria-label="分類">${CATS.map(c => `<option${c === g.cat ? ' selected' : ''}>${c}</option>`).join('')}</select><input data-gcap="${i}" value="${esc(g.cap)}" aria-label="照片說明" placeholder="照片說明"></div>
+      <div class="acts"><button class="sbtn" data-act="gup" data-i="${i}" aria-label="往前移" ${i === 0 ? 'disabled' : ''}>↑</button><button class="sbtn" data-act="gdown" data-i="${i}" aria-label="往後移" ${i === S.gallery.length - 1 ? 'disabled' : ''}>↓</button><button class="sbtn dan" data-act="gdel" data-i="${i}">刪除</button></div></div>`).join('')}</div>`;
+}
+function vRules() {
+  return `<div class="tophead"><div><h1>住宿須知</h1><p class="sub">顯示在官網「住宿須知」，訂房付款前也會列出</p></div><div class="acts"><button class="sbtn pri" data-act="newrule">＋ 新增項目</button></div></div>
+    <div class="rulel">${S.rules.map((r, i) => `<div class="rr">${ic(r.icon)}<b>${esc(r.t)}</b><div class="v">${esc(r.v)}</div><div class="acts" style="margin:0"><button class="sbtn" data-act="rup" data-i="${i}" aria-label="往上移" ${i === 0 ? 'disabled' : ''}>↑</button><button class="sbtn" data-act="rdown" data-i="${i}" aria-label="往下移" ${i === S.rules.length - 1 ? 'disabled' : ''}>↓</button><button class="sbtn" data-act="editrule" data-i="${i}">編輯</button><button class="sbtn dan" data-act="delrule" data-i="${i}">刪除</button></div></div>`).join('') || '<p class="empty-s" style="padding:16px">還沒有項目。</p>'}</div>`;
+}
+
+/* ---------- admin forms ---------- */
+function form(title, body, onSave, saveLabel) {
+  const d = $('#dlg');
+  d.innerHTML = `<form class="dform" novalidate><div class="dh"><h2>${title}</h2><button type="button" class="x" data-close aria-label="關閉">×</button></div><div class="db">${body}<p class="ferr" role="alert"></p></div><div class="df"><button type="button" class="sbtn" data-close>取消</button><button class="sbtn pri" type="submit">${saveLabel || '儲存'}</button></div></form>`;
+  const f = $('form', d);
+  f.onsubmit = e => { e.preventDefault(); const err = onSave(f); if (err) { $('.ferr', f).textContent = err; return; } d.close(); };
+  openDlg();
+  return f;
+}
+function confirmBox(title, msg, yesLabel, onYes) {
+  const d = $('#dlg');
+  d.innerHTML = `<div><div class="dh"><h2>${title}</h2><button type="button" class="x" data-close aria-label="關閉">×</button></div><div class="db"><p style="font-size:15px">${msg}</p></div><div class="df"><button type="button" class="sbtn" data-close>先不要</button><button type="button" class="sbtn dan solid" id="yes">${yesLabel}</button></div></div>`;
+  $('#yes', d).onclick = () => { onYes(); d.close(); };
+  openDlg();
+}
+const fld = (label, html) => `<label class="af"><span>${label}</span>${html}</label>`;
+const val = (f, n) => (f.elements[n] ? f.elements[n].value : '').trim();
+const allRefs = () => Object.keys(PH).concat(Object.keys(S.uploads).map(k => 'up:' + k));
+function picker(name, chosen, multi) {
+  return `<div class="pick" data-pick="${name}">${multi ? '' : `<label><input type="radio" name="${name}" value="" ${!chosen.length ? 'checked' : ''}><span class="none">不放照片</span></label>`}${allRefs().map(r => `<label title="${esc(altOf(r))}"><input type="${multi ? 'checkbox' : 'radio'}" name="${name}" value="${r}" ${chosen.includes(r) ? 'checked' : ''}>${img(r, altOf(r) || '上傳的照片')}</label>`).join('')}</div>
+    <div class="acts" style="margin:0"><label class="sbtn upl">上傳新照片<input type="file" accept="image/*" data-upto="${name}" ${multi ? 'multiple' : ''}></label><span class="m" style="font-size:13px;color:var(--muted)">會自動縮小到 1200 像素寬</span></div>`;
+}
+function wirePicker(f, name, multi) {
+  const inp = $(`[data-upto="${name}"]`, f); if (!inp) return;
+  inp.onchange = () => readImgs(inp.files, refs => {
+    const chosen = $$(`input[name="${name}"]:checked`, f).map(x => x.value).filter(Boolean).concat(refs);
+    const wrap = $(`[data-pick="${name}"]`, f), tmp = document.createElement('div');
+    tmp.innerHTML = picker(name, multi ? chosen : refs.slice(-1), multi);
+    wrap.replaceWith(tmp.firstElementChild); tmp.firstElementChild && tmp.firstElementChild.remove();
+    toast(refs.length + ' 張照片已上傳');
+  });
+}
+function readImgs(files, cb) {
+  const list = Array.from(files || []), out = []; let left = list.length;
+  if (!left) return;
+  list.forEach(file => {
+    const fr = new FileReader();
+    fr.onload = () => { const im = new Image(); im.onload = () => { const s = Math.min(1, 1200 / im.width), c = document.createElement('canvas'); c.width = Math.round(im.width * s); c.height = Math.round(im.height * s); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6); S.uploads[id] = c.toDataURL('image/jpeg', .72); out.push('up:' + id); if (!--left) { save(); cb(out); } }; im.onerror = () => { if (!--left) cb(out); }; im.src = fr.result; };
+    fr.readAsDataURL(file);
+  });
+}
+function orderForm(b) {
+  const isNew = !b, rs = S.rooms.filter(r => !r.deleted);
+  const o = b || { room: (liveRooms()[0] || rs[0]).id, ci: add(TODAY, 1), co: add(TODAY, 2), adults: 2, kids: 0, inf: 0, pay: 'atm', status: 'pending', name: '', phone: '', email: '', note: '', checkedIn: false };
+  const f = form(isNew ? '新增訂單' : '編輯訂單 ' + b.id, `
+    <div class="g2">${fld('旅客姓名', `<input name="name" value="${esc(o.name)}" required>`)}${fld('電話', `<input name="phone" value="${esc(o.phone)}" inputmode="tel">`)}</div>
+    ${fld('Email（選填）', `<input name="email" type="email" value="${esc(o.email)}">`)}
+    <div class="g2">${fld('房型', `<select name="room">${rs.map(r => `<option value="${r.id}"${r.id === o.room ? ' selected' : ''}>${esc(r.name)}（最多 ${r.max} 位）</option>`).join('')}</select>`)}${fld('付款方式', `<select name="pay">${Object.keys(PAY).map(k => `<option value="${k}"${k === o.pay ? ' selected' : ''}>${PAY[k]}</option>`).join('')}</select>`)}</div>
+    <div class="g2">${fld('入住日', `<input type="date" name="ci" value="${o.ci}">`)}${fld('退房日', `<input type="date" name="co" value="${o.co}">`)}</div>
+    <div class="g3">${fld('大人', `<input type="number" name="adults" min="1" max="8" value="${o.adults}">`)}${fld('兒童 2–11 歲', `<input type="number" name="kids" min="0" max="6" value="${o.kids}">`)}${fld('嬰兒 0–1 歲', `<input type="number" name="inf" min="0" max="3" value="${o.inf || 0}">`)}</div>
+    <div class="g2">${fld('訂單狀態', `<select name="status">${Object.keys(ST).map(k => `<option value="${k}"${k === o.status ? ' selected' : ''}>${ST[k]}</option>`).join('')}</select>`)}${fld('金額（留空自動計算）', `<input type="number" name="amount" min="0" step="100" value="${isNew ? '' : o.amount}" placeholder="依房價自動計算">`)}</div>
+    <label class="ck"><input type="checkbox" name="checkedIn" ${o.checkedIn ? 'checked' : ''}>已辦理入住</label>
+    ${fld('備註', `<textarea name="note">${esc(o.note)}</textarea>`)}
+    <p class="m" id="calc" style="color:var(--muted);font-size:13px"></p>`, f => {
+    const v = { name: val(f, 'name'), phone: val(f, 'phone'), email: val(f, 'email'), room: val(f, 'room'), pay: val(f, 'pay'), ci: val(f, 'ci'), co: val(f, 'co'), adults: +val(f, 'adults') || 0, kids: +val(f, 'kids') || 0, inf: +val(f, 'inf') || 0, status: val(f, 'status'), note: val(f, 'note'), checkedIn: f.elements.checkedIn.checked };
+    if (!v.name) return '請填寫旅客姓名。';
+    if (!v.ci || !v.co || v.co <= v.ci) return '退房日要在入住日之後。';
+    if (v.adults < 1) return '至少要有一位大人。';
+    if (v.adults + v.kids > room(v.room).max) return `${room(v.room).name}最多住 ${room(v.room).max} 位，請換房型或減少人數。`;
+    if (v.status !== 'cancelled' && !free(v.room, v.ci, v.co, isNew ? null : b.id)) return '這間房在這段日期已有其他訂單或關房，請換日期或房型。';
+    const amt = val(f, 'amount') ? +val(f, 'amount') : price(v.room, v.ci, v.co).total;
+    if (isNew) { const nb = Object.assign({ id: newId(v.ci), created: TODAY, due: v.pay === 'card' || v.pay === 'cash' ? null : add(TODAY, 3), amount: amt }, v); S.bookings.unshift(nb); A.sel = nb.id; toast('已新增訂單 ' + nb.id); }
+    else { Object.assign(b, v, { amount: amt, fresh: false }); if (b.status === 'pending' && !b.due) b.due = add(TODAY, 3); toast(b.id + ' 已更新'); }
+    save(); A.tab = 'orders'; A.filter = 'all'; adminRender(); refreshSite();
+  });
+  const calc = () => { const r = val(f, 'room'), ci = val(f, 'ci'), co = val(f, 'co'); $('#calc', f).textContent = ci && co && co > ci ? `依房價計算：${diff(ci, co)} 晚，${money(price(r, ci, co).total)}${free(r, ci, co, isNew ? null : b.id) ? '，這段日期有空房' : '，這段日期已被訂走'}` : ''; };
+  ['room', 'ci', 'co'].forEach(n => f.elements[n].addEventListener('change', calc)); calc();
+}
+function roomForm(r) {
+  const isNew = !r;
+  const o = r || { name: '', size: 6, beds: '雙人床一張', max: 2, view: '', desc: '', extraBed: false, wk: 3600, we: 4800, hol: 5400, photos: [], on: true };
+  const f = form(isNew ? '新增房型' : '編輯房型', `
+    <div class="g2">${fld('房型名稱', `<input name="name" value="${esc(o.name)}" required>`)}${fld('床型', `<input name="beds" value="${esc(o.beds)}">`)}</div>
+    <div class="g2">${fld('大小（坪）', `<input type="number" name="size" min="1" value="${o.size}">`)}${fld('最多入住人數', `<input type="number" name="max" min="1" max="12" value="${o.max}">`)}</div>
+    ${fld('窗景', `<input name="view" value="${esc(o.view)}" placeholder="例如：正東窗，日出與雲海">`)}
+    ${fld('介紹', `<textarea name="desc">${esc(o.desc)}</textarea>`)}
+    <div class="g3">${fld('平日房價', `<input type="number" name="wk" min="0" step="100" value="${o.wk}">`)}${fld('假日房價', `<input type="number" name="we" min="0" step="100" value="${o.we}">`)}${fld('連假房價', `<input type="number" name="hol" min="0" step="100" value="${o.hol}">`)}</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap"><label class="ck"><input type="checkbox" name="extraBed" ${o.extraBed ? 'checked' : ''}>可加床</label><label class="ck"><input type="checkbox" name="on" ${o.on ? 'checked' : ''}>上架，顯示在官網</label></div>
+    <div class="af"><span>房型照片（依勾選順序顯示，第一張是封面）</span>${picker('photos', o.photos || [], true)}</div>`, f => {
+    const v = { name: val(f, 'name'), beds: val(f, 'beds'), size: +val(f, 'size') || 0, max: +val(f, 'max') || 0, view: val(f, 'view'), desc: val(f, 'desc'), wk: +val(f, 'wk') || 0, we: +val(f, 'we') || 0, hol: +val(f, 'hol') || 0, extraBed: f.elements.extraBed.checked, on: f.elements.on.checked };
+    v.photos = order.filter(x => $$('input[name="photos"]:checked', f).some(i => i.value === x)).concat($$('input[name="photos"]:checked', f).map(i => i.value).filter(x => !order.includes(x)));
+    if (!v.name) return '請填寫房型名稱。';
+    if (v.max < 1) return '最多入住人數至少 1 位。';
+    if (!v.wk || !v.we || !v.hol) return '三種房價都要填。';
+    if (!v.photos.length) return '至少選一張照片，官網房型才有封面。';
+    if (isNew) { S.rooms.push(Object.assign({ id: 'r' + Date.now().toString(36) }, v)); toast('已新增房型「' + v.name + '」'); }
+    else { Object.assign(r, v); toast('「' + v.name + '」已更新'); }
+    save(); adminRender(); refreshSite();
+  });
+  const order = (o.photos || []).slice();
+  f.addEventListener('change', e => { if (e.target.name === 'photos') { const i = order.indexOf(e.target.value); if (e.target.checked && i < 0) order.push(e.target.value); if (!e.target.checked && i >= 0) order.splice(i, 1); } });
+  wirePicker(f, 'photos', true);
+}
+function newsForm(n) {
+  const isNew = !n;
+  const o = n || { date: TODAY, tag: '公告', title: '', body: '', photo: '', pub: true, pin: false };
+  const f = form(isNew ? '新增消息' : '編輯消息', `
+    <div class="g2">${fld('日期', `<input type="date" name="date" value="${o.date}">`)}${fld('分類', `<select name="tag">${['公告', '優惠', '活動'].map(t => `<option${t === o.tag ? ' selected' : ''}>${t}</option>`).join('')}</select>`)}</div>
+    ${fld('標題', `<input name="title" value="${esc(o.title)}" maxlength="60" required>`)}
+    ${fld('內容', `<textarea name="body" style="min-height:150px">${esc(o.body)}</textarea>`)}
+    <div style="display:flex;gap:20px;flex-wrap:wrap"><label class="ck"><input type="checkbox" name="pub" ${o.pub ? 'checked' : ''}>發布到官網</label><label class="ck"><input type="checkbox" name="pin" ${o.pin ? 'checked' : ''}>置頂</label></div>
+    <div class="af"><span>封面照片</span>${picker('photo', o.photo ? [o.photo] : [], false)}</div>`, f => {
+    const ph = $('input[name="photo"]:checked', f);
+    const v = { date: val(f, 'date') || TODAY, tag: val(f, 'tag'), title: val(f, 'title'), body: val(f, 'body'), pub: f.elements.pub.checked, pin: f.elements.pin.checked, photo: ph ? ph.value : '' };
+    if (!v.title) return '請填寫標題。';
+    if (!v.body) return '請填寫內容。';
+    if (v.pin) S.news.forEach(x => x.pin = false);
+    if (isNew) { S.news.push(Object.assign({ id: 'n' + Date.now().toString(36) }, v)); toast(v.pub ? '消息已發布' : '已存成草稿'); }
+    else { Object.assign(n, v); toast('消息已更新'); }
+    save(); adminRender(); refreshSite();
+  });
+  wirePicker(f, 'photo', false);
+}
+function ruleForm(i) {
+  const isNew = i == null, o = isNew ? { icon: 'info', t: '', v: '', badges: false } : S.rules[i];
+  form(isNew ? '新增住宿須知' : '編輯住宿須知', `
+    <div class="g2">${fld('項目名稱', `<input name="t" value="${esc(o.t)}" required>`)}${fld('圖示', `<select name="icon">${Object.keys(ICON).map(k => `<option value="${k}"${k === o.icon ? ' selected' : ''}>${ICON[k][0]}</option>`).join('')}</select>`)}</div>
+    ${fld('內容（可以換行）', `<textarea name="v">${esc(o.v)}</textarea>`)}
+    <label class="ck"><input type="checkbox" name="badges" ${o.badges ? 'checked' : ''}>以標籤顯示（用頓號分開，例如付款方式）</label>`, f => {
+    const v = { t: val(f, 't'), icon: val(f, 'icon'), v: val(f, 'v'), badges: f.elements.badges.checked };
+    if (!v.t || !v.v) return '名稱和內容都要填。';
+    if (isNew) S.rules.push(Object.assign({ id: 'r' + Date.now().toString(36) }, v)); else Object.assign(o, v);
+    save(); toast(isNew ? '已新增「' + v.t + '」' : '「' + v.t + '」已更新'); adminRender(); refreshSite();
+  });
+}
+const mv = (arr, i, d) => { const j = i + d; if (j < 0 || j >= arr.length) return; const t = arr[i]; arr[i] = arr[j]; arr[j] = t; };
+
+$('#adminMain').addEventListener('click', e => {
+  const t = e.target.closest('[data-act],[data-filter],[data-row],[data-open],[data-block],[data-delhol]');
+  if (!t) return;
+  const a = t.dataset.act, id = t.dataset.id, i = t.dataset.i != null ? +t.dataset.i : null, b = id && S.bookings.find(x => x.id === id);
+  if (t.dataset.filter) { A.filter = t.dataset.filter; return adminRender(); }
+  if (t.dataset.row) { A.sel = t.dataset.row; A.confirm = null; return adminRender(); }
+  if (t.dataset.open) { A.tab = 'orders'; A.sel = t.dataset.open; A.filter = 'all'; return adminRender(); }
+  if (t.dataset.block) { const [rid, d] = t.dataset.block.split('|'), l = S.blocks[rid] = S.blocks[rid] || [], k = l.indexOf(d); k >= 0 ? l.splice(k, 1) : l.push(d); save(); return adminRender(); }
+  if (t.dataset.delhol) { S.hol = S.hol.filter(h => h !== t.dataset.delhol); save(); refreshSite(); return adminRender(); }
+  switch (a) {
+    case 'checkin': b.checkedIn = true; save(); toast(b.name + ' 已辦理入住'); break;
+    case 'markpaid': b.status = 'paid'; b.fresh = false; save(); toast(b.id + ' 已標記為付款完成'); break;
+    case 'remind': return copy(reminder(b), '付款提醒已複製，可以貼到 LINE 傳給旅客');
+    case 'open': A.tab = 'orders'; A.sel = id; A.filter = 'all'; break;
+    case 'askcancel': A.confirm = id; break;
+    case 'nocancel': A.confirm = null; break;
+    case 'cancel': b.status = 'cancelled'; A.confirm = null; save(); toast(b.id + ' 已取消'); refreshSite(); break;
+    case 'neworder': return orderForm();
+    case 'editorder': return orderForm(b);
+    case 'delorder': return confirmBox('刪除訂單 ' + b.id + '？', `${esc(b.name)}，${mdw(b.ci)} 入住${esc(room(b.room).name)}。刪除後無法復原；如果只是旅客不來了，建議用「取消訂單」保留紀錄。`, '刪除訂單', () => { S.bookings = S.bookings.filter(x => x !== b); A.sel = null; save(); toast('訂單已刪除'); adminRender(); refreshSite(); });
+    case 'newroom': return roomForm();
+    case 'editroom': return roomForm(S.rooms.find(r => r.id === id));
+    case 'toggleroom': { const r = S.rooms.find(x => x.id === id); r.on = !r.on; save(); toast('「' + r.name + '」已' + (r.on ? '上架' : '下架')); refreshSite(); break; }
+    case 'delroom': { const r = S.rooms.find(x => x.id === id), fut = S.bookings.filter(x => x.room === id && x.status !== 'cancelled' && x.co > TODAY).length;
+      if (fut) return confirmBox('還不能刪除「' + esc(r.name) + '」', `這間房還有 ${fut} 筆未完成的訂單。請先把訂單換房或取消；暫時不想賣的話，可以改用「下架」。`, '改為下架', () => { r.on = false; save(); adminRender(); refreshSite(); toast('已下架'); });
+      return confirmBox('刪除「' + esc(r.name) + '」？', '官網和訂房頁會立刻拿掉這個房型，過去的訂單紀錄會保留。', '刪除房型', () => { r.deleted = true; r.on = false; save(); toast('房型已刪除'); adminRender(); refreshSite(); }); }
+    case 'saverates': { let bad = false; S.rooms.filter(r => !r.deleted).forEach(r => ['wk', 'we', 'hol'].forEach(k => { const v = parseInt($(`#rate-${r.id}-${k}`).value, 10); if (v > 0) r[k] = v; else bad = true; })); save(); refreshSite(); toast(bad ? '已儲存，空白或 0 的欄位保留原價' : '房價已儲存，官網價格已更新'); break; }
+    case 'addhol': { const v = $('#newHol').value; if (v && !S.hol.includes(v)) { S.hol.push(v); save(); refreshSite(); toast(mdw(v) + ' 已設為連假'); } break; }
+    case 'newnews': return newsForm();
+    case 'editnews': return newsForm(S.news.find(n => n.id === id));
+    case 'pubnews': { const n = S.news.find(x => x.id === id); n.pub = !n.pub; save(); toast(n.pub ? '已發布到官網' : '已改回草稿'); refreshSite(); break; }
+    case 'delnews': { const n = S.news.find(x => x.id === id); return confirmBox('刪除這則消息？', '「' + esc(n.title) + '」刪除後無法復原。只是暫時不想顯示的話，可以按「取消發布」。', '刪除消息', () => { S.news = S.news.filter(x => x !== n); save(); toast('消息已刪除'); adminRender(); refreshSite(); }); }
+    case 'gup': mv(S.gallery, i, -1); save(); break;
+    case 'gdown': mv(S.gallery, i, 1); save(); break;
+    case 'gdel': return confirmBox('從環境照片移除？', '這張照片會從官網的「環境照片」頁拿掉。房型或消息有用到這張照片的話，不受影響。', '移除照片', () => { S.gallery.splice(i, 1); save(); adminRender(); toast('照片已移除'); });
+    case 'newrule': return ruleForm();
+    case 'editrule': return ruleForm(i);
+    case 'rup': mv(S.rules, i, -1); save(); refreshSite(); break;
+    case 'rdown': mv(S.rules, i, 1); save(); refreshSite(); break;
+    case 'delrule': return confirmBox('刪除「' + esc(S.rules[i].t) + '」？', '官網的住宿須知和訂房付款前的說明都會拿掉這一項。', '刪除', () => { S.rules.splice(i, 1); save(); adminRender(); refreshSite(); toast('已刪除'); });
+  }
+  adminRender();
+});
+$('#adminMain').addEventListener('change', e => {
+  const t = e.target;
+  if (t.dataset.gcat != null) { S.gallery[+t.dataset.gcat].cat = t.value; save(); toast('分類已更新'); }
+  if (t.dataset.gcap != null) { S.gallery[+t.dataset.gcap].cap = t.value.trim(); save(); toast('說明已更新'); }
+  if (t.id === 'galUp') readImgs(t.files, refs => { refs.forEach(r => S.gallery.unshift({ ref: r, cat: '外觀', cap: '' })); save(); adminRender(); toast(refs.length + ' 張照片已加入，記得選分類、寫說明'); });
+});
+$('#adminMain').addEventListener('input', e => { if (e.target.id === 'q') { A.q = e.target.value; const pos = e.target.selectionStart; adminRender(); const n = $('#q'); n.focus(); n.setSelectionRange(pos, pos); } });
+$$('.side [data-tab]').forEach(b => b.onclick = () => { A.tab = b.dataset.tab; A.confirm = null; adminRender(); window.scrollTo(0, 0); });
+$('[data-reset]').onclick = () => confirmBox('還原初始資料？', '所有訂單、房型、消息、照片和住宿須知的修改都會回到一開始的範例內容。', '還原', () => { reset(); save(); adminRender(); refreshSite(); toast('已還原'); });
+
+/* ---------- site wiring ---------- */
+function refreshSite() { renderRooms(); renderRules(); renderNews(); const m = Math.min.apply(null, liveRooms().map(r => r.wk).concat([Infinity])); $('#mbarP').textContent = isFinite(m) ? money(m) : '—'; if (cur === 'gal') renderGallery(); }
+let pend = [];
+function observe(root) { $$('.rv:not(.in), .wipe:not(.in), [data-count]:not(.in), [data-in]:not(.in)', root).forEach(el => { if (!pend.includes(el)) pend.push(el); }); reveal(); }
+function reveal() {
+  if (RM) { pend.forEach(el => el.classList.add('in')); pend = []; return; }
+  const lim = innerHeight * 0.9;
+  pend = pend.filter(el => {
+    if (!el.isConnected) return false;
+    const r = el.getBoundingClientRect();
+    if (!r.width && !r.height) return true;
+    if (r.top < lim) { el.classList.add('in'); if (el.dataset.count) countUp(el); return false; }
+    return true;
+  });
+}
+function countUp(el) {
+  const to = +el.dataset.count, t0 = performance.now(), dur = 1300;
+  const f = now => { const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(f); };
+  requestAnimationFrame(f);
+}
+
+/* header: solid after scroll, hides on scroll down; mobile book bar; parallax; active nav */
+const sh = $('#sh'), mbar = $('#mbar'), burger = $('#burger'), mnav = $('#mnav');
+let lastY = 0, ticking = false;
+function onScroll() {
+  const y = scrollY, menu = mnav.classList.contains('open');
+  sh.classList.toggle('solid', cur !== 'site' || y > 40 || menu);
+  sh.classList.toggle('hide', !menu && y > 500 && y > lastY + 2 && !$('#lb').classList.contains('open'));
+  if (y < lastY - 2 || y < 500) sh.classList.remove('hide');
+  mbar.classList.toggle('show', cur === 'site' && y > innerHeight * 0.85);
+  if (!RM && innerWidth > 900) $$('[data-par]').forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) el.style.setProperty('--py', ((r.top + r.height / 2 - innerHeight / 2) * -+el.dataset.par).toFixed(1) + 'px'); });
+  reveal(); lastY = y; ticking = false;
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+burger.onclick = () => { const o = !mnav.classList.contains('open'); mnav.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); burger.setAttribute('aria-label', o ? '關閉選單' : '開啟選單'); document.body.style.overflow = o ? 'hidden' : ''; onScroll(); };
+$$('#mnav a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }));
+if ('IntersectionObserver' in window) {
+  const navIo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$('.sn a').forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+  ['about', 'rooms', 'dining', 'facilities', 'rules', 'news', 'visit'].forEach(id => navIo.observe(document.getElementById(id)));
+}
+document.addEventListener('click', e => { const bt = e.target.closest('.btn'); if (!bt || RM) return; const r = bt.getBoundingClientRect(), s = document.createElement('span'), d = Math.max(r.width, r.height); s.className = 'rip'; s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`; bt.appendChild(s); setTimeout(() => s.remove(), 650); });
+/* smooth accordion: close others */
+$$('.qa').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('.qa').forEach(o => { if (o !== d) o.open = false; }); }));
+
+/* ---------- router ---------- */
+const views = { site: $('#v-site'), book: $('#v-book'), admin: $('#v-admin'), gal: $('#v-gal') };
+let cur = null;
+function route() {
+  const h = location.hash.replace('#', '');
+  const v = h === 'book' ? 'book' : h === 'admin' ? 'admin' : h === 'gallery' ? 'gal' : 'site';
+  for (const k in views) views[k].hidden = k !== v;
+  sh.hidden = v === 'admin';
+  if ($('#dlg').open) $('#dlg').close();
+  if (v === 'book') { if (cur !== 'book' && B.step === 3) { B.step = 0; B.ci = B.co = null; B.agree = false; } bookBody(); window.scrollTo(0, 0); }
+  else if (v === 'admin') { adminRender(); window.scrollTo(0, 0); }
+  else if (v === 'gal') { cur = v; renderGallery(); window.scrollTo(0, 0); }
+  else { const t = h && document.getElementById(h); if (t) { requestAnimationFrame(() => t.scrollIntoView({ behavior: cur === 'site' && !RM ? 'smooth' : 'auto' })); } else if (cur !== 'site') window.scrollTo(0, 0); }
+  cur = v; lastY = scrollY; onScroll();
+}
+load(); renderFacilities(); refreshSite();
+$('#tmrSun').textContent = sunrise(add(TODAY, 1));
+observe(document);
+addEventListener('hashchange', route);
+route();
+})();
+</script>
