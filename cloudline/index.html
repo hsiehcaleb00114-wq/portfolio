@@ -91,7 +91,7 @@ a:hover .arr, button:hover .arr { transform: translateX(5px); }
 @keyframes drift { from { transform: scale(1.08); } to { transform: scale(1); } }
 .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, var(--scrim) 0%, transparent 40%), linear-gradient(to right, rgb(18 20 20 / .35) 0%, transparent 55%); }
 .hero h1 { position: absolute; inset: 0; margin: 0; z-index: 2; }
-.hero .l1, .hero .l2 { position: absolute; display: block; font-size: var(--step-display); line-height: .85; font-weight: 300; letter-spacing: -0.035em; overflow: hidden; padding-bottom: .06em; }
+.hero .l1, .hero .l2 { position: absolute; display: block; font-size: var(--step-display); line-height: 1; font-weight: 300; letter-spacing: -0.035em; overflow: hidden; padding: .04em 0 .06em; }
 .hero .l1 { top: 104px; left: max(32px, env(safe-area-inset-left, 0px)); color: var(--on-sky); }
 .hero .l2 { right: max(32px, env(safe-area-inset-right, 0px)); bottom: 24px; color: var(--on-photo); }
 .mask { display: inline-block; animation: rise 1s var(--ease-out) both; }
