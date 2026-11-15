@@ -76,20 +76,17 @@ a:hover .arr, button:hover .arr { transform: translate(3px, -3px); }
 .top .act:hover { background: var(--accent); color: #fff; }
 
 /* hero board */
-.hero { height: calc(100svh - 68px); min-height: 600px; grid-template-rows: 1fr 1fr; }
-.hero .name { grid-column: 1 / 7; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px; }
-.hero .name .who { font-size: clamp(18px, 1.4vw, 21px); max-width: 26em; }
-.hero h1 { font-size: var(--step-display); letter-spacing: -0.05em; line-height: .95; font-weight: 600; }
+.hero { align-items: stretch; }
+.hero .name { grid-column: 1 / 6; display: flex; flex-direction: column; justify-content: flex-end; gap: 24px; padding: 40px; }
+.hero .name .who { font-size: clamp(18px, 1.4vw, 22px); max-width: 24em; }
+.hero .name .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero h1 { font-size: clamp(64px, 7.4vw, 128px); letter-spacing: -0.05em; line-height: .95; font-weight: 600; }
 .hero h1 span { display: block; }
 .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: bottom; }
 .hero h1 .w i { display: inline-block; font-style: normal; animation: up 1s var(--ease) both; }
 .hero h1 .w + .w i { animation-delay: .08s; }
 @keyframes up { from { transform: translateY(105%); } }
-.hero .p1 { grid-column: 7 / 13; }
-.hero .p2 { grid-column: 1 / 7; }
-.hero .s1 { grid-column: 7 / 10; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
-.hero .s2 { grid-column: 10 / 13; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; text-decoration: none; transition: background .2s; }
-.hero .s2:hover { background: var(--accent-2); }
+.hero .p1 { grid-column: 6 / 13; aspect-ratio: 16 / 10; }
 .say { font-size: clamp(20px, 1.7vw, 26px); line-height: 1.3; letter-spacing: -0.01em; font-weight: 500; }
 .small { font-size: var(--step-small); }
 .dim { color: var(--muted); }
@@ -137,21 +134,6 @@ a:hover .arr, button:hover .arr { transform: translate(3px, -3px); }
 .row .c span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .row .c span:last-child { color: var(--on-dark-muted); }
 
-/* try it */
-.try-in { grid-column: 1 / 6; display: flex; flex-direction: column; gap: 18px; }
-.try-in h2 { font-size: clamp(32px, 3vw, 48px); }
-.try-in label { font-size: var(--step-small); color: var(--muted); display: grid; gap: 6px; }
-.try-in input { min-height: 52px; border: 0; border-radius: var(--r); background: var(--paper); padding: 0 16px; font-size: 20px; }
-.kinds { display: flex; flex-wrap: wrap; gap: 6px; }
-.kinds button { min-height: 40px; padding: 0 16px; border: 0; border-radius: var(--r); background: var(--paper); cursor: pointer; transition: background .2s, color .2s; }
-.kinds button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-.try-out { grid-column: 6 / 13; aspect-ratio: 16 / 10; padding: 0; }
-.try-out img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity .35s; }
-.try-out .over { position: absolute; left: 0; right: 0; top: 0; padding: 28px 32px 72px; background: linear-gradient(to bottom, rgb(8 9 12 / .72), transparent); color: #fff; }
-.try-out .over b { display: block; font-size: clamp(30px, 3.6vw, 56px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; overflow-wrap: anywhere; }
-.try-out .over span { font-size: 15px; opacity: .85; }
-.try-out .go { position: absolute; right: 12px; bottom: 12px; }
-
 /* apps departure board */
 .apps-sec { margin: 0 var(--edge-r) var(--gap) var(--edge); }
 .apps-sec .sec-title { padding: 72px 16px 16px; }
@@ -197,17 +179,22 @@ a:hover .arr, button:hover .arr { transform: translate(3px, -3px); }
 .terms span { background: var(--surface); border-radius: var(--r); padding: 14px 20px; font-size: 16px; }
 
 /* about */
-.about-sec .sec-title { padding-bottom: 0; padding-top: 120px; }
-.about-lead { grid-column: 1 / 8; padding: 8px 16px 48px; font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; }
-.about-pic { grid-column: 1 / 9; aspect-ratio: 16 / 10; }
-.about-pic .note { position: absolute; right: 0; top: 0; width: min(340px, 60%); background: var(--paper); color: var(--ink); padding: 20px; font-size: 16px; border-radius: 0 0 0 var(--r); }
-.about-side { grid-column: 9 / 13; display: grid; grid-template-rows: auto auto; gap: var(--gap); align-content: start; }
-.about-map { aspect-ratio: 4 / 3.3; display: grid; place-items: center; }
-.about-map svg { width: 78%; height: 100%; }
-.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.about-facts dt { font-size: var(--step-small); color: var(--muted); }
-.about-facts dd { margin: 2px 0 0; font-size: 18px; }
-
+.about-sec .sec-title, .process-sec .sec-title { padding-top: 120px; }
+.me { grid-column: 1 / 5; aspect-ratio: 1; }
+.me img { object-position: center; }
+.me-text { grid-column: 5 / 13; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px; padding: 40px; }
+.me-text h3 { font-size: clamp(40px, 4vw, 64px); }
+.me-text > p { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.55; max-width: 30em; }
+.facts-list { margin: 8px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.facts-list dt { font-size: var(--step-small); color: var(--muted); }
+.facts-list dd { margin: 4px 0 0; font-size: 18px; overflow-wrap: anywhere; }
+/* process */
+.steps { grid-column: 1 / 13; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--gap); }
+.step { display: flex; flex-direction: column; gap: 10px; padding: 28px 24px; }
+.step svg { width: 56px; height: 56px; fill: var(--accent); margin-bottom: 18px; }
+.step .n { font-size: var(--step-small); font-weight: 600; color: var(--accent); letter-spacing: .08em; }
+.step h3 { font-size: clamp(22px, 1.7vw, 28px); line-height: 1.2; }
+.step p { font-size: 16px; color: var(--muted); }
 /* contact */
 .contact { margin: 0 var(--edge-r) var(--gap) var(--edge); background: var(--accent); color: var(--accent-ink); border-radius: var(--r); padding: 40px 0 32px; overflow: hidden; }
 .strip { display: flex; gap: 8px; width: max-content; animation: marquee 60s linear infinite; }
@@ -247,12 +234,9 @@ footer.board .t a { color: inherit; }
   .top nav { padding: 0 14px; gap: 18px; font-size: 15px; }
   .top .act { padding: 0 14px; }
   .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero { height: auto; min-height: 0; grid-template-rows: auto; }
-  .hero .name { grid-column: 1 / 3; min-height: 34svh; }
-  .hero h1 { font-size: 20vw; }
-  .hero .p1 { grid-column: 1 / 3; aspect-ratio: 4 / 3; }
-  .hero .s1, .hero .s2 { grid-column: 1 / 3; min-height: 0; gap: 12px; }
-  .hero .p2 { grid-column: 1 / 3; aspect-ratio: 16 / 10; }
+  .hero .name { grid-column: 1 / 3; padding: 28px 20px; gap: 18px; }
+  .hero h1 { font-size: 19vw; }
+  .hero .p1 { grid-column: 1 / 3; }
   .say { font-size: 18px; }
   .facts .t { grid-column: span 1; }
   .sec-title { grid-column: 1 / 3; padding: 48px 8px 12px; }
@@ -271,7 +255,6 @@ footer.board .t a { color: inherit; }
   .row a:first-child:nth-last-child(odd) { flex-basis: 100%; }
   .row .im { height: 160px; }
   .row a:first-child:nth-last-child(odd) .im { height: 220px; }
-  .try-in, .try-out { grid-column: 1 / 3; }
   .dep .r > button { grid-template-columns: minmax(0, 1fr) auto auto; min-height: 64px; font-size: 20px; padding: 0 14px; }
   .dep .r .pf { display: none; }
   .dep .inner { grid-template-columns: 1fr; padding: 0 14px 18px; }
@@ -281,12 +264,12 @@ footer.board .t a { color: inherit; }
   .ptable, .ptable tbody, .ptable tfoot, .ptable tr, .ptable th, .ptable td { display: block; width: 100%; }
   .ptable { background: transparent; }
   .plan-m { display: grid; gap: 6px; }
-  .about-lead { grid-column: 1 / 3; font-size: 18px; padding: 8px 8px 32px; }
-  .about-pic, .about-side { grid-column: 1 / 3; }
-  .about-pic { aspect-ratio: 4 / 3; }
-  .about-pic .note { position: static; width: auto; border-radius: 0; }
-  .about-pic { overflow: visible; display: flex; flex-direction: column; }
-  .about-pic img { aspect-ratio: 4 / 3; }
+  .me, .me-text { grid-column: 1 / 3; }
+  .me-text { padding: 24px 20px; }
+  .facts-list { grid-template-columns: 1fr; gap: 12px; }
+  .steps { grid-template-columns: 1fr; }
+  .step { display: grid; grid-template-columns: 48px 1fr; column-gap: 18px; row-gap: 4px; padding: 20px; }
+  .step svg { width: 48px; height: 48px; margin: 0; grid-row: span 3; }
   .contact h2 { padding: 48px 16px 10px; font-size: 11vw; }
   .contact > p { padding: 0 16px 24px; font-size: 18px; }
   .cells { grid-template-columns: 1fr; padding: 0 16px; }
@@ -312,7 +295,7 @@ footer.board .t a { color: inherit; }
 <header class="top">
   <a class="logo" href="#top" aria-label="點子成形，回到頂端"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8H92V92H50A42 42 0 0 1 50 8Z" fill="currentColor"/></svg></a>
   <nav aria-label="主要">
-    <a href="#case">民宿</a><a href="#sites">網站</a><a href="#apps">App</a><a href="#price">價格</a><a href="#about" class="wide">關於</a>
+    <a href="#case">民宿</a><a href="#sites">網站</a><a href="#apps">App</a><a href="#price">價格</a><a href="#process" class="wide">流程</a><a href="#about" class="wide">關於</a>
   </nav>
   <a class="act" href="#contact">聯絡我 <span class="arr">↗</span></a>
 </header>
@@ -321,12 +304,10 @@ footer.board .t a { color: inherit; }
   <section class="board hero" aria-label="點子成形工作室">
     <div class="t paper name">
       <h1><span class="w"><i>點子</i></span><span class="w"><i>成形</i></span></h1>
-      <p class="who">旻翰在南投的一人工作室，做民宿和店家的網站、線上訂房和 App。</p>
+      <p class="who">我是旻翰，住在南投。幫民宿、餐廳和小店做網站、線上訂房和 App，從設計到上線一個人完成。</p>
+      <div class="acts"><a class="btn" href="#case">看作品</a><a class="btn line" href="https://line.me/ti/p/ibrb0W_zdi" target="_blank" rel="noopener">加 LINE 聊聊 <span class="arr">↗</span></a></div>
     </div>
-    <a class="t pic p1 shutter" href="cloudline/" aria-label="打開雲線山居民宿網站"><img src="work/11-cloudline.jpg" alt="雲線山居民宿網站首頁，雲海照片上是大字店名與快速查空房列" width="960" height="600" fetchpriority="high"><span class="cap">最新作品：雲線山居民宿網站 ↗</span></a>
-    <a class="t pic p2" href="https://hsiehcaleb00114-wq.github.io/restaurant-demos/sites/06-sanlan-cafe/" target="_blank" rel="noopener" aria-label="打開山嵐咖啡輕食網站"><img src="work/06-sanlan-cafe.jpg" alt="山嵐咖啡輕食網站首頁" width="960" height="600"><span class="cap">山嵐咖啡輕食 ↗</span></a>
-    <div class="t dark s1"><p class="say">我幫民宿、餐廳和小店做官網、線上訂房和 App，從設計到上線一個人完成。</p><p class="small dim">11 個網站、4 個 App（3 個已上架），每一個都能點開操作。</p></div>
-    <a class="t blue s2" href="#contact"><p class="say">第一次聊不收費，告訴我你想做什麼。</p><p class="small">LINE 或 minhanstudio369@gmail.com <span class="arr">↗</span></p></a>
+    <a class="t pic p1 shutter" href="cloudline/" aria-label="打開雲線山居民宿網站"><img src="work/11-cloudline.jpg" alt="最新作品：雲線山居民宿網站首頁" width="1920" height="1200" fetchpriority="high"></a>
   </section>
 
   <section class="board" id="case" aria-labelledby="case-h">
@@ -351,20 +332,6 @@ footer.board .t a { color: inherit; }
   <section class="wall-sec" id="sites" aria-labelledby="sites-h">
     <div class="sec-title"><h2 id="sites-h">店家網站</h2><p>10 間餐廳，10 種完全不同的風格。點一張就會打開網站，電腦和手機都能操作。網站內照片來自 Pexels 免費圖庫。</p></div>
     <div class="wall" id="wall"></div>
-  </section>
-
-  <section class="board" aria-labelledby="try-h" style="padding-top:56px">
-    <div class="t try-in">
-      <h2 id="try-h">把你的店名放進去看看</h2>
-      <label>你的店名<input id="tryName" maxlength="16" value="你的店名" autocomplete="off"></label>
-      <div><p class="small dim" style="margin-bottom:6px">你的店是</p><div class="kinds" id="kinds" role="group" aria-label="店的類型"></div></div>
-      <p class="small dim">右邊換成你選的類型的網站風格。正式做的時候，照片、顏色和內容都會換成你的店。</p>
-    </div>
-    <div class="t pic try-out" aria-live="polite">
-      <img id="tryImg" src="work/11-cloudline.jpg" alt="" width="960" height="600" loading="lazy">
-      <div class="over"><b id="tryTitle">你的店名</b><span id="tryKind">民宿・官網加訂房</span></div>
-      <a class="btn inv go" id="tryGo" href="cloudline/">打開這個風格的網站 <span class="arr">↗</span></a>
-    </div>
   </section>
 
   <section class="apps-sec" id="apps" aria-labelledby="apps-h">
@@ -392,19 +359,27 @@ footer.board .t a { color: inherit; }
     <div class="terms"><span>先付一半訂金，完成後付另一半</span><span>含 2 次修改</span><span>第一次聊不收費</span></div>
   </section>
 
+  <section class="board process-sec" id="process" aria-labelledby="process-h">
+    <div class="sec-title"><h2 id="process-h" class="rv">接案流程</h2><p class="rv" style="--d:1">從第一次聊到上線，大概 1～2 週，看資料什麼時候到齊。</p></div>
+    <ol class="steps">
+      <li class="t step rv" style="--d:0"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/></svg><span class="n">01</span><h3>先聊聊，不收費</h3><p>想放什麼內容、預算多少、什麼時候要。南投的店家可以當面聊。</p></li>
+      <li class="t step rv" style="--d:1"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="8" width="84" height="84" rx="30"/></svg><span class="n">02</span><h3>報價，付一半訂金</h3><p>做哪些頁面和功能都先寫清楚，確認後付一半訂金開工。</p></li>
+      <li class="t step rv" style="--d:2"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8H92V92H50A42 42 0 0 1 50 8Z"/></svg><span class="n">03</span><h3>給我資料</h3><p>菜單、照片、logo 和營業時間。資料到齊後開始算製作時間。</p></li>
+      <li class="t step rv" style="--d:3"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="8" width="84" height="84" rx="14"/></svg><span class="n">04</span><h3>先看預覽，修改 2 次</h3><p>給你預覽網址，在手機上確認。含 2 次修改，超過再另外報價。</p></li>
+      <li class="t step rv" style="--d:4"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="8" width="84" height="84" rx="3"/></svg><span class="n">05</span><h3>付尾款、上線</h3><p>網域用你的名字申請，網站是你的。上線後我會教你怎麼改內容。</p></li>
+    </ol>
+  </section>
+
   <section class="board about-sec" id="about" aria-labelledby="about-h">
-    <div class="sec-title"><h2 id="about-h" class="rv">關於</h2></div>
-    <p class="about-lead rv" style="--d:1">我是旻翰，住在南投。「點子成形」的意思是：你帶著想法來，我把它做成能點、能用的東西。設計、寫程式、上線都是我一個人，你從頭到尾只要跟同一個人講。</p>
-    <div class="t pic about-pic rv"><img src="cloudline/img/hero.jpg" alt="南投山區清晨的雲海" width="2000" height="1466" loading="lazy"><p class="note">南投的店家我可以當面聊；其他縣市用 LINE、Email 和視訊，一樣做得完。</p></div>
-    <div class="about-side">
-      <div class="t blue about-map rv" style="--d:1" role="img" aria-label="台灣地圖，標出南投">
-        <svg viewBox="0 0 230 400" aria-hidden="true"><path id="tw" fill="rgb(255 255 255 / .22)"/><circle id="nt" r="7" fill="#fff"/><text id="ntl" font-size="15" fill="#fff" font-weight="600">南投</text></svg>
-      </div>
-      <dl class="t about-facts rv" style="--d:2">
-        <div><dt>工作室</dt><dd>南投</dd></div>
-        <div><dt>合作範圍</dt><dd>全台遠端</dd></div>
-        <div><dt>做的東西</dt><dd>網站、訂房、App</dd></div>
-        <div><dt>第一次聊</dt><dd>不收費</dd></div>
+    <div class="sec-title"><h2 id="about-h" class="rv">關於我</h2></div>
+    <div class="t pic me rv"><img src="work/me.jpg" alt="旻翰和家裡的狗" width="1000" height="1000" loading="lazy"></div>
+    <div class="t paper me-text rv" style="--d:1">
+      <h3>旻翰</h3>
+      <p>住在南投，自己接案做網站和 App。設計、寫程式、上線都是我一個人，你從頭到尾只要跟同一個人講。</p>
+      <dl class="facts-list">
+        <div><dt>所在地</dt><dd>南投，全台都可以遠端合作</dd></div>
+        <div><dt>做的東西</dt><dd>店家網站、民宿訂房網站、App</dd></div>
+        <div><dt>聯絡</dt><dd><a href="https://line.me/ti/p/ibrb0W_zdi" target="_blank" rel="noopener">LINE</a>・<a href="mailto:minhanstudio369@gmail.com">minhanstudio369@gmail.com</a></dd></div>
       </dl>
     </div>
   </section>
@@ -456,39 +431,12 @@ footer.board .t a { color: inherit; }
     }).join('') + '</div>';
   }).join('');
 
-  /* try it: your name in a style */
-  var KINDS = [
-    ['民宿', 'cloudline/', 'work/11-cloudline.jpg', '民宿・官網加訂房'],
-    ['咖啡廳', REST + '06-sanlan-cafe/', 'work/06-sanlan-cafe.jpg', '咖啡輕食・自然森林風'],
-    ['早餐店', REST + '08-good-morning/', 'work/08-good-morning.jpg', '早餐店・可以線上點餐'],
-    ['小吃攤', REST + '10-night-market/', 'work/10-night-market.jpg', '小吃・霓虹夜市風'],
-    ['居酒屋', REST + '07-yoto-izakaya/', 'work/07-yoto-izakaya.jpg', '居酒屋・日式和風'],
-    ['麵店', REST + '03-alley-beef-noodle/', 'work/03-alley-beef-noodle.jpg', '麵店・深色暖光']
-  ];
-  var ki = 0, kinds = document.getElementById('kinds'), img = document.getElementById('tryImg');
-  function drawKinds() {
-    kinds.innerHTML = KINDS.map(function (k, i) { return '<button type="button" aria-pressed="' + (i === ki) + '" data-k="' + i + '">' + k[0] + '</button>'; }).join('');
-  }
-  function apply() {
-    var k = KINDS[ki];
-    img.style.opacity = 0;
-    setTimeout(function () { img.src = k[2]; img.alt = k[0] + '風格的網站首頁'; img.style.opacity = 1; }, 180);
-    document.getElementById('tryKind').textContent = k[3];
-    var go = document.getElementById('tryGo'); go.href = k[1];
-    if (k[1].indexOf('http') === 0) { go.target = '_blank'; go.rel = 'noopener'; } else { go.removeAttribute('target'); }
-  }
-  kinds.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (!b) return; ki = +b.dataset.k; drawKinds(); apply(); });
-  var nameIn = document.getElementById('tryName');
-  nameIn.addEventListener('focus', function () { if (nameIn.value === '你的店名') nameIn.select(); });
-  nameIn.addEventListener('input', function () { document.getElementById('tryTitle').textContent = nameIn.value.trim() || '你的店名'; });
-  drawKinds();
-
   /* apps board */
   var APPS = [
     { n: 'FoodyStash', p: 'iOS・Android・網頁', s: '已上架', one: '收藏食譜、排一週菜單、自動列購物清單。', li: ['份量一調，食材自動換算', '排好菜單就產生購物清單', '家人共用、即時同步，支援五種語言'], st: [['App Store 下載', 'https://apps.apple.com/tw/app/id6811551598'], ['Google Play 下載', 'https://play.google.com/store/apps/details?id=com.foodystash.app'], ['foodystash.com', 'https://foodystash.com']], k: 'foody', alt: ['食譜收藏', '食譜內容', '一週菜單', '購物清單'] },
     { n: '待辦公會', p: 'iOS', s: '已上架', one: '像素風的待辦清單，把每天要做的事變成公會委託。', li: ['完成委託領金幣，開寶箱收集 180 把劍', '番茄鐘專注時，騎士替你下地城打怪', '一週專注紀錄，每天做了什麼一眼看完'], st: [['App Store 下載', 'https://apps.apple.com/tw/app/id6817811357']], k: 'guild', alt: ['把待辦變成公會委託', '專注時騎士下地城', '用賞金開寶箱', '把劍掛滿四間房'] },
-    { n: '選舉通', p: 'iOS・Android・網頁', s: '已上架', one: '2026 九合一選舉 App，查你要投的每一張票。', li: ['依戶籍地列出你的選票和參選人', '1996 年到現在的歷屆選舉結果和走勢', '投票倒數和提醒，一鍵加入 Google 日曆'], st: [['App Store 下載', 'https://apps.apple.com/tw/app/id6824759475']], k: 'vote', alt: ['投票倒數', '你的選票', '30 年選舉走勢', '你住的地方怎麼投'] },
-    { n: 'POV NOVEL', p: 'iOS・Android・網頁', s: '即將上架', one: '你就是主角的互動小說，每個選擇都會改寫故事。', li: ['十種題材可以混搭：戀愛、武俠、克蘇魯、推理⋯⋯', '冒險時翻命運卡決定成敗', '會員登入、雲端存檔、排行榜、訂閱付費'], st: [['看介紹頁', 'https://pov-novel.expo.app']], k: 'pov', alt: ['你就是主角', '翻命運卡', '十個題材任你混搭', '收集轉折卡'] }
+    { n: '選舉通', p: 'iOS・Android・網頁', s: '已上架', one: '2026 九合一選舉 App，查你要投的每一張票。', li: ['依戶籍地列出你的選票和參選人', '1996 年到現在的歷屆選舉結果和走勢', '投票倒數和提醒，一鍵加入 Google 日曆'], st: [['App Store 下載', 'https://apps.apple.com/tw/app/id6824759475'], ['Google Play 下載', 'https://play.google.com/store/apps/details?id=com.minhanxie.xuanjutong']], k: 'vote', alt: ['投票倒數', '你的選票', '30 年選舉走勢', '你住的地方怎麼投'] },
+    { n: 'POV NOVEL', p: 'iOS・Android・網頁', s: '已上架', one: '你就是主角的互動小說，每個選擇都會改寫故事。', li: ['十種題材可以混搭：戀愛、武俠、克蘇魯、推理⋯⋯', '冒險時翻命運卡決定成敗', '會員登入、雲端存檔、排行榜、訂閱付費'], st: [['App Store 下載', 'https://apps.apple.com/tw/app/id6827397983'], ['看介紹頁', 'https://pov-novel.expo.app']], k: 'pov', alt: ['你就是主角', '翻命運卡', '十個題材任你混搭', '收集轉折卡'] }
   ];
   var open = 0, dep = document.getElementById('dep');
   dep.innerHTML = APPS.map(function (a, i) {
@@ -518,14 +466,6 @@ footer.board .t a { color: inherit; }
     try { navigator.clipboard.writeText(v.textContent.trim()).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
   });
 
-  /* Taiwan outline from coastline points (lon, lat) */
-  var P = [[121.54, 25.30], [121.74, 25.14], [122.0, 25.01], [121.87, 24.84], [121.85, 24.6], [121.75, 24.3], [121.62, 23.98], [121.5, 23.5], [121.38, 23.1], [121.15, 22.75], [120.9, 22.35], [120.85, 21.9], [120.73, 21.94], [120.6, 22.36], [120.28, 22.6], [120.15, 22.9], [120.08, 23.05], [120.13, 23.4], [120.2, 23.7], [120.42, 24.07], [120.52, 24.28], [120.65, 24.46], [120.92, 24.82], [121.06, 25.04], [121.41, 25.18]];
-  var px = function (p) { return [((p[0] - 119.9) * 105).toFixed(1), ((25.42 - p[1]) * 108).toFixed(1)]; };
-  document.getElementById('tw').setAttribute('d', 'M' + P.map(function (p) { return px(p).join(' '); }).join(' L') + ' Z');
-  var nt = px([120.97, 23.92]);
-  var c = document.getElementById('nt'); c.setAttribute('cx', nt[0]); c.setAttribute('cy', nt[1]);
-  var tl = document.getElementById('ntl'); tl.setAttribute('x', +nt[0] - 52); tl.setAttribute('y', +nt[1] + 5);
-
   /* reveal on scroll */
   var pend = [].slice.call(document.querySelectorAll('.rv'));
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -541,7 +481,7 @@ footer.board .t a { color: inherit; }
   if ('IntersectionObserver' in window) {
     var links = [].slice.call(document.querySelectorAll('.top nav a'));
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id); }); }); }, { rootMargin: '-45% 0px -50% 0px' });
-    ['case', 'sites', 'apps', 'price', 'about'].forEach(function (id) { io.observe(document.getElementById(id)); });
+    ['case', 'sites', 'apps', 'price', 'process', 'about'].forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 })();
 </script>
