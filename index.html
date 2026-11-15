@@ -163,21 +163,22 @@ a:hover .arr, button:hover .arr { transform: translate(3px, -3px); }
 /* pricing */
 .price-sec { margin: 0 var(--edge-r) var(--gap) var(--edge); }
 .price-sec .sec-title { padding: 72px 16px 16px; }
-.ptable { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: var(--r); overflow: hidden; }
-.ptable th, .ptable td { text-align: left; vertical-align: top; padding: 20px 24px; font-size: 19px; font-weight: 400; }
-.ptable thead th { padding-top: 28px; }
-.ptable thead th b { display: block; font-size: clamp(24px, 2.4vw, 36px); font-weight: 600; letter-spacing: -0.03em; }
-.ptable thead th span { display: block; font-size: clamp(24px, 2.4vw, 36px); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-.ptable thead th small { font-size: 16px; color: var(--muted); }
-.ptable tbody tr:nth-child(odd) th, .ptable tbody tr:nth-child(odd) td { background: var(--paper); }
-.ptable tbody th { color: var(--muted); width: 22%; }
-.ptable .hi { background: var(--accent) !important; color: var(--accent-ink); }
-.ptable .hi small { color: rgb(255 255 255 / .8); }
-.ptable tfoot td { padding-bottom: 24px; }
-.ptable .corner { font-size: clamp(28px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.03em; }
-.terms { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-.terms span { background: var(--surface); border-radius: var(--r); padding: 14px 20px; font-size: 16px; }
-
+.pwrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: var(--gap); }
+.pgroup { background: var(--surface); border-radius: var(--r); padding: 8px; display: flex; flex-direction: column; }
+.pg-h { padding: 12px 14px 14px; font-size: 22px; font-weight: 600; }
+.pcards { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.pgroup.app .pcards { grid-template-columns: 1fr; }
+.pc { background: var(--paper); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.pc h3 { font-size: clamp(24px, 2vw, 30px); }
+.pc .pr { font-size: clamp(28px, 2.6vw, 40px); letter-spacing: -0.03em; line-height: 1.1; }
+.pc .pr small { font-size: 16px; color: var(--muted); letter-spacing: 0; }
+.pc-d { font-size: 17px; }
+.pc-ex { font-size: 15px; color: var(--muted); }
+.pc-t { margin-top: auto; padding-top: 8px; font-size: 15px; color: var(--muted); }
+.pc .btn { align-self: flex-start; }
+.pnotes { list-style: none; margin: var(--gap) 0 0; padding: 0; display: grid; gap: var(--gap); }
+.pnotes li { background: var(--surface); border-radius: var(--r); padding: 16px 20px; font-size: 16px; }
+.pnotes b { margin-right: 12px; }
 /* about */
 .about-sec .sec-title, .process-sec .sec-title { padding-top: 120px; }
 .me { grid-column: 1 / 5; aspect-ratio: 1; }
@@ -260,10 +261,8 @@ footer.board .t a { color: inherit; }
   .dep .inner { grid-template-columns: 1fr; padding: 0 14px 18px; }
   .dep .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
   .dep .screens img { flex: 0 0 42%; scroll-snap-align: start; }
-  .ptable thead { display: none; }
-  .ptable, .ptable tbody, .ptable tfoot, .ptable tr, .ptable th, .ptable td { display: block; width: 100%; }
-  .ptable { background: transparent; }
-  .plan-m { display: grid; gap: 6px; }
+  .pwrap, .pcards { grid-template-columns: 1fr; }
+  .pnotes b { display: block; margin: 0 0 4px; }
   .me, .me-text { grid-column: 1 / 3; }
   .me-text { padding: 24px 20px; }
   .facts-list { grid-template-columns: 1fr; gap: 12px; }
@@ -279,15 +278,7 @@ footer.board .t a { color: inherit; }
   .strip img { height: 110px; }
   footer.board .t { grid-column: 1 / 3; }
 }
-@media (min-width: 901px) { .plan-m { display: none; } }
-@media (max-width: 900px) { .ptable { display: none; } }
-.plan-m .pm { border-radius: var(--r); background: var(--surface); padding: 20px; display: grid; gap: 10px; }
-.plan-m .pm.hi { background: var(--accent); color: var(--accent-ink); }
-.plan-m .pm h3 { font-size: 9vw; }
-.plan-m .pm .pr { font-size: 7vw; letter-spacing: -0.03em; }
-.plan-m .pm dl { margin: 0; display: grid; gap: 10px; font-size: 17px; }
-.plan-m .pm dt { opacity: .7; }
-.plan-m .pm dd { margin: 0; }
+
 </style>
 </head>
 <body>
@@ -340,23 +331,21 @@ footer.board .t a { color: inherit; }
   </section>
 
   <section class="price-sec" id="price" aria-labelledby="price-h">
-    <div class="sec-title"><h2 id="price-h">價格</h2><p>以下是起價。實際價格看功能多寡，聊過之後給你確定的報價。</p></div>
-    <table class="ptable">
-      <thead><tr><th class="corner">三種做法</th><th><b>店家網站</b><span>NT$6,000 <small>起</small></span></th><th class="hi"><b>網站加功能</b><span>NT$15,000 <small>起</small></span></th><th><b>App 原型</b><span>NT$15,000 <small>起</small></span></th></tr></thead>
-      <tbody>
-        <tr><th>內容</th><td>店家介紹、菜單或房型、營業時間、地圖和電話</td><td class="hi">再加上線上點餐、預約或訂房，或讓你自己改內容的後台</td><td>手機上可以實際操作的 App，拿去提案、比賽或找人試用</td></tr>
-        <tr><th>時間</th><td>約 1 週</td><td class="hi">約 2 週</td><td>約 2 週</td></tr>
-        <tr><th>手機版</th><td>有</td><td class="hi">有</td><td>iOS 和 Android</td></tr>
-        <tr><th>上架</th><td>幫你放上網路</td><td class="hi">幫你放上網路</td><td>另外報價</td></tr>
-      </tbody>
-      <tfoot><tr><td></td><td><a class="btn line" href="#contact">問這個</a></td><td class="hi"><a class="btn inv" href="#contact">問這個</a></td><td><a class="btn line" href="#contact">問這個</a></td></tr></tfoot>
-    </table>
-    <div class="plan-m">
-      <div class="pm"><h3>店家網站</h3><p class="pr num">NT$6,000 起</p><dl><div><dt>內容</dt><dd>店家介紹、菜單或房型、營業時間、地圖和電話</dd></div><div><dt>時間</dt><dd>約 1 週</dd></div></dl><a class="btn" href="#contact">問這個</a></div>
-      <div class="pm hi"><h3>網站加功能</h3><p class="pr num">NT$15,000 起</p><dl><div><dt>內容</dt><dd>再加上線上點餐、預約或訂房，或讓你自己改內容的後台</dd></div><div><dt>時間</dt><dd>約 2 週</dd></div></dl><a class="btn inv" href="#contact">問這個</a></div>
-      <div class="pm"><h3>App 原型</h3><p class="pr num">NT$15,000 起</p><dl><div><dt>內容</dt><dd>手機上可以實際操作的 App，拿去提案、比賽或找人試用。上架另外報價</dd></div><div><dt>時間</dt><dd>約 2 週</dd></div></dl><a class="btn" href="#contact">問這個</a></div>
+    <div class="sec-title"><h2 id="price-h">價格</h2><p>以下是起價，聊過之後給你確定的報價。製作時間從資料到齊開始算。</p></div>
+    <div class="pwrap">
+      <div class="pgroup"><p class="pg-h">網站</p><div class="pcards">
+        <div class="pc"><h3>店家網站</h3><p class="pr num">NT$6,000 <small>起</small></p><p class="pc-d">一頁式網站：店家介紹、菜單、營業時間、地圖和電話。</p><p class="pc-ex">加線上訂位或點餐，另外報價</p><p class="pc-t">製作時間 約 3～5 天</p><a class="btn line" href="#contact">問這個</a></div>
+        <div class="pc"><h3>民宿網站</h3><p class="pr num">NT$15,000 <small>起</small></p><p class="pc-d">每間房一頁、房價、住宿須知和交通，客人用表單或 LINE 訂房。</p><p class="pc-t">製作時間 約 1 週</p><a class="btn line" href="#contact">問這個</a></div>
+        <div class="pc"><h3>民宿訂房系統</h3><p class="pr num">NT$35,000 <small>起</small></p><p class="pc-d">查空房日曆、線上付款，加上老闆用的後台。像上面的雲線山居。</p><p class="pc-t">製作時間 約 2 週（金流審核另計）</p><a class="btn line" href="#contact">問這個</a></div>
+      </div></div>
+      <div class="pgroup app"><p class="pg-h">App</p><div class="pcards">
+        <div class="pc"><h3>App 原型</h3><p class="pr num">NT$15,000 <small>起</small></p><p class="pc-d">手機上可以實際操作的 App，拿去提案、比賽或找人試用。</p><p class="pc-ex">要上架 App Store、Google Play，依功能另外報價</p><p class="pc-t">製作時間 約 2 週</p><a class="btn line" href="#contact">問這個</a></div>
+      </div></div>
     </div>
-    <div class="terms"><span>先付一半訂金，完成後付另一半</span><span>含 2 次修改</span><span>第一次聊不收費</span></div>
+    <ul class="pnotes">
+      <li><b>上線後</b>網域用店家的名字申請，每年約 NT$400～1,200，店家自付。維護月費 NT$500，每月可以改 2 次菜單、價格或營業時間；沒有月費的話，每次修改 NT$800。</li>
+      <li><b>付款</b>先付一半訂金，完成後付另一半。含 2 次修改。個人接案，可開勞務報酬單。</li>
+    </ul>
   </section>
 
   <section class="board process-sec" id="process" aria-labelledby="process-h">
